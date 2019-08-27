@@ -3,7 +3,7 @@ import { GridLoader } from 'react-spinners'
 import isEmpty from 'lodash/isEmpty'
 import styled from '@emotion/styled'
 
-import { FlexContainer, FlexItem } from '../UI'
+import { FlexContainer, FlexItem, Image } from '../UI'
 import AppContext from '../../helpers/context'
 
 const StyledLoader = styled.div`
@@ -53,7 +53,7 @@ const Main = () => {
                 <StyledColorDiv key={color} color={color} />
               ))}
             </FlexItem>
-            <img src={item.img} alt={item.brand} />
+            <Image src={item.img} alt={item.brand} />
           </StyledFlexContainer>
         ))
       ) : (

@@ -13,7 +13,6 @@ const App = () => {
   const [filters, setFilters] = useState({})
 
   const filteredData = filterData(data, filters)
-  console.log(filters)
 
   useEffect(() => {
     trafficMeister.fetchData((err, res) => {
