@@ -5,6 +5,8 @@
         "@emotion/babel-preset-css-prop"
     ],
     "plugins": [
-        "react-hot-loader/babel"
+        "transform-inline-environment-variables",
+        "react-hot-loader/babel",
+        "@babel/plugin-proposal-class-properties",
     ]
 }
