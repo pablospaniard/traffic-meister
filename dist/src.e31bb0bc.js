@@ -50807,6 +50807,20 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
   enterModule && enterModule(module);
 })();
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -50820,20 +50834,27 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 };
 
 var arrayOfTypes = [];
+var arrayOfBrands = [];
+var arrayOfColors = [];
 
 var Header = function Header() {
+  var _useContext = (0, _react.useContext)(_context.default),
+      data = _useContext.data; // this could be done with useReducer, but i leave it as is for simplicity
+
+
   var _useState = (0, _react.useState)({}),
       _useState2 = _slicedToArray(_useState, 2),
-      types = _useState2[0],
-      setTypes = _useState2[1];
+      state = _useState2[0],
+      setState = _useState2[1];
 
   var _useState3 = (0, _react.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
       type = _useState4[0],
-      setType = _useState4[1];
+      setType = _useState4[1]; // const [brands, setBrands] = useState({})
+  // const [brand, setBrand] = useState('')
+  // const [colors, setColors] = useState({})
+  // const [color, setColor] = useState('')
 
-  var _useContext = (0, _react.useContext)(_context.default),
-      data = _useContext.data;
 
   (0, _react.useEffect)(function () {
     if (!(0, _isEmpty.default)(data)) {
@@ -50841,7 +50862,19 @@ var Header = function Header() {
         return i.type;
       });
       var uniqueTypes = Array.from(new Set(arrayOfTypes));
-      setTypes(uniqueTypes);
+      arrayOfBrands = data.map(function (i) {
+        return i.brand;
+      });
+      var uniqueBrands = Array.from(new Set(arrayOfBrands));
+      arrayOfColors = data.reduce(function (prev, curr) {
+        return [].concat(_toConsumableArray(prev), _toConsumableArray(curr.colors));
+      }, []);
+      var uniqueColors = Array.from(new Set(arrayOfColors));
+      setState(_objectSpread({}, state, {
+        types: uniqueTypes,
+        brands: uniqueBrands,
+        colors: uniqueColors
+      }));
     }
   }, [data]);
 
@@ -50851,16 +50884,32 @@ var Header = function Header() {
 
   return (0, _core.jsx)(_react.default.Fragment, null, (0, _core.jsx)("h1", null, "The Traffic Meister"), (0, _core.jsx)(_UI.FlexContainer, null, (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_UI.Select, {
     value: type,
-    items: types,
+    items: state.types,
     handleChange: function handleChange(item) {
       return _handleChange(item);
     },
-    disabled: (0, _isEmpty.default)(types),
+    disabled: (0, _isEmpty.default)(state.types),
+    loading: (0, _isEmpty.default)(data)
+  })), (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_UI.Select, {
+    value: type,
+    items: state.brands,
+    handleChange: function handleChange(item) {
+      return _handleChange(item);
+    },
+    disabled: (0, _isEmpty.default)(state.brands),
+    loading: (0, _isEmpty.default)(data)
+  })), (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_UI.Select, {
+    value: type,
+    items: state.colors,
+    handleChange: function handleChange(item) {
+      return _handleChange(item);
+    },
+    disabled: (0, _isEmpty.default)(state.colors),
     loading: (0, _isEmpty.default)(data)
   }))));
 };
 
-__signature__(Header, "useState{[types, setTypes]({})}\nuseState{[type, setType]('')}\nuseContext{{ data }}\nuseEffect{}");
+__signature__(Header, "useContext{{ data }}\nuseState{[state, setState]({})}\nuseState{[type, setType]('')}\nuseEffect{}");
 
 var _default = Header;
 var _default2 = _default;
@@ -50875,6 +50924,8 @@ exports.default = _default2;
   }
 
   reactHotLoader.register(arrayOfTypes, "arrayOfTypes", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
+  reactHotLoader.register(arrayOfBrands, "arrayOfBrands", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
+  reactHotLoader.register(arrayOfColors, "arrayOfColors", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
   reactHotLoader.register(Header, "Header", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
   reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
 })();
@@ -51432,7 +51483,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56763" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49425" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
