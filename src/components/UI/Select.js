@@ -25,14 +25,14 @@ const SelectComponent = ({ value, handleChange, items, disabled, loading }) => {
 SelectComponent.propTypes = {
   disabled: bool.isRequired,
   loading: bool.isRequired,
-  value: arrayOf(object),
+  value: oneOfType([string, arrayOf(object)]),
   items: oneOfType([arrayOf(string), arrayOf(object)]),
   handleChange: func
 }
 
 SelectComponent.defaultProps = {
   handleChange: () => {},
-  items: {},
+  items: [],
   value: []
 }
 

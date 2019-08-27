@@ -50319,13 +50319,13 @@ var SelectComponent = function SelectComponent(_ref) {
 SelectComponent.propTypes = {
   disabled: _propTypes.bool.isRequired,
   loading: _propTypes.bool.isRequired,
-  value: (0, _propTypes.arrayOf)(_propTypes.object),
+  value: (0, _propTypes.oneOfType)([_propTypes.string, (0, _propTypes.arrayOf)(_propTypes.object)]),
   items: (0, _propTypes.oneOfType)([(0, _propTypes.arrayOf)(_propTypes.string), (0, _propTypes.arrayOf)(_propTypes.object)]),
   handleChange: _propTypes.func
 };
 SelectComponent.defaultProps = {
   handleChange: function handleChange() {},
-  items: {},
+  items: [],
   value: []
 };
 var _default = SelectComponent;
@@ -50350,11 +50350,7 @@ exports.default = _default2;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-select":"../node_modules/react-select/dist/react-select.browser.esm.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js"}],"components/UI/Table.js":[function(require,module,exports) {
-var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
-  return a;
-};
-},{}],"../node_modules/@babel/runtime/helpers/defineProperty.js":[function(require,module,exports) {
+},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-select":"../node_modules/react-select/dist/react-select.browser.esm.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js"}],"../node_modules/@babel/runtime/helpers/defineProperty.js":[function(require,module,exports) {
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -50671,7 +50667,10 @@ var _default = (0, _styledBase.default)("div", {
 }, ";margin:", function (_ref4) {
   var margin = _ref4.margin;
   return margin || '0 20px';
-}, ";" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhJdGVtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUV5QiIsImZpbGUiOiJGbGV4SXRlbS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5leHBvcnQgZGVmYXVsdCBzdHlsZWQuZGl2YFxuICBmbGV4LWRpcmVjdGlvbjogJHsoeyBkaXJlY3Rpb24gfSkgPT4gZGlyZWN0aW9uIHx8ICdyb3cnfTtcbiAgZmxleDogJHsoeyBmbGV4IH0pID0+IGZsZXggfHwgJzEgMSBhdXRvJ307XG4gIGRpc3BsYXk6ICR7KHsgZGlzcGxheSB9KSA9PiBkaXNwbGF5IHx8ICdibG9jayd9O1xuICBtYXJnaW46ICR7KHsgbWFyZ2luIH0pID0+IG1hcmdpbiB8fCAnMCAyMHB4J307XG5gXG4iXX0= */"));
+}, ";width:", function (_ref5) {
+  var width = _ref5.width;
+  return width || '100%';
+}, ";" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhJdGVtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUV5QiIsImZpbGUiOiJGbGV4SXRlbS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5leHBvcnQgZGVmYXVsdCBzdHlsZWQuZGl2YFxuICBmbGV4LWRpcmVjdGlvbjogJHsoeyBkaXJlY3Rpb24gfSkgPT4gZGlyZWN0aW9uIHx8ICdyb3cnfTtcbiAgZmxleDogJHsoeyBmbGV4IH0pID0+IGZsZXggfHwgJzEgMSBhdXRvJ307XG4gIGRpc3BsYXk6ICR7KHsgZGlzcGxheSB9KSA9PiBkaXNwbGF5IHx8ICdibG9jayd9O1xuICBtYXJnaW46ICR7KHsgbWFyZ2luIH0pID0+IG1hcmdpbiB8fCAnMCAyMHB4J307XG4gIHdpZHRoOiAkeyh7IHdpZHRoIH0pID0+IHdpZHRoIHx8ICcxMDAlJ307XG5gXG4iXX0= */"));
 
 var _default2 = _default;
 exports.default = _default2;
@@ -50705,12 +50704,6 @@ Object.defineProperty(exports, "Select", {
     return _Select.default;
   }
 });
-Object.defineProperty(exports, "Table", {
-  enumerable: true,
-  get: function () {
-    return _Table.default;
-  }
-});
 Object.defineProperty(exports, "FlexContainer", {
   enumerable: true,
   get: function () {
@@ -50726,8 +50719,6 @@ Object.defineProperty(exports, "FlexItem", {
 
 var _Select = _interopRequireDefault(require("./Select"));
 
-var _Table = _interopRequireDefault(require("./Table"));
-
 var _FlexContainer = _interopRequireDefault(require("./FlexContainer"));
 
 var _FlexItem = _interopRequireDefault(require("./FlexItem"));
@@ -50737,7 +50728,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
   return a;
 };
-},{"./Select":"components/UI/Select.js","./Table":"components/UI/Table.js","./FlexContainer":"components/UI/FlexContainer.js","./FlexItem":"components/UI/FlexItem.js"}],"helpers/context.js":[function(require,module,exports) {
+},{"./Select":"components/UI/Select.js","./FlexContainer":"components/UI/FlexContainer.js","./FlexItem":"components/UI/FlexItem.js"}],"helpers/context.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50780,7 +50771,55 @@ exports.default = _default2;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{"react":"../node_modules/react/index.js"}],"components/Header/Header.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"helpers/constants.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PROPS = exports.TYPES = void 0;
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+var TYPES = {
+  CAR: 'car',
+  TRAIN: 'train',
+  PLANE: 'plane'
+};
+exports.TYPES = TYPES;
+var PROPS = {
+  TYPES: 'types',
+  BRANDS: 'brands',
+  COLORS: 'colors'
+};
+exports.PROPS = PROPS;
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(TYPES, "TYPES", "/Users/pavel/code/React-pablospaniard/src/helpers/constants.js");
+  reactHotLoader.register(PROPS, "PROPS", "/Users/pavel/code/React-pablospaniard/src/helpers/constants.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+},{}],"components/Header/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50797,6 +50836,8 @@ var _isEmpty = _interopRequireDefault(require("lodash/isEmpty"));
 var _UI = require("../UI");
 
 var _context = _interopRequireDefault(require("../../helpers/context"));
+
+var _constants = require("../../helpers/constants");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50850,11 +50891,17 @@ var Header = function Header() {
   var _useState3 = (0, _react.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
       type = _useState4[0],
-      setType = _useState4[1]; // const [brands, setBrands] = useState({})
-  // const [brand, setBrand] = useState('')
-  // const [colors, setColors] = useState({})
-  // const [color, setColor] = useState('')
+      setType = _useState4[1];
 
+  var _useState5 = (0, _react.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      brand = _useState6[0],
+      setBrand = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      color = _useState8[0],
+      setColor = _useState8[1];
 
   (0, _react.useEffect)(function () {
     if (!(0, _isEmpty.default)(data)) {
@@ -50878,38 +50925,59 @@ var Header = function Header() {
     }
   }, [data]);
 
-  var _handleChange = function handleChange(item) {
-    setType(item);
+  var _handleChange = function handleChange(item, prop) {
+    switch (prop) {
+      case _constants.PROPS.TYPES:
+        setType(item);
+        break;
+
+      case _constants.PROPS.BRANDS:
+        setBrand(item);
+        break;
+
+      case _constants.PROPS.COLORS:
+        setColor(item);
+        break;
+
+      default:
+        break;
+    }
   };
 
-  return (0, _core.jsx)(_react.default.Fragment, null, (0, _core.jsx)("h1", null, "The Traffic Meister"), (0, _core.jsx)(_UI.FlexContainer, null, (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_UI.Select, {
+  return (0, _core.jsx)(_react.default.Fragment, null, (0, _core.jsx)("h1", null, "The Traffic Meister"), (0, _core.jsx)("form", null, (0, _core.jsx)(_UI.FlexContainer, null, (0, _core.jsx)(_UI.FlexItem, {
+    flex: "1"
+  }, (0, _core.jsx)(_UI.Select, {
     value: type,
     items: state.types,
     handleChange: function handleChange(item) {
-      return _handleChange(item);
+      return _handleChange(item, 'types');
     },
     disabled: (0, _isEmpty.default)(state.types),
     loading: (0, _isEmpty.default)(data)
-  })), (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_UI.Select, {
-    value: type,
+  })), (0, _core.jsx)(_UI.FlexItem, {
+    flex: "1"
+  }, (0, _core.jsx)(_UI.Select, {
+    value: brand,
     items: state.brands,
     handleChange: function handleChange(item) {
-      return _handleChange(item);
+      return _handleChange(item, 'brands');
     },
     disabled: (0, _isEmpty.default)(state.brands),
     loading: (0, _isEmpty.default)(data)
-  })), (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_UI.Select, {
-    value: type,
+  })), (0, _core.jsx)(_UI.FlexItem, {
+    flex: "1"
+  }, (0, _core.jsx)(_UI.Select, {
+    value: color,
     items: state.colors,
     handleChange: function handleChange(item) {
-      return _handleChange(item);
+      return _handleChange(item, 'colors');
     },
     disabled: (0, _isEmpty.default)(state.colors),
     loading: (0, _isEmpty.default)(data)
-  }))));
+  })))));
 };
 
-__signature__(Header, "useContext{{ data }}\nuseState{[state, setState]({})}\nuseState{[type, setType]('')}\nuseEffect{}");
+__signature__(Header, "useContext{{ data }}\nuseState{[state, setState]({})}\nuseState{[type, setType]('')}\nuseState{[brand, setBrand]('')}\nuseState{[color, setColor]('')}\nuseEffect{}");
 
 var _default = Header;
 var _default2 = _default;
@@ -50936,11 +51004,1975 @@ exports.default = _default2;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js","../UI":"components/UI/index.js","../../helpers/context":"helpers/context.js"}],"components/Main/Main.js":[function(require,module,exports) {
+},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js","../UI":"components/UI/index.js","../../helpers/context":"helpers/context.js","../../helpers/constants":"helpers/constants.js"}],"../node_modules/react-spinners/helpers/proptypes.js":[function(require,module,exports) {
+"use strict";
+var _a;
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
+ * List of string constants to represent different props
+ */
+var LOADING = "loading";
+var COLOR = "color";
+var CSS = "css";
+var SIZE = "size";
+var SIZE_UNIT = "sizeUnit";
+var WIDTH = "width";
+var WIDTH_UNIT = "widthUnit";
+var HEIGHT = "height";
+var HEIGHT_UNIT = "heightUnit";
+var RADIUS = "radius";
+var RADIUS_UNIT = "radiusUnit";
+var MARGIN = "margin";
+var commonValues = (_a = {},
+    _a[LOADING] = true,
+    _a[COLOR] = "#000000",
+    _a[CSS] = {},
+    _a);
+var heightWidthValues = function (height, width) {
+    var _a;
+    return (_a = {},
+        _a[HEIGHT] = height,
+        _a[HEIGHT_UNIT] = "px",
+        _a[WIDTH] = width,
+        _a[WIDTH_UNIT] = "px",
+        _a);
+};
+var sizeValues = function (sizeValue) {
+    var _a;
+    return (_a = {},
+        _a[SIZE] = sizeValue,
+        _a[SIZE_UNIT] = "px",
+        _a);
+};
+exports.sizeDefaults = function (sizeValue) {
+    return Object.assign({}, commonValues, sizeValues(sizeValue));
+};
+exports.sizeMarginDefaults = function (sizeValue) {
+    var _a;
+    return Object.assign({}, exports.sizeDefaults(sizeValue), (_a = {},
+        _a[MARGIN] = "2px",
+        _a));
+};
+exports.heightWidthDefaults = function (height, width) {
+    return Object.assign({}, commonValues, heightWidthValues(height, width));
+};
+exports.heightWidthRadiusDefaults = function (height, width, radius) {
+    var _a;
+    if (radius === void 0) { radius = 2; }
+    return Object.assign({}, exports.heightWidthDefaults(height, width), (_a = {},
+        _a[RADIUS] = radius,
+        _a[RADIUS_UNIT] = "px",
+        _a[MARGIN] = "2px",
+        _a));
+};
+
+},{}],"../node_modules/react-spinners/helpers/colors.js":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var BasicColors;
+(function (BasicColors) {
+    BasicColors["maroon"] = "#800000";
+    BasicColors["red"] = "#FF0000";
+    BasicColors["orange"] = "#FFA500";
+    BasicColors["yellow"] = "#FFFF00";
+    BasicColors["olive"] = "#808000";
+    BasicColors["green"] = "#008000";
+    BasicColors["purple"] = "#800080";
+    BasicColors["fuchsia"] = "#FF00FF";
+    BasicColors["lime"] = "#00FF00";
+    BasicColors["teal"] = "#008080";
+    BasicColors["aqua"] = "#00FFFF";
+    BasicColors["blue"] = "#0000FF";
+    BasicColors["navy"] = "#000080";
+    BasicColors["black"] = "#000000";
+    BasicColors["gray"] = "#808080";
+    BasicColors["silver"] = "#C0C0C0";
+    BasicColors["white"] = "#FFFFFF";
+})(BasicColors || (BasicColors = {}));
+exports.calculateRgba = function (color, opacity) {
+    if (Object.keys(BasicColors).includes(color)) {
+        color = BasicColors[color];
+    }
+    if (color[0] === "#") {
+        color = color.slice(1);
+    }
+    if (color.length === 3) {
+        var res_1 = "";
+        color.split("").forEach(function (c) {
+            res_1 += c;
+            res_1 += c;
+        });
+        color = res_1;
+    }
+    var rgbValues = color
+        .match(/.{2}/g)
+        .map(function (hex) { return parseInt(hex, 16); })
+        .join(", ");
+    return "rgba(" + rgbValues + ", " + opacity + ")";
+};
+
+},{}],"../node_modules/react-spinners/helpers/index.js":[function(require,module,exports) {
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(require("./proptypes"));
+__export(require("./colors"));
+
+},{"./proptypes":"../node_modules/react-spinners/helpers/proptypes.js","./colors":"../node_modules/react-spinners/helpers/colors.js"}],"../node_modules/react-spinners/BarLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var long = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {left: -35%;right: 100%}\n  60% {left: 100%;right: -90%}\n  100% {left: 100%;right: -90%}\n"], ["\n  0% {left: -35%;right: 100%}\n  60% {left: 100%;right: -90%}\n  100% {left: 100%;right: -90%}\n"])));
+var short = core_1.keyframes(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  0% {left: -200%;right: 100%}\n  60% {left: 107%;right: -8%}\n  100% {left: 107%;right: -8%}\n"], ["\n  0% {left: -200%;right: 100%}\n  60% {left: 107%;right: -8%}\n  100% {left: 107%;right: -8%}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, height = _a.height, color = _a.color, heightUnit = _a.heightUnit;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: absolute;\n      height: ", ";\n      overflow: hidden;\n      background-color: ", ";\n      background-clip: padding-box;\n      display: block;\n      border-radius: 2px;\n      will-change: left, right;\n      animation-fill-mode: forwards;\n      animation: ", " 2.1s ", "\n        ", "\n        infinite;\n    "], ["\n      position: absolute;\n      height: ", ";\n      overflow: hidden;\n      background-color: ", ";\n      background-clip: padding-box;\n      display: block;\n      border-radius: 2px;\n      will-change: left, right;\n      animation-fill-mode: forwards;\n      animation: ", " 2.1s ", "\n        ",
+                "\n        infinite;\n    "])), "" + height + heightUnit, color, i === 1 ? long : short, i === 2 ? "1.15s" : "", i === 1
+                ? "cubic-bezier(0.65, 0.815, 0.735, 0.395)"
+                : "cubic-bezier(0.165, 0.84, 0.44, 1)");
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, width = _a.width, height = _a.height, color = _a.color, heightUnit = _a.heightUnit, widthUnit = _a.widthUnit;
+            return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      position: relative;\n      width: ", ";\n      height: ", ";\n      overflow: hidden;\n      background-color: ", ";\n      background-clip: padding-box;\n    "], ["\n      position: relative;\n      width: ", ";\n      height: ", ";\n      overflow: hidden;\n      background-color: ", ";\n      background-clip: padding-box;\n    "])), "" + width + widthUnit, "" + height + heightUnit, helpers_1.calculateRgba(color, 0.2));
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.heightWidthDefaults(4, 100);
+    return Loader;
+}(React.PureComponent));
+exports.Loader = Loader;
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/BeatLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var beat = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  50% {transform: scale(0.75);opacity: 0.2}\n  100% {transform: scale(1);opacity: 1}\n"], ["\n  50% {transform: scale(0.75);opacity: 0.2}\n  100% {transform: scale(1);opacity: 1}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, color = _a.color, size = _a.size, sizeUnit = _a.sizeUnit, margin = _a.margin;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      display: inline-block;\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      animation: ", " 0.7s ", " infinite linear;\n      animation-fill-mode: both;\n    "], ["\n      display: inline-block;\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      animation: ", " 0.7s ", " infinite linear;\n      animation-fill-mode: both;\n    "])), color, "" + size + sizeUnit, "" + size + sizeUnit, margin, beat, i % 2 ? "0s" : "0.35s");
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }),
+            core_1.jsx("div", { css: this.style(3) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeMarginDefaults(15);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/BounceLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var bounce = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0%, 100% {transform: scale(0)}\n  50% {transform: scale(1.0)}\n"], ["\n  0%, 100% {transform: scale(0)}\n  50% {transform: scale(1.0)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, size = _a.size, color = _a.color, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      position: absolute;\n      height: ", ";\n      width: ", ";\n      background-color: ", ";\n      border-radius: 100%;\n      opacity: 0.6;\n      top: 0;\n      left: 0;\n      animation-fill-mode: both;\n      animation: ", " 2.1s ", " infinite ease-in-out;\n    "], ["\n      position: absolute;\n      height: ", ";\n      width: ", ";\n      background-color: ", ";\n      border-radius: 100%;\n      opacity: 0.6;\n      top: 0;\n      left: 0;\n      animation-fill-mode: both;\n      animation: ", " 2.1s ", " infinite ease-in-out;\n    "])), "" + size + sizeUnit, "" + size + sizeUnit, color, bounce, i === 1 ? "1s" : "0s");
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: relative;\n      width: ", ";\n      height: ", ";\n    "], ["\n      position: relative;\n      width: ", ";\n      height: ", ";\n    "])), "" + size + sizeUnit, "" + size + sizeUnit);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(60);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/CircleLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var circle = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform: rotate(0deg)}\n  50% {transform: rotate(180deg)}\n  100% {transform: rotate(360deg)}\n"], ["\n  0% {transform: rotate(0deg)}\n  50% {transform: rotate(180deg)}\n  100% {transform: rotate(360deg)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, size = _a.size, color = _a.color, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      position: absolute;\n      height: ", ";\n      width: ", ";\n      border: 1px solid ", ";\n      border-radius: 100%;\n      transition: 2s;\n      border-bottom: none;\n      border-right: none;\n      top: ", "%;\n      left: ", "%;\n      animation-fill-mode: \"\";\n      animation: ", " 1s ", "s infinite linear;\n    "], ["\n      position: absolute;\n      height: ", ";\n      width: ", ";\n      border: 1px solid ", ";\n      border-radius: 100%;\n      transition: 2s;\n      border-bottom: none;\n      border-right: none;\n      top: ", "%;\n      left: ", "%;\n      animation-fill-mode: \"\";\n      animation: ", " 1s ", "s infinite linear;\n    "])), "" + size * (1 - i / 10) + sizeUnit, "" + size * (1 - i / 10) + sizeUnit, color, i * 0.7 * 2.5, i * 0.35 * 2.5, circle, i * 0.2);
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: relative;\n      width: ", ";\n      height: ", ";\n    "], ["\n      position: relative;\n      width: ", ";\n      height: ", ";\n    "])), "" + size + sizeUnit, "" + size + sizeUnit);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.style(0) }),
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }),
+            core_1.jsx("div", { css: this.style(3) }),
+            core_1.jsx("div", { css: this.style(4) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(50);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/ClimbingBoxLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var climbingBox = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform:translate(0, -1em) rotate(-45deg)}\n  5% {transform:translate(0, -1em) rotate(-50deg)}\n  20% {transform:translate(1em, -2em) rotate(47deg)}\n  25% {transform:translate(1em, -2em) rotate(45deg)}\n  30% {transform:translate(1em, -2em) rotate(40deg)}\n  45% {transform:translate(2em, -3em) rotate(137deg)}\n  50% {transform:translate(2em, -3em) rotate(135deg)}\n  55% {transform:translate(2em, -3em) rotate(130deg)}\n  70% {transform:translate(3em, -4em) rotate(217deg)}\n  75% {transform:translate(3em, -4em) rotate(220deg)}\n  100% {transform:translate(0, -1em) rotate(-225deg)}\n"], ["\n  0% {transform:translate(0, -1em) rotate(-45deg)}\n  5% {transform:translate(0, -1em) rotate(-50deg)}\n  20% {transform:translate(1em, -2em) rotate(47deg)}\n  25% {transform:translate(1em, -2em) rotate(45deg)}\n  30% {transform:translate(1em, -2em) rotate(40deg)}\n  45% {transform:translate(2em, -3em) rotate(137deg)}\n  50% {transform:translate(2em, -3em) rotate(135deg)}\n  55% {transform:translate(2em, -3em) rotate(130deg)}\n  70% {transform:translate(3em, -4em) rotate(217deg)}\n  75% {transform:translate(3em, -4em) rotate(220deg)}\n  100% {transform:translate(0, -1em) rotate(-225deg)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function () {
+            var color = _this.props.color;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      position: absolute;\n      left: 0;\n      bottom: -0.1em;\n      height: 1em;\n      width: 1em;\n      background-color: transparent;\n      border-radius: 15%;\n      border: 0.25em solid ", ";\n      transform: translate(0, -1em) rotate(-45deg);\n      animation-fill-mode: both;\n      animation: ", " 2.5s infinite cubic-bezier(0.79, 0, 0.47, 0.97);\n    "], ["\n      position: absolute;\n      left: 0;\n      bottom: -0.1em;\n      height: 1em;\n      width: 1em;\n      background-color: transparent;\n      border-radius: 15%;\n      border: 0.25em solid ", ";\n      transform: translate(0, -1em) rotate(-45deg);\n      animation-fill-mode: both;\n      animation: ", " 2.5s infinite cubic-bezier(0.79, 0, 0.47, 0.97);\n    "])), color, climbingBox);
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      margin-top: -2.7em;\n      margin-left: -2.7em;\n      width: 5.4em;\n      height: 5.4em;\n      font-size: ", ";\n    "], ["\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      margin-top: -2.7em;\n      margin-left: -2.7em;\n      width: 5.4em;\n      height: 5.4em;\n      font-size: ", ";\n    "])), "" + size + sizeUnit);
+        };
+        _this.hill = function () {
+            var color = _this.props.color;
+            return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      position: absolute;\n      width: 7.1em;\n      height: 7.1em;\n      top: 1.7em;\n      left: 1.7em;\n      border-left: 0.25em solid ", ";\n      transform: rotate(45deg);\n    "], ["\n      position: absolute;\n      width: 7.1em;\n      height: 7.1em;\n      top: 1.7em;\n      left: 1.7em;\n      border-left: 0.25em solid ", ";\n      transform: rotate(45deg);\n    "])), color);
+        };
+        _this.container = function () {
+            return core_1.css(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n      position: relative;\n      width: 7.1em;\n      height: 7.1em;\n    "], ["\n      position: relative;\n      width: 7.1em;\n      height: 7.1em;\n    "])));
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.container(), css] },
+            core_1.jsx("div", { css: this.wrapper() },
+                core_1.jsx("div", { css: this.style() }),
+                core_1.jsx("div", { css: this.hill() })))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(15);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/ClipLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var proptypes_1 = require("./helpers/proptypes");
+var clip = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform: rotate(0deg) scale(1)}\n  50% {transform: rotate(180deg) scale(0.8)}\n  100% {transform: rotate(360deg) scale(1)}\n"], ["\n  0% {transform: rotate(0deg) scale(1)}\n  50% {transform: rotate(180deg) scale(0.8)}\n  100% {transform: rotate(360deg) scale(1)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit, color = _a.color;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      background: transparent !important;\n      width: ", ";\n      height: ", ";\n      border-radius: 100%;\n      border: 2px solid;\n      border-color: ", ";\n      border-bottom-color: transparent;\n      display: inline-block;\n      animation: ", " 0.75s 0s infinite linear;\n      animation-fill-mode: both;\n    "], ["\n      background: transparent !important;\n      width: ", ";\n      height: ", ";\n      border-radius: 100%;\n      border: 2px solid;\n      border-color: ", ";\n      border-bottom-color: transparent;\n      display: inline-block;\n      animation: ", " 0.75s 0s infinite linear;\n      animation-fill-mode: both;\n    "])), "" + size + sizeUnit, "" + size + sizeUnit, color, clip);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? core_1.jsx("div", { css: [this.style(), css] }) : null;
+    };
+    Loader.defaultProps = proptypes_1.sizeDefaults(35);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers/proptypes":"../node_modules/react-spinners/helpers/proptypes.js"}],"../node_modules/react-spinners/DotLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var rotate = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  100% {transform: rotate(360deg)}\n"], ["\n  100% {transform: rotate(360deg)}\n"])));
+var bounce = core_1.keyframes(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  0%, 100% {transform: scale(0)}\n  50% {transform: scale(1.0)}\n"], ["\n  0%, 100% {transform: scale(0)}\n  50% {transform: scale(1.0)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit, color = _a.color;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: absolute;\n      top: ", ";\n      bottom: ", ";\n      height: ", ";\n      width: ", ";\n      background-color: ", ";\n      border-radius: 100%;\n      animation-fill-mode: forwards;\n      animation: ", " 2s ", " infinite linear;\n    "], ["\n      position: absolute;\n      top: ", ";\n      bottom: ", ";\n      height: ", ";\n      width: ", ";\n      background-color: ", ";\n      border-radius: 100%;\n      animation-fill-mode: forwards;\n      animation: ", " 2s ", " infinite linear;\n    "])), i % 2 ? "0" : "auto", i % 2 ? "auto" : "0", "" + size / 2 + sizeUnit, "" + size / 2 + sizeUnit, color, bounce, i === 2 ? "-1s" : "0s");
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      position: relative;\n      width: ", ";\n      height: ", ";\n      animation-fill-mode: forwards;\n      animation: ", " 2s 0s infinite linear;\n    "], ["\n      position: relative;\n      width: ", ";\n      height: ", ";\n      animation-fill-mode: forwards;\n      animation: ", " 2s 0s infinite linear;\n    "])), "" + size + sizeUnit, "" + size + sizeUnit, rotate);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(60);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/FadeLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var fade = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  50% {opacity: 0.3}\n  100% {opacity: 1}\n"], ["\n  50% {opacity: 0.3}\n  100% {opacity: 1}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.radius = 20;
+        _this.quarter = _this.radius / 2 + _this.radius / 5.5;
+        _this.style = function (i) {
+            var _a = _this.props, height = _a.height, width = _a.width, margin = _a.margin, color = _a.color, radius = _a.radius, widthUnit = _a.widthUnit, heightUnit = _a.heightUnit, radiusUnit = _a.radiusUnit;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      background-color: ", ";\n      border-radius: ", ";\n      transition: 2s;\n      animation-fill-mode: \"both\";\n      animation: ", " 1.2s ", "s infinite ease-in-out;\n    "], ["\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      background-color: ", ";\n      border-radius: ", ";\n      transition: 2s;\n      animation-fill-mode: \"both\";\n      animation: ", " 1.2s ", "s infinite ease-in-out;\n    "])), "" + width + widthUnit, "" + height + heightUnit, margin, color, "" + radius + radiusUnit, fade, i * 0.12);
+        };
+        _this.wrapper = function () {
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: relative;\n      font-size: 0;\n      top: ", "px;\n      left: ", "px;\n      width: ", "px;\n      height: ", "px;\n    "], ["\n      position: relative;\n      font-size: 0;\n      top: ", "px;\n      left: ", "px;\n      width: ", "px;\n      height: ", "px;\n    "])), _this.radius, _this.radius, _this.radius * 3, _this.radius * 3);
+        };
+        _this.a = function () { return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n    ", ";\n    top: ", "px;\n    left: 0;\n  "], ["\n    ", ";\n    top: ", "px;\n    left: 0;\n  "])), _this.style(1), _this.radius); };
+        _this.b = function () { return core_1.css(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n    ", ";\n    top: ", "px;\n    left: ", "px;\n    transform: rotate(-45deg);\n  "], ["\n    ", ";\n    top: ", "px;\n    left: ", "px;\n    transform: rotate(-45deg);\n  "])), _this.style(2), _this.quarter, _this.quarter); };
+        _this.c = function () { return core_1.css(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n    ", ";\n    top: 0;\n    left: ", "px;\n    transform: rotate(90deg);\n  "], ["\n    ", ";\n    top: 0;\n    left: ", "px;\n    transform: rotate(90deg);\n  "])), _this.style(3), _this.radius); };
+        _this.d = function () { return core_1.css(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n    ", ";\n    top: ", "px;\n    left: ", "px;\n    transform: rotate(45deg);\n  "], ["\n    ", ";\n    top: ", "px;\n    left: ", "px;\n    transform: rotate(45deg);\n  "])), _this.style(4), -_this.quarter, _this.quarter); };
+        _this.e = function () { return core_1.css(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n    ", ";\n    top: ", "px;\n    left: 0;\n  "], ["\n    ", ";\n    top: ", "px;\n    left: 0;\n  "])), _this.style(5), -_this.radius); };
+        _this.f = function () { return core_1.css(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n    ", ";\n    top: ", "px;\n    left: ", "px;\n    transform: rotate(-45deg);\n  "], ["\n    ", ";\n    top: ", "px;\n    left: ", "px;\n    transform: rotate(-45deg);\n  "])), _this.style(6), -_this.quarter, -_this.quarter); };
+        _this.g = function () { return core_1.css(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n    ", ";\n    top: 0;\n    left: ", "px;\n    transform: rotate(90deg);\n  "], ["\n    ", ";\n    top: 0;\n    left: ", "px;\n    transform: rotate(90deg);\n  "])), _this.style(7), -_this.radius); };
+        _this.h = function () { return core_1.css(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n    ", ";\n    top: ", "px;\n    left: ", "px;\n    transform: rotate(45deg);\n  "], ["\n    ", ";\n    top: ", "px;\n    left: ", "px;\n    transform: rotate(45deg);\n  "])), _this.style(8), _this.quarter, -_this.quarter); };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.a() }),
+            core_1.jsx("div", { css: this.b() }),
+            core_1.jsx("div", { css: this.c() }),
+            core_1.jsx("div", { css: this.d() }),
+            core_1.jsx("div", { css: this.e() }),
+            core_1.jsx("div", { css: this.f() }),
+            core_1.jsx("div", { css: this.g() }),
+            core_1.jsx("div", { css: this.h() }))) : null;
+    };
+    Loader.defaultProps = helpers_1.heightWidthRadiusDefaults(15, 5, 2);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/GridLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var grid = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform: scale(1)}\n  50% {transform: scale(0.5); opacity: 0.7}\n  100% {transform: scale(1);opacity: 1}\n"], ["\n  0% {transform: scale(1)}\n  50% {transform: scale(0.5); opacity: 0.7}\n  100% {transform: scale(1);opacity: 1}\n"])));
+var random = function (top) { return Math.random() * top; };
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (rand) {
+            var _a = _this.props, color = _a.color, size = _a.size, sizeUnit = _a.sizeUnit, margin = _a.margin;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      display: inline-block;\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      animation-fill-mode: \"both\";\n      animation: ", " ", "s ", "s infinite ease;\n    "], ["\n      display: inline-block;\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      animation-fill-mode: \"both\";\n      animation: ", " ", "s ", "s infinite ease;\n    "])), color, "" + size + sizeUnit, "" + size + sizeUnit, margin, grid, rand / 100 + 0.6, rand / 100 - 0.2);
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit, margin = _a.margin;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      width: ", ";\n      font-size: 0;\n    "], ["\n      width: ", ";\n      font-size: 0;\n    "])), "" + (parseFloat(size.toString()) * 3 + parseFloat(margin) * 6) + sizeUnit);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.style(random(100)) }),
+            core_1.jsx("div", { css: this.style(random(100)) }),
+            core_1.jsx("div", { css: this.style(random(100)) }),
+            core_1.jsx("div", { css: this.style(random(100)) }),
+            core_1.jsx("div", { css: this.style(random(100)) }),
+            core_1.jsx("div", { css: this.style(random(100)) }),
+            core_1.jsx("div", { css: this.style(random(100)) }),
+            core_1.jsx("div", { css: this.style(random(100)) }),
+            core_1.jsx("div", { css: this.style(random(100)) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeMarginDefaults(15);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/HashLoader.js":[function(require,module,exports) {
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var index_1 = require("./helpers/index");
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.thickness = function () {
+            var size = _this.props.size;
+            return size / 5;
+        };
+        _this.lat = function () {
+            var size = _this.props.size;
+            return (size - _this.thickness()) / 2;
+        };
+        _this.offset = function () { return _this.lat() - _this.thickness(); };
+        _this.color = function () {
+            var color = _this.props.color;
+            return index_1.calculateRgba(color, 0.75);
+        };
+        _this.before = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            var color = _this.color();
+            var lat = _this.lat();
+            var thickness = _this.thickness();
+            var offset = _this.offset();
+            return core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n      0% {width: ", "px;box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n      35% {width: ", ";box-shadow: 0 ", "px ", ", 0 ", "px ", "}\n      70% {width: ", "px;box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n      100% {box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n    "], ["\n      0% {width: ", "px;box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n      35% {width: ", ";box-shadow: 0 ", "px ", ", 0 ", "px ", "}\n      70% {width: ", "px;box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n      100% {box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n    "])), thickness, lat, -offset, color, -lat, offset, color, "" + size + sizeUnit, -offset, color, offset, color, thickness, -lat, -offset, color, lat, offset, color, lat, -offset, color, -lat, offset, color);
+        };
+        _this.after = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            var color = _this.color();
+            var lat = _this.lat();
+            var thickness = _this.thickness();
+            var offset = _this.offset();
+            return core_1.keyframes(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      0% {height: ", "px;box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n      35% {height: ", ";box-shadow: ", "px 0 ", ", ", "px 0 ", "}\n      70% {height: ", "px;box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n      100% {box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n    "], ["\n      0% {height: ", "px;box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n      35% {height: ", ";box-shadow: ", "px 0 ", ", ", "px 0 ", "}\n      70% {height: ", "px;box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n      100% {box-shadow: ", "px ", "px ", ", ", "px ", "px ", "}\n    "])), thickness, offset, lat, color, -offset, -lat, color, "" + size + sizeUnit, offset, color, -offset, color, thickness, offset, -lat, color, -offset, lat, color, offset, lat, color, -offset, -lat, color);
+        };
+        _this.style = function (i) {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: absolute;\n      content: \"\";\n      top: 50%;\n      left: 50%;\n      display: block;\n      width: ", ";\n      height: ", ";\n      border-radius: ", ";\n      transform: translate(-50%, -50%);\n      animation-fill-mode: none;\n      animation: ", " 2s infinite;\n    "], ["\n      position: absolute;\n      content: \"\";\n      top: 50%;\n      left: 50%;\n      display: block;\n      width: ", ";\n      height: ", ";\n      border-radius: ", ";\n      transform: translate(-50%, -50%);\n      animation-fill-mode: none;\n      animation: ", " 2s infinite;\n    "])), "" + size / 5 + sizeUnit, "" + size / 5 + sizeUnit, "" + size / 10 + sizeUnit, i === 1 ? _this.before() : _this.after());
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      position: relative;\n      width: ", ";\n      height: ", ";\n      transform: rotate(165deg);\n    "], ["\n      position: relative;\n      width: ", ";\n      height: ", ";\n      transform: rotate(165deg);\n    "])), "" + size + sizeUnit, "" + size + sizeUnit);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }))) : null;
+    };
+    Loader.defaultProps = index_1.sizeDefaults(50);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers/index":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/MoonLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var moon = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  100% {transform: rotate(360deg)}\n"], ["\n  100% {transform: rotate(360deg)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.moonSize = function () {
+            var size = _this.props.size;
+            return size / 7;
+        };
+        _this.ballStyle = function (size) {
+            var sizeUnit = _this.props.sizeUnit;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      width: ", ";\n      height: ", ";\n      border-radius: 100%;\n    "], ["\n      width: ", ";\n      height: ", ";\n      border-radius: 100%;\n    "])), "" + size + sizeUnit, "" + size + sizeUnit);
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: relative;\n      width: ", ";\n      height: ", ";\n      animation: ", " 0.6s 0s infinite linear;\n      animation-fill-mode: forwards;\n    "], ["\n      position: relative;\n      width: ", ";\n      height: ", ";\n      animation: ", " 0.6s 0s infinite linear;\n      animation-fill-mode: forwards;\n    "])), "" + (size + _this.moonSize() * 2) + sizeUnit, "" + (size + _this.moonSize() * 2) + sizeUnit, moon);
+        };
+        _this.ball = function () {
+            var _a = _this.props, color = _a.color, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      ", ";\n      background-color: ", ";\n      opacity: 0.8;\n      position: absolute;\n      top: ", ";\n      animation: ", " 0.6s 0s infinite linear;\n      animation-fill-mode: forwards;\n    "], ["\n      ", ";\n      background-color: ", ";\n      opacity: 0.8;\n      position: absolute;\n      top: ", ";\n      animation: ", " 0.6s 0s infinite linear;\n      animation-fill-mode: forwards;\n    "])), _this.ballStyle(_this.moonSize()), color, "" + (size / 2 - _this.moonSize() / 2) + sizeUnit, moon);
+        };
+        _this.circle = function () {
+            var _a = _this.props, size = _a.size, color = _a.color;
+            return core_1.css(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n      ", ";\n      border: ", "px solid ", ";\n      opacity: 0.1;\n    "], ["\n      ", ";\n      border: ", "px solid ", ";\n      opacity: 0.1;\n    "])), _this.ballStyle(size), _this.moonSize(), color);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.ball() }),
+            core_1.jsx("div", { css: this.circle() }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(60);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/PacmanLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var pacman = [
+    core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    0% {transform: rotate(0deg)}\n    50% {transform: rotate(-44deg)}\n  "], ["\n    0% {transform: rotate(0deg)}\n    50% {transform: rotate(-44deg)}\n  "]))),
+    core_1.keyframes(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    0% {transform: rotate(0deg)}\n    50% {transform: rotate(44deg)}\n  "], ["\n    0% {transform: rotate(0deg)}\n    50% {transform: rotate(44deg)}\n  "])))
+];
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.ball = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.keyframes(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      75% {opacity: 0.7}\n      100% {transform: translate(", ", ", ")}\n    "], ["\n      75% {opacity: 0.7}\n      100% {transform: translate(", ", ", ")}\n    "])), "" + -4 * size + sizeUnit, "" + -size / 4 + sizeUnit);
+        };
+        _this.ballStyle = function (i) {
+            var _a = _this.props, color = _a.color, margin = _a.margin, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      width: ", ";\n      height: ", ";\n      background-color: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      transform: translate(0, ", ");\n      position: absolute;\n      top: ", ";\n      left: ", ";\n      animation: ", " 1s ", "s infinite linear;\n      animation-fill-mode: both;\n    "], ["\n      width: ", ";\n      height: ", ";\n      background-color: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      transform: translate(0, ", ");\n      position: absolute;\n      top: ", ";\n      left: ", ";\n      animation: ", " 1s ", "s infinite linear;\n      animation-fill-mode: both;\n    "])), "" + size / 3 + sizeUnit, "" + size / 3 + sizeUnit, color, margin, "" + -size / 4 + sizeUnit, "" + size + sizeUnit, "" + size * 4 + sizeUnit, _this.ball(), i * 0.25);
+        };
+        _this.s1 = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return "" + size + sizeUnit + " solid transparent";
+        };
+        _this.s2 = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit, color = _a.color;
+            return "" + size + sizeUnit + " solid " + color;
+        };
+        _this.pacmanStyle = function (i) {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            var s1 = _this.s1();
+            var s2 = _this.s2();
+            return core_1.css(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n      width: 0;\n      height: 0;\n      border-right: ", ";\n      border-top: ", ";\n      border-left: ", ";\n      border-bottom: ", ";\n      border-radius: ", ";\n      position: absolute;\n      animation: ", " 0.8s infinite ease-in-out;\n      animation-fill-mode: both;\n    "], ["\n      width: 0;\n      height: 0;\n      border-right: ", ";\n      border-top: ", ";\n      border-left: ", ";\n      border-bottom: ", ";\n      border-radius: ", ";\n      position: absolute;\n      animation: ", " 0.8s infinite ease-in-out;\n      animation-fill-mode: both;\n    "])), s1, i === 0 ? s1 : s2, s2, i === 0 ? s2 : s1, "" + size + sizeUnit, pacman[i]);
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n      position: relative;\n      font-size: 0;\n      height: ", ";\n      width: ", ";\n    "], ["\n      position: relative;\n      font-size: 0;\n      height: ", ";\n      width: ", ";\n    "])), "" + size + sizeUnit, "" + size + sizeUnit);
+        };
+        _this.pac = function () { return _this.pacmanStyle(0); };
+        _this.man = function () { return _this.pacmanStyle(1); };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.pac() }),
+            core_1.jsx("div", { css: this.man() }),
+            core_1.jsx("div", { css: this.ballStyle(2) }),
+            core_1.jsx("div", { css: this.ballStyle(3) }),
+            core_1.jsx("div", { css: this.ballStyle(4) }),
+            core_1.jsx("div", { css: this.ballStyle(5) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeMarginDefaults(25);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/PropagateLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+// 1.5 4.5 7.5
+var distance = [1, 3, 5];
+var propagate = [
+    core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n      25% {transform: translateX(-", "rem) scale(0.75)}\n      50% {transform: translateX(-", "rem) scale(0.6)}\n      75% {transform: translateX(-", "rem) scale(0.5)}\n      95% {transform: translateX(0rem) scale(1)}\n    "], ["\n      25% {transform: translateX(-", "rem) scale(0.75)}\n      50% {transform: translateX(-", "rem) scale(0.6)}\n      75% {transform: translateX(-", "rem) scale(0.5)}\n      95% {transform: translateX(0rem) scale(1)}\n    "])), distance[0], distance[1], distance[2]),
+    core_1.keyframes(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      25% {transform: translateX(-", "rem) scale(0.75)}\n      50% {transform: translateX(-", "rem) scale(0.6)}\n      75% {transform: translateX(-", "rem) scale(0.6)}\n      95% {transform: translateX(0rem) scale(1)}\n    "], ["\n      25% {transform: translateX(-", "rem) scale(0.75)}\n      50% {transform: translateX(-", "rem) scale(0.6)}\n      75% {transform: translateX(-", "rem) scale(0.6)}\n      95% {transform: translateX(0rem) scale(1)}\n    "])), distance[0], distance[1], distance[1]),
+    core_1.keyframes(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      25% {transform: translateX(-", "rem) scale(0.75)}\n      75% {transform: translateX(-", "rem) scale(0.75)}\n      95% {transform: translateX(0rem) scale(1)}\n    "], ["\n      25% {transform: translateX(-", "rem) scale(0.75)}\n      75% {transform: translateX(-", "rem) scale(0.75)}\n      95% {transform: translateX(0rem) scale(1)}\n    "])), distance[0], distance[0]),
+    core_1.keyframes(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      25% {transform: translateX(", "rem) scale(0.75)}\n      75% {transform: translateX(", "rem) scale(0.75)}\n      95% {transform: translateX(0rem) scale(1)}\n    "], ["\n      25% {transform: translateX(", "rem) scale(0.75)}\n      75% {transform: translateX(", "rem) scale(0.75)}\n      95% {transform: translateX(0rem) scale(1)}\n    "])), distance[0], distance[0]),
+    core_1.keyframes(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n      25% {transform: translateX(", "rem) scale(0.75)}\n      50% {transform: translateX(", "rem) scale(0.6)}\n      75% {transform: translateX(", "rem) scale(0.6)}\n      95% {transform: translateX(0rem) scale(1)}\n    "], ["\n      25% {transform: translateX(", "rem) scale(0.75)}\n      50% {transform: translateX(", "rem) scale(0.6)}\n      75% {transform: translateX(", "rem) scale(0.6)}\n      95% {transform: translateX(0rem) scale(1)}\n    "])), distance[0], distance[1], distance[1]),
+    core_1.keyframes(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n      25% {transform: translateX(", "rem) scale(0.75)}\n      50% {transform: translateX(", "rem) scale(0.6)}\n      75% {transform: translateX(", "rem) scale(0.5)}\n      95% {transform: translateX(0rem) scale(1)}\n    "], ["\n      25% {transform: translateX(", "rem) scale(0.75)}\n      50% {transform: translateX(", "rem) scale(0.6)}\n      75% {transform: translateX(", "rem) scale(0.5)}\n      95% {transform: translateX(0rem) scale(1)}\n    "])), distance[0], distance[1], distance[2])
+];
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit, color = _a.color;
+            return core_1.css(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n      position: absolute;\n      font-size: ", ";\n      width: ", ";\n      height: ", ";\n      background: ", ";\n      border-radius: 50%;\n      animation: ", " 1.5s infinite;\n      animation-fill-mode: forwards;\n    "], ["\n      position: absolute;\n      font-size: ", ";\n      width: ", ";\n      height: ", ";\n      background: ", ";\n      border-radius: 50%;\n      animation: ", " 1.5s infinite;\n      animation-fill-mode: forwards;\n    "])), "" + size / 3 + sizeUnit, "" + size + sizeUnit, "" + size + sizeUnit, color, propagate[i]);
+        };
+        _this.wrapper = function () {
+            return core_1.css(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n      position: relative;\n    "], ["\n      position: relative;\n    "])));
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.style(0) }),
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }),
+            core_1.jsx("div", { css: this.style(3) }),
+            core_1.jsx("div", { css: this.style(4) }),
+            core_1.jsx("div", { css: this.style(5) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(15);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/PulseLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var pulse = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform: scale(1);opacity: 1}\n  45% {transform: scale(0.1);opacity: 0.7}\n  80% {transform: scale(1);opacity: 1}\n"], ["\n  0% {transform: scale(1);opacity: 1}\n  45% {transform: scale(0.1);opacity: 0.7}\n  80% {transform: scale(1);opacity: 1}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, color = _a.color, size = _a.size, sizeUnit = _a.sizeUnit, margin = _a.margin;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      display: inline-block;\n      animation: ", " 0.75s ", "s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n      animation-fill-mode: both;\n    "], ["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      display: inline-block;\n      animation: ", " 0.75s ", "s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n      animation-fill-mode: both;\n    "])), color, "" + size + sizeUnit, "" + size + sizeUnit, margin, pulse, i * 0.12);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }),
+            core_1.jsx("div", { css: this.style(3) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeMarginDefaults(15);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/RingLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var right = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)}\n  100% {transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg)}\n"], ["\n  0% {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)}\n  100% {transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg)}\n"])));
+var left = core_1.keyframes(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  0% {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)}\n  100% {transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg)}\n"], ["\n  0% {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)}\n  100% {transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit, color = _a.color;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: ", ";\n      height: ", ";\n      border: ", " solid ", ";\n      opacity: 0.4;\n      border-radius: 100%;\n      animation-fill-mode: forwards;\n      perspective: 800px;\n      animation: ", " 2s 0s infinite linear;\n    "], ["\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: ", ";\n      height: ", ";\n      border: ", " solid ", ";\n      opacity: 0.4;\n      border-radius: 100%;\n      animation-fill-mode: forwards;\n      perspective: 800px;\n      animation: ", " 2s 0s infinite linear;\n    "])), "" + size + sizeUnit, "" + size + sizeUnit, "" + size / 10 + sizeUnit, color, i === 1 ? right : left);
+        };
+        _this.wrapper = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      width: ", ";\n      height: ", ";\n      position: relative;\n    "], ["\n      width: ", ";\n      height: ", ";\n      position: relative;\n    "])), "" + size + sizeUnit, "" + size + sizeUnit);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(60);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/RiseLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var riseAmount = 30;
+var even = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform: scale(1.1)}\n  25% {transform: translateY(-", "px)}\n  50% {transform: scale(0.4)}\n  75% {transform: translateY(", "px)}\n  100% {transform: translateY(0) scale(1.0)}\n"], ["\n  0% {transform: scale(1.1)}\n  25% {transform: translateY(-", "px)}\n  50% {transform: scale(0.4)}\n  75% {transform: translateY(", "px)}\n  100% {transform: translateY(0) scale(1.0)}\n"])), riseAmount, riseAmount);
+var odd = core_1.keyframes(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  0% {transform: scale(0.4)}\n  25% {transform: translateY(", "px)}\n  50% {transform: scale(1.1)}\n  75% {transform: translateY(", "px)}\n  100% {transform: translateY(0) scale(0.75)}\n"], ["\n  0% {transform: scale(0.4)}\n  25% {transform: translateY(", "px)}\n  50% {transform: scale(1.1)}\n  75% {transform: translateY(", "px)}\n  100% {transform: translateY(0) scale(0.75)}\n"])), riseAmount, -riseAmount);
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, color = _a.color, size = _a.size, sizeUnit = _a.sizeUnit, margin = _a.margin;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      display: inline-block;\n      animation: ", " 1s 0s infinite cubic-bezier(0.15, 0.46, 0.9, 0.6);\n      animation-fill-mode: both;\n    "], ["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      display: inline-block;\n      animation: ", " 1s 0s infinite cubic-bezier(0.15, 0.46, 0.9, 0.6);\n      animation-fill-mode: both;\n    "])), color, "" + size + sizeUnit, "" + size + sizeUnit, "" + margin, i % 2 === 0 ? even : odd);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }),
+            core_1.jsx("div", { css: this.style(3) }),
+            core_1.jsx("div", { css: this.style(4) }),
+            core_1.jsx("div", { css: this.style(5) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeMarginDefaults(15);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/RotateLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var rotate = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform: rotate(0deg)}\n  50% {transform: rotate(180deg)}\n  100% {transform: rotate(360deg)}\n"], ["\n  0% {transform: rotate(0deg)}\n  50% {transform: rotate(180deg)}\n  100% {transform: rotate(360deg)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) { return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    opacity: 0.8;\n    position: absolute;\n    top: 0;\n    left: ", "px;\n  "], ["\n    opacity: 0.8;\n    position: absolute;\n    top: 0;\n    left: ", "px;\n  "])), i % 2 ? -28 : 25); };
+        _this.ball = function () {
+            var _a = _this.props, color = _a.color, size = _a.size, sizeUnit = _a.sizeUnit, margin = _a.margin;
+            return core_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n    "], ["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n    "])), color, "" + size + sizeUnit, "" + size + sizeUnit, margin);
+        };
+        _this.wrapper = function () {
+            return core_1.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      ", ";\n      display: inline-block;\n      position: relative;\n      animation-fill-mode: both;\n      animation: ", " 1s 0s infinite cubic-bezier(0.7, -0.13, 0.22, 0.86);\n    "], ["\n      ", ";\n      display: inline-block;\n      position: relative;\n      animation-fill-mode: both;\n      animation: ", " 1s 0s infinite cubic-bezier(0.7, -0.13, 0.22, 0.86);\n    "])), _this.ball(), rotate);
+        };
+        _this.long = function () { return core_1.css(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n    ", ";\n    ", ";\n  "], ["\n    ", ";\n    ", ";\n  "])), _this.ball(), _this.style(1)); };
+        _this.short = function () { return core_1.css(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n    ", ";\n    ", ";\n  "], ["\n    ", ";\n    ", ";\n  "])), _this.ball(), _this.style(2)); };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [this.wrapper(), css] },
+            core_1.jsx("div", { css: this.long() }),
+            core_1.jsx("div", { css: this.short() }))) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeMarginDefaults(15);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/ScaleLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var scale = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  0% {transform: scaley(1.0)}\n  50% {transform: scaley(0.4)}\n  100% {transform: scaley(1.0)}\n"], ["\n  0% {transform: scaley(1.0)}\n  50% {transform: scaley(0.4)}\n  100% {transform: scaley(1.0)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, color = _a.color, width = _a.width, height = _a.height, margin = _a.margin, radius = _a.radius, widthUnit = _a.widthUnit, heightUnit = _a.heightUnit, radiusUnit = _a.radiusUnit;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: ", ";\n      display: inline-block;\n      animation: ", " 1s ", "s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n      animation-fill-mode: both;\n    "], ["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: ", ";\n      display: inline-block;\n      animation: ", " 1s ", "s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n      animation-fill-mode: both;\n    "])), color, "" + width + widthUnit, "" + height + heightUnit, margin, "" + radius + radiusUnit, scale, i * 0.1);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }),
+            core_1.jsx("div", { css: this.style(3) }),
+            core_1.jsx("div", { css: this.style(4) }),
+            core_1.jsx("div", { css: this.style(5) }))) : null;
+    };
+    Loader.defaultProps = helpers_1.heightWidthRadiusDefaults(35, 4, 2);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/SkewLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var skew = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  25% {transform: perspective(100px) rotateX(180deg) rotateY(0)}\n  50% {transform: perspective(100px) rotateX(180deg) rotateY(180deg)}\n  75% {transform: perspective(100px) rotateX(0) rotateY(180deg)}\n  100% {transform: perspective(100px) rotateX(0) rotateY(0)}\n"], ["\n  25% {transform: perspective(100px) rotateX(180deg) rotateY(0)}\n  50% {transform: perspective(100px) rotateX(180deg) rotateY(180deg)}\n  75% {transform: perspective(100px) rotateX(0) rotateY(180deg)}\n  100% {transform: perspective(100px) rotateX(0) rotateY(0)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function () {
+            var _a = _this.props, size = _a.size, sizeUnit = _a.sizeUnit, color = _a.color;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      width: 0;\n      height: 0;\n      border-left: ", " solid transparent;\n      border-right: ", " solid transparent;\n      border-bottom: ", " solid ", ";\n      display: inline-block;\n      animation: ", " 3s 0s infinite cubic-bezier(0.09, 0.57, 0.49, 0.9);\n      animation-fill-mode: both;\n    "], ["\n      width: 0;\n      height: 0;\n      border-left: ", " solid transparent;\n      border-right: ", " solid transparent;\n      border-bottom: ", " solid ", ";\n      display: inline-block;\n      animation: ", " 3s 0s infinite cubic-bezier(0.09, 0.57, 0.49, 0.9);\n      animation-fill-mode: both;\n    "])), "" + size + sizeUnit, "" + size + sizeUnit, "" + size + sizeUnit, color, skew);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? core_1.jsx("div", { css: [this.style(), css] }) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(20);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/SquareLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var helpers_1 = require("./helpers");
+var square = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  25% {transform: rotateX(180deg) rotateY(0)}\n  50% {transform: rotateX(180deg) rotateY(180deg)}\n  75% {transform: rotateX(0) rotateY(180deg)}\n  100% {transform: rotateX(0) rotateY(0)}\n"], ["\n  25% {transform: rotateX(180deg) rotateY(0)}\n  50% {transform: rotateX(180deg) rotateY(180deg)}\n  75% {transform: rotateX(0) rotateY(180deg)}\n  100% {transform: rotateX(0) rotateY(0)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function () {
+            var _a = _this.props, color = _a.color, size = _a.size, sizeUnit = _a.sizeUnit;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      display: inline-block;\n      animation: ", " 3s 0s infinite cubic-bezier(0.09, 0.57, 0.49, 0.9);\n      animation-fill-mode: both;\n    "], ["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      display: inline-block;\n      animation: ", " 3s 0s infinite cubic-bezier(0.09, 0.57, 0.49, 0.9);\n      animation-fill-mode: both;\n    "])), color, "" + size + sizeUnit, "" + size + sizeUnit, square);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? core_1.jsx("div", { css: [this.style(), css] }) : null;
+    };
+    Loader.defaultProps = helpers_1.sizeDefaults(50);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers":"../node_modules/react-spinners/helpers/index.js"}],"../node_modules/react-spinners/SyncLoader.js":[function(require,module,exports) {
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @jsx jsx */
+var React = __importStar(require("react"));
+var core_1 = require("@emotion/core");
+var proptypes_1 = require("./helpers/proptypes");
+var sync = core_1.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  33% {transform: translateY(10px)}\n  66% {transform: translateY(-10px)}\n  100% {transform: translateY(0)}\n"], ["\n  33% {transform: translateY(10px)}\n  66% {transform: translateY(-10px)}\n  100% {transform: translateY(0)}\n"])));
+var Loader = /** @class */ (function (_super) {
+    __extends(Loader, _super);
+    function Loader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.style = function (i) {
+            var _a = _this.props, color = _a.color, size = _a.size, sizeUnit = _a.sizeUnit, margin = _a.margin;
+            return core_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      display: inline-block;\n      animation: ", " 0.6s ", "s infinite ease-in-out;\n      animation-fill-mode: both;\n    "], ["\n      background-color: ", ";\n      width: ", ";\n      height: ", ";\n      margin: ", ";\n      border-radius: 100%;\n      display: inline-block;\n      animation: ", " 0.6s ", "s infinite ease-in-out;\n      animation-fill-mode: both;\n    "])), color, "" + size + sizeUnit, "" + size + sizeUnit, margin, sync, i * 0.07);
+        };
+        return _this;
+    }
+    Loader.prototype.render = function () {
+        var _a = this.props, loading = _a.loading, css = _a.css;
+        return loading ? (core_1.jsx("div", { css: [css] },
+            core_1.jsx("div", { css: this.style(1) }),
+            core_1.jsx("div", { css: this.style(2) }),
+            core_1.jsx("div", { css: this.style(3) }))) : null;
+    };
+    Loader.defaultProps = proptypes_1.sizeMarginDefaults(15);
+    return Loader;
+}(React.PureComponent));
+exports.default = Loader;
+var templateObject_1, templateObject_2;
+
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./helpers/proptypes":"../node_modules/react-spinners/helpers/proptypes.js"}],"../node_modules/react-spinners/index.js":[function(require,module,exports) {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var BarLoader_1 = __importDefault(require("./BarLoader"));
+var BeatLoader_1 = __importDefault(require("./BeatLoader"));
+var BounceLoader_1 = __importDefault(require("./BounceLoader"));
+var CircleLoader_1 = __importDefault(require("./CircleLoader"));
+var ClimbingBoxLoader_1 = __importDefault(require("./ClimbingBoxLoader"));
+var ClipLoader_1 = __importDefault(require("./ClipLoader"));
+var DotLoader_1 = __importDefault(require("./DotLoader"));
+var FadeLoader_1 = __importDefault(require("./FadeLoader"));
+var GridLoader_1 = __importDefault(require("./GridLoader"));
+var HashLoader_1 = __importDefault(require("./HashLoader"));
+var MoonLoader_1 = __importDefault(require("./MoonLoader"));
+var PacmanLoader_1 = __importDefault(require("./PacmanLoader"));
+var PropagateLoader_1 = __importDefault(require("./PropagateLoader"));
+var PulseLoader_1 = __importDefault(require("./PulseLoader"));
+var RingLoader_1 = __importDefault(require("./RingLoader"));
+var RiseLoader_1 = __importDefault(require("./RiseLoader"));
+var RotateLoader_1 = __importDefault(require("./RotateLoader"));
+var ScaleLoader_1 = __importDefault(require("./ScaleLoader"));
+var SkewLoader_1 = __importDefault(require("./SkewLoader"));
+var SquareLoader_1 = __importDefault(require("./SquareLoader"));
+var SyncLoader_1 = __importDefault(require("./SyncLoader"));
+exports.BarLoader = BarLoader_1.default;
+exports.BeatLoader = BeatLoader_1.default;
+exports.BounceLoader = BounceLoader_1.default;
+exports.CircleLoader = CircleLoader_1.default;
+exports.ClimbingBoxLoader = ClimbingBoxLoader_1.default;
+exports.ClipLoader = ClipLoader_1.default;
+exports.DotLoader = DotLoader_1.default;
+exports.FadeLoader = FadeLoader_1.default;
+exports.GridLoader = GridLoader_1.default;
+exports.HashLoader = HashLoader_1.default;
+exports.MoonLoader = MoonLoader_1.default;
+exports.PacmanLoader = PacmanLoader_1.default;
+exports.PropagateLoader = PropagateLoader_1.default;
+exports.PulseLoader = PulseLoader_1.default;
+exports.RingLoader = RingLoader_1.default;
+exports.RiseLoader = RiseLoader_1.default;
+exports.RotateLoader = RotateLoader_1.default;
+exports.ScaleLoader = ScaleLoader_1.default;
+exports.SkewLoader = SkewLoader_1.default;
+exports.SquareLoader = SquareLoader_1.default;
+exports.SyncLoader = SyncLoader_1.default;
+
+},{"./BarLoader":"../node_modules/react-spinners/BarLoader.js","./BeatLoader":"../node_modules/react-spinners/BeatLoader.js","./BounceLoader":"../node_modules/react-spinners/BounceLoader.js","./CircleLoader":"../node_modules/react-spinners/CircleLoader.js","./ClimbingBoxLoader":"../node_modules/react-spinners/ClimbingBoxLoader.js","./ClipLoader":"../node_modules/react-spinners/ClipLoader.js","./DotLoader":"../node_modules/react-spinners/DotLoader.js","./FadeLoader":"../node_modules/react-spinners/FadeLoader.js","./GridLoader":"../node_modules/react-spinners/GridLoader.js","./HashLoader":"../node_modules/react-spinners/HashLoader.js","./MoonLoader":"../node_modules/react-spinners/MoonLoader.js","./PacmanLoader":"../node_modules/react-spinners/PacmanLoader.js","./PropagateLoader":"../node_modules/react-spinners/PropagateLoader.js","./PulseLoader":"../node_modules/react-spinners/PulseLoader.js","./RingLoader":"../node_modules/react-spinners/RingLoader.js","./RiseLoader":"../node_modules/react-spinners/RiseLoader.js","./RotateLoader":"../node_modules/react-spinners/RotateLoader.js","./ScaleLoader":"../node_modules/react-spinners/ScaleLoader.js","./SkewLoader":"../node_modules/react-spinners/SkewLoader.js","./SquareLoader":"../node_modules/react-spinners/SquareLoader.js","./SyncLoader":"../node_modules/react-spinners/SyncLoader.js"}],"../node_modules/lodash/_arrayMap.js":[function(require,module,exports) {
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+module.exports = arrayMap;
+
+},{}],"../node_modules/lodash/isSymbol.js":[function(require,module,exports) {
+var baseGetTag = require('./_baseGetTag'),
+    isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
+}
+
+module.exports = isSymbol;
+
+},{"./_baseGetTag":"../node_modules/lodash/_baseGetTag.js","./isObjectLike":"../node_modules/lodash/isObjectLike.js"}],"../node_modules/lodash/_baseToString.js":[function(require,module,exports) {
+var Symbol = require('./_Symbol'),
+    arrayMap = require('./_arrayMap'),
+    isArray = require('./isArray'),
+    isSymbol = require('./isSymbol');
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (isArray(value)) {
+    // Recursively convert values (susceptible to call stack limits).
+    return arrayMap(value, baseToString) + '';
+  }
+  if (isSymbol(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+module.exports = baseToString;
+
+},{"./_Symbol":"../node_modules/lodash/_Symbol.js","./_arrayMap":"../node_modules/lodash/_arrayMap.js","./isArray":"../node_modules/lodash/isArray.js","./isSymbol":"../node_modules/lodash/isSymbol.js"}],"../node_modules/lodash/toString.js":[function(require,module,exports) {
+var baseToString = require('./_baseToString');
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString(value) {
+  return value == null ? '' : baseToString(value);
+}
+
+module.exports = toString;
+
+},{"./_baseToString":"../node_modules/lodash/_baseToString.js"}],"../node_modules/lodash/_baseSlice.js":[function(require,module,exports) {
+/**
+ * The base implementation of `_.slice` without an iteratee call guard.
+ *
+ * @private
+ * @param {Array} array The array to slice.
+ * @param {number} [start=0] The start position.
+ * @param {number} [end=array.length] The end position.
+ * @returns {Array} Returns the slice of `array`.
+ */
+function baseSlice(array, start, end) {
+  var index = -1,
+      length = array.length;
+
+  if (start < 0) {
+    start = -start > length ? 0 : (length + start);
+  }
+  end = end > length ? length : end;
+  if (end < 0) {
+    end += length;
+  }
+  length = start > end ? 0 : ((end - start) >>> 0);
+  start >>>= 0;
+
+  var result = Array(length);
+  while (++index < length) {
+    result[index] = array[index + start];
+  }
+  return result;
+}
+
+module.exports = baseSlice;
+
+},{}],"../node_modules/lodash/_castSlice.js":[function(require,module,exports) {
+var baseSlice = require('./_baseSlice');
+
+/**
+ * Casts `array` to a slice if it's needed.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {number} start The start position.
+ * @param {number} [end=array.length] The end position.
+ * @returns {Array} Returns the cast slice.
+ */
+function castSlice(array, start, end) {
+  var length = array.length;
+  end = end === undefined ? length : end;
+  return (!start && end >= length) ? array : baseSlice(array, start, end);
+}
+
+module.exports = castSlice;
+
+},{"./_baseSlice":"../node_modules/lodash/_baseSlice.js"}],"../node_modules/lodash/_hasUnicode.js":[function(require,module,exports) {
+/** Used to compose unicode character classes. */
+var rsAstralRange = '\\ud800-\\udfff',
+    rsComboMarksRange = '\\u0300-\\u036f',
+    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+    rsComboSymbolsRange = '\\u20d0-\\u20ff',
+    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
+    rsVarRange = '\\ufe0e\\ufe0f';
+
+/** Used to compose unicode capture groups. */
+var rsZWJ = '\\u200d';
+
+/** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
+var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboRange + rsVarRange + ']');
+
+/**
+ * Checks if `string` contains Unicode symbols.
+ *
+ * @private
+ * @param {string} string The string to inspect.
+ * @returns {boolean} Returns `true` if a symbol is found, else `false`.
+ */
+function hasUnicode(string) {
+  return reHasUnicode.test(string);
+}
+
+module.exports = hasUnicode;
+
+},{}],"../node_modules/lodash/_asciiToArray.js":[function(require,module,exports) {
+/**
+ * Converts an ASCII `string` to an array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the converted array.
+ */
+function asciiToArray(string) {
+  return string.split('');
+}
+
+module.exports = asciiToArray;
+
+},{}],"../node_modules/lodash/_unicodeToArray.js":[function(require,module,exports) {
+/** Used to compose unicode character classes. */
+var rsAstralRange = '\\ud800-\\udfff',
+    rsComboMarksRange = '\\u0300-\\u036f',
+    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+    rsComboSymbolsRange = '\\u20d0-\\u20ff',
+    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
+    rsVarRange = '\\ufe0e\\ufe0f';
+
+/** Used to compose unicode capture groups. */
+var rsAstral = '[' + rsAstralRange + ']',
+    rsCombo = '[' + rsComboRange + ']',
+    rsFitz = '\\ud83c[\\udffb-\\udfff]',
+    rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',
+    rsNonAstral = '[^' + rsAstralRange + ']',
+    rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}',
+    rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]',
+    rsZWJ = '\\u200d';
+
+/** Used to compose unicode regexes. */
+var reOptMod = rsModifier + '?',
+    rsOptVar = '[' + rsVarRange + ']?',
+    rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
+    rsSeq = rsOptVar + reOptMod + rsOptJoin,
+    rsSymbol = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
+
+/** Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode). */
+var reUnicode = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
+
+/**
+ * Converts a Unicode `string` to an array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the converted array.
+ */
+function unicodeToArray(string) {
+  return string.match(reUnicode) || [];
+}
+
+module.exports = unicodeToArray;
+
+},{}],"../node_modules/lodash/_stringToArray.js":[function(require,module,exports) {
+var asciiToArray = require('./_asciiToArray'),
+    hasUnicode = require('./_hasUnicode'),
+    unicodeToArray = require('./_unicodeToArray');
+
+/**
+ * Converts `string` to an array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the converted array.
+ */
+function stringToArray(string) {
+  return hasUnicode(string)
+    ? unicodeToArray(string)
+    : asciiToArray(string);
+}
+
+module.exports = stringToArray;
+
+},{"./_asciiToArray":"../node_modules/lodash/_asciiToArray.js","./_hasUnicode":"../node_modules/lodash/_hasUnicode.js","./_unicodeToArray":"../node_modules/lodash/_unicodeToArray.js"}],"../node_modules/lodash/_createCaseFirst.js":[function(require,module,exports) {
+var castSlice = require('./_castSlice'),
+    hasUnicode = require('./_hasUnicode'),
+    stringToArray = require('./_stringToArray'),
+    toString = require('./toString');
+
+/**
+ * Creates a function like `_.lowerFirst`.
+ *
+ * @private
+ * @param {string} methodName The name of the `String` case method to use.
+ * @returns {Function} Returns the new case function.
+ */
+function createCaseFirst(methodName) {
+  return function(string) {
+    string = toString(string);
+
+    var strSymbols = hasUnicode(string)
+      ? stringToArray(string)
+      : undefined;
+
+    var chr = strSymbols
+      ? strSymbols[0]
+      : string.charAt(0);
+
+    var trailing = strSymbols
+      ? castSlice(strSymbols, 1).join('')
+      : string.slice(1);
+
+    return chr[methodName]() + trailing;
+  };
+}
+
+module.exports = createCaseFirst;
+
+},{"./_castSlice":"../node_modules/lodash/_castSlice.js","./_hasUnicode":"../node_modules/lodash/_hasUnicode.js","./_stringToArray":"../node_modules/lodash/_stringToArray.js","./toString":"../node_modules/lodash/toString.js"}],"../node_modules/lodash/upperFirst.js":[function(require,module,exports) {
+var createCaseFirst = require('./_createCaseFirst');
+
+/**
+ * Converts the first character of `string` to upper case.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category String
+ * @param {string} [string=''] The string to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.upperFirst('fred');
+ * // => 'Fred'
+ *
+ * _.upperFirst('FRED');
+ * // => 'FRED'
+ */
+var upperFirst = createCaseFirst('toUpperCase');
+
+module.exports = upperFirst;
+
+},{"./_createCaseFirst":"../node_modules/lodash/_createCaseFirst.js"}],"../node_modules/lodash/capitalize.js":[function(require,module,exports) {
+var toString = require('./toString'),
+    upperFirst = require('./upperFirst');
+
+/**
+ * Converts the first character of `string` to upper case and the remaining
+ * to lower case.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category String
+ * @param {string} [string=''] The string to capitalize.
+ * @returns {string} Returns the capitalized string.
+ * @example
+ *
+ * _.capitalize('FRED');
+ * // => 'Fred'
+ */
+function capitalize(string) {
+  return upperFirst(toString(string).toLowerCase());
+}
+
+module.exports = capitalize;
+
+},{"./toString":"../node_modules/lodash/toString.js","./upperFirst":"../node_modules/lodash/upperFirst.js"}],"components/Main/Main.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
+
+var _core = require("@emotion/core");
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactSpinners = require("react-spinners");
+
+var _isEmpty = _interopRequireDefault(require("lodash/isEmpty"));
+
+var _capitalize = _interopRequireDefault(require("lodash/capitalize"));
+
+var _UI = require("../UI");
+
+var _context = _interopRequireDefault(require("../../helpers/context"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
 var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
   return a;
 };
-},{}],"components/index.js":[function(require,module,exports) {
+
+var StyledLoader = (0, _styledBase.default)("div", {
+  target: "eloob7g0",
+  label: "StyledLoader"
+})("development" === "production" ? {
+  name: "m5g9ji",
+  styles: "width:fit-content;margin:20px auto;"
+} : {
+  name: "m5g9ji",
+  styles: "width:fit-content;margin:20px auto;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUytCIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgR3JpZExvYWRlciB9IGZyb20gJ3JlYWN0LXNwaW5uZXJzJ1xuaW1wb3J0IGlzRW1wdHkgZnJvbSAnbG9kYXNoL2lzRW1wdHknXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcbmltcG9ydCBjYXBpdGFsaXplIGZyb20gJ2xvZGFzaC9jYXBpdGFsaXplJ1xuXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSB9IGZyb20gJy4uL1VJJ1xuaW1wb3J0IEFwcENvbnRleHQgZnJvbSAnLi4vLi4vaGVscGVycy9jb250ZXh0J1xuXG5jb25zdCBTdHlsZWRMb2FkZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuYFxuXG5jb25zdCBTdHlsZWRGbGV4Q29udGFpbmVyID0gc3R5bGVkKEZsZXhDb250YWluZXIpYFxuICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiA1cHggYXV0bztcbiAgcGFkZGluZzogNXB4O1xuXG4gIGltZyB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBtaW4taGVpZ2h0OiA1MHB4O1xuICB9XG5gXG5cbmNvbnN0IFN0eWxlZENvbG9yRGl2ID0gc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDIwcHg7XG4gIHdpZHRoOiAyMHB4O1xuICBtYXJnaW46IDAgNXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAkeyh7IGNvbG9yIH0pID0+IGNvbG9yIHx8ICdpbmhlcml0J307XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG5gXG5cbmNvbnN0IE1haW4gPSAoKSA9PiB7XG4gIGNvbnN0IHsgZGF0YSB9ID0gdXNlQ29udGV4dChBcHBDb250ZXh0KVxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGRhdGEubWFwKGl0ZW0gPT4gKFxuICAgICAgICAgIDxTdHlsZWRGbGV4Q29udGFpbmVyIGtleT17aXRlbS5pZH0gYWxpZ25JdGVtcz1cImNlbnRlclwiPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2NhcGl0YWxpemUoaXRlbS50eXBlKX08L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2l0ZW0uYnJhbmR9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPlxuICAgICAgICAgICAgICB7aXRlbS5jb2xvcnMubWFwKGNvbG9yID0+IChcbiAgICAgICAgICAgICAgICA8U3R5bGVkQ29sb3JEaXYgY29sb3I9e2NvbG9yfSAvPlxuICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgIDwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8aW1nIHNyYz17aXRlbS5pbWd9IGFsdD17aXRlbS5icmFuZH0gLz5cbiAgICAgICAgICA8L1N0eWxlZEZsZXhDb250YWluZXI+XG4gICAgICAgICkpXG4gICAgICApIDogKFxuICAgICAgICA8U3R5bGVkTG9hZGVyPlxuICAgICAgICAgIDxHcmlkTG9hZGVyIHNpemVVbml0PVwicHhcIiBzaXplPXsxMH0gY29sb3I9XCIjMTIzYWJjXCIgbG9hZGluZyAvPlxuICAgICAgICA8L1N0eWxlZExvYWRlcj5cbiAgICAgICl9XG4gICAgPC8+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgTWFpblxuIl19 */"
+});
+var StyledFlexContainer = (
+/*#__PURE__*/
+0, _styledBase.default)(_UI.FlexContainer, {
+  target: "eloob7g1",
+  label: "StyledFlexContainer"
+})("development" === "production" ? {
+  name: "10y09zs",
+  styles: "border:1px solid black;width:50%;margin:5px auto;padding:5px;img{height:100%;width:200px;min-height:50px;}"
+} : {
+  name: "10y09zs",
+  styles: "border:1px solid black;width:50%;margin:5px auto;padding:5px;img{height:100%;width:200px;min-height:50px;}",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBY2lEIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgR3JpZExvYWRlciB9IGZyb20gJ3JlYWN0LXNwaW5uZXJzJ1xuaW1wb3J0IGlzRW1wdHkgZnJvbSAnbG9kYXNoL2lzRW1wdHknXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcbmltcG9ydCBjYXBpdGFsaXplIGZyb20gJ2xvZGFzaC9jYXBpdGFsaXplJ1xuXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSB9IGZyb20gJy4uL1VJJ1xuaW1wb3J0IEFwcENvbnRleHQgZnJvbSAnLi4vLi4vaGVscGVycy9jb250ZXh0J1xuXG5jb25zdCBTdHlsZWRMb2FkZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuYFxuXG5jb25zdCBTdHlsZWRGbGV4Q29udGFpbmVyID0gc3R5bGVkKEZsZXhDb250YWluZXIpYFxuICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiA1cHggYXV0bztcbiAgcGFkZGluZzogNXB4O1xuXG4gIGltZyB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBtaW4taGVpZ2h0OiA1MHB4O1xuICB9XG5gXG5cbmNvbnN0IFN0eWxlZENvbG9yRGl2ID0gc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDIwcHg7XG4gIHdpZHRoOiAyMHB4O1xuICBtYXJnaW46IDAgNXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAkeyh7IGNvbG9yIH0pID0+IGNvbG9yIHx8ICdpbmhlcml0J307XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG5gXG5cbmNvbnN0IE1haW4gPSAoKSA9PiB7XG4gIGNvbnN0IHsgZGF0YSB9ID0gdXNlQ29udGV4dChBcHBDb250ZXh0KVxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGRhdGEubWFwKGl0ZW0gPT4gKFxuICAgICAgICAgIDxTdHlsZWRGbGV4Q29udGFpbmVyIGtleT17aXRlbS5pZH0gYWxpZ25JdGVtcz1cImNlbnRlclwiPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2NhcGl0YWxpemUoaXRlbS50eXBlKX08L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2l0ZW0uYnJhbmR9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPlxuICAgICAgICAgICAgICB7aXRlbS5jb2xvcnMubWFwKGNvbG9yID0+IChcbiAgICAgICAgICAgICAgICA8U3R5bGVkQ29sb3JEaXYgY29sb3I9e2NvbG9yfSAvPlxuICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgIDwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8aW1nIHNyYz17aXRlbS5pbWd9IGFsdD17aXRlbS5icmFuZH0gLz5cbiAgICAgICAgICA8L1N0eWxlZEZsZXhDb250YWluZXI+XG4gICAgICAgICkpXG4gICAgICApIDogKFxuICAgICAgICA8U3R5bGVkTG9hZGVyPlxuICAgICAgICAgIDxHcmlkTG9hZGVyIHNpemVVbml0PVwicHhcIiBzaXplPXsxMH0gY29sb3I9XCIjMTIzYWJjXCIgbG9hZGluZyAvPlxuICAgICAgICA8L1N0eWxlZExvYWRlcj5cbiAgICAgICl9XG4gICAgPC8+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgTWFpblxuIl19 */"
+});
+var StyledColorDiv = (0, _styledBase.default)("div", {
+  target: "eloob7g2",
+  label: "StyledColorDiv"
+})("display:inline-block;height:20px;width:20px;margin:0 5px;background-color:", function (_ref) {
+  var color = _ref.color;
+  return color || 'inherit';
+}, ";border:1px solid #ccc;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMkJpQyIsImZpbGUiOiJNYWluLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUNvbnRleHQgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IEdyaWRMb2FkZXIgfSBmcm9tICdyZWFjdC1zcGlubmVycydcbmltcG9ydCBpc0VtcHR5IGZyb20gJ2xvZGFzaC9pc0VtcHR5J1xuaW1wb3J0IHN0eWxlZCBmcm9tICdAZW1vdGlvbi9zdHlsZWQnXG5pbXBvcnQgY2FwaXRhbGl6ZSBmcm9tICdsb2Rhc2gvY2FwaXRhbGl6ZSdcblxuaW1wb3J0IHsgRmxleENvbnRhaW5lciwgRmxleEl0ZW0gfSBmcm9tICcuLi9VSSdcbmltcG9ydCBBcHBDb250ZXh0IGZyb20gJy4uLy4uL2hlbHBlcnMvY29udGV4dCdcblxuY29uc3QgU3R5bGVkTG9hZGVyID0gc3R5bGVkLmRpdmBcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xuICBtYXJnaW46IDIwcHggYXV0bztcbmBcblxuY29uc3QgU3R5bGVkRmxleENvbnRhaW5lciA9IHN0eWxlZChGbGV4Q29udGFpbmVyKWBcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XG4gIHdpZHRoOiA1MCU7XG4gIG1hcmdpbjogNXB4IGF1dG87XG4gIHBhZGRpbmc6IDVweDtcblxuICBpbWcge1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogMjAwcHg7XG4gICAgbWluLWhlaWdodDogNTBweDtcbiAgfVxuYFxuXG5jb25zdCBTdHlsZWRDb2xvckRpdiA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAyMHB4O1xuICB3aWR0aDogMjBweDtcbiAgbWFyZ2luOiAwIDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyBjb2xvciB9KSA9PiBjb2xvciB8fCAnaW5oZXJpdCd9O1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuYFxuXG5jb25zdCBNYWluID0gKCkgPT4ge1xuICBjb25zdCB7IGRhdGEgfSA9IHVzZUNvbnRleHQoQXBwQ29udGV4dClcbiAgcmV0dXJuIChcbiAgICA8PlxuICAgICAgeyFpc0VtcHR5KGRhdGEpID8gKFxuICAgICAgICBkYXRhLm1hcChpdGVtID0+IChcbiAgICAgICAgICA8U3R5bGVkRmxleENvbnRhaW5lciBrZXk9e2l0ZW0uaWR9IGFsaWduSXRlbXM9XCJjZW50ZXJcIj5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntjYXBpdGFsaXplKGl0ZW0udHlwZSl9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntpdGVtLmJyYW5kfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj5cbiAgICAgICAgICAgICAge2l0ZW0uY29sb3JzLm1hcChjb2xvciA9PiAoXG4gICAgICAgICAgICAgICAgPFN0eWxlZENvbG9yRGl2IGNvbG9yPXtjb2xvcn0gLz5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPGltZyBzcmM9e2l0ZW0uaW1nfSBhbHQ9e2l0ZW0uYnJhbmR9IC8+XG4gICAgICAgICAgPC9TdHlsZWRGbGV4Q29udGFpbmVyPlxuICAgICAgICApKVxuICAgICAgKSA6IChcbiAgICAgICAgPFN0eWxlZExvYWRlcj5cbiAgICAgICAgICA8R3JpZExvYWRlciBzaXplVW5pdD1cInB4XCIgc2l6ZT17MTB9IGNvbG9yPVwiIzEyM2FiY1wiIGxvYWRpbmcgLz5cbiAgICAgICAgPC9TdHlsZWRMb2FkZXI+XG4gICAgICApfVxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5cbiJdfQ== */"));
+
+var Main = function Main() {
+  var _useContext = (0, _react.useContext)(_context.default),
+      data = _useContext.data;
+
+  return (0, _core.jsx)(_react.default.Fragment, null, !(0, _isEmpty.default)(data) ? data.map(function (item) {
+    return (0, _core.jsx)(StyledFlexContainer, {
+      key: item.id,
+      alignItems: "center"
+    }, (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, (0, _capitalize.default)(item.type)), (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, item.brand), (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, item.colors.map(function (color) {
+      return (0, _core.jsx)(StyledColorDiv, {
+        color: color
+      });
+    })), (0, _core.jsx)("img", {
+      src: item.img,
+      alt: item.brand
+    }));
+  }) : (0, _core.jsx)(StyledLoader, null, (0, _core.jsx)(_reactSpinners.GridLoader, {
+    sizeUnit: "px",
+    size: 10,
+    color: "#123abc",
+    loading: true
+  })));
+};
+
+__signature__(Main, "useContext{{ data }}");
+
+var _default = Main;
+var _default2 = _default;
+exports.default = _default2;
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(StyledLoader, "StyledLoader", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledFlexContainer, "StyledFlexContainer", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledColorDiv, "StyledColorDiv", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(Main, "Main", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","react-spinners":"../node_modules/react-spinners/index.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js","lodash/capitalize":"../node_modules/lodash/capitalize.js","../UI":"components/UI/index.js","../../helpers/context":"helpers/context.js"}],"components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51148,6 +53180,7 @@ var App = function App() {
   (0, _react.useEffect)(function () {
     _service.default.fetchData(function (err, res) {
       if (err) throw new Error(err);
+      console.log(res);
       setData(res);
     });
   }, []);
@@ -51155,7 +53188,9 @@ var App = function App() {
     value: {
       data: data
     }
-  }, (0, _core.jsx)(_UI.FlexContainer, null, (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Header, null))));
+  }, (0, _core.jsx)(_UI.FlexContainer, {
+    direction: "column"
+  }, (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Header, null)), (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Main, null))));
 };
 
 __signature__(App, "useState{[data, setData]([])}\nuseEffect{}");
@@ -51483,7 +53518,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49425" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62261" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
