@@ -10,12 +10,9 @@ let arrayOfBrands = []
 let arrayOfColors = []
 
 const Header = () => {
-  const { data } = useContext(AppContext)
+  const { data, filters, setFilters } = useContext(AppContext)
   // this could be done with useReducer, but i leave it as is for simplicity
   const [state, setState] = useState({})
-  const [type, setType] = useState('')
-  const [brand, setBrand] = useState('')
-  const [color, setColor] = useState('')
 
   useEffect(() => {
     if (!isEmpty(data)) {
@@ -37,13 +34,13 @@ const Header = () => {
   const handleChange = (item, prop) => {
     switch (prop) {
       case PROPS.TYPES:
-        setType(item)
+        setFilters({ ...filters, types: item })
         break
       case PROPS.BRANDS:
-        setBrand(item)
+        setFilters({ ...filters, brands: item })
         break
       case PROPS.COLORS:
-        setColor(item)
+        setFilters({ ...filters, colors: item })
         break
 
       default:
@@ -56,27 +53,27 @@ const Header = () => {
       <h1>The Traffic Meister</h1>
       <form>
         <FlexContainer>
-          <FlexItem flex="1">
+          <FlexItem flex="1" margin="0 20px">
             <Select
-              value={type}
+              value={filters.types}
               items={state.types}
               handleChange={item => handleChange(item, 'types')}
               disabled={isEmpty(state.types)}
               loading={isEmpty(data)}
             />
           </FlexItem>
-          <FlexItem flex="1">
+          <FlexItem flex="1" margin="0 20px">
             <Select
-              value={brand}
+              value={filters.brands}
               items={state.brands}
               handleChange={item => handleChange(item, 'brands')}
               disabled={isEmpty(state.brands)}
               loading={isEmpty(data)}
             />
           </FlexItem>
-          <FlexItem flex="1">
+          <FlexItem flex="1" margin="0 20px">
             <Select
-              value={color}
+              value={filters.colors}
               items={state.colors}
               handleChange={item => handleChange(item, 'colors')}
               disabled={isEmpty(state.colors)}

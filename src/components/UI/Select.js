@@ -6,7 +6,7 @@ import isEmpty from 'lodash/isEmpty'
 const SelectComponent = ({ value, handleChange, items, disabled, loading }) => {
   const objects = !isEmpty(items)
     ? items.map(i => {
-        return { label: i, value: i }
+        return { label: i.toLowerCase(), value: i }
       })
     : {}
   return (

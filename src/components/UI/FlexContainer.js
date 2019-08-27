@@ -5,5 +5,5 @@ export default styled.div`
   flex-flow: ${({ direction }) => direction || 'row'} nowrap;
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
   align-items: ${({ alignItems }) => alignItems || 'flex-start'};
-  margin: 20px 0;
+  box-sizing: border-box;
 `

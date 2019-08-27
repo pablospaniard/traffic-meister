@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { GridLoader } from 'react-spinners'
 import isEmpty from 'lodash/isEmpty'
 import styled from '@emotion/styled'
-import capitalize from 'lodash/capitalize'
 
 import { FlexContainer, FlexItem } from '../UI'
 import AppContext from '../../helpers/context'
+import { filterData } from '../../helpers/helpers'
+import trafficMeister from '../../service'
 
 const StyledLoader = styled.div`
   width: fit-content;
@@ -13,15 +14,20 @@ const StyledLoader = styled.div`
 `
 
 const StyledFlexContainer = styled(FlexContainer)`
-  border: 1px solid black;
+  border: 1px solid #ccc;
   width: 50%;
   margin: 5px auto;
   padding: 5px;
+  border-radius: 4px;
 
   img {
     height: 100%;
     width: 200px;
     min-height: 50px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 `
 
@@ -35,17 +41,27 @@ const StyledColorDiv = styled.div`
 `
 
 const Main = () => {
-  const { data } = useContext(AppContext)
+  const { data, filters, setData } = useContext(AppContext)
+  const filteredData = filterData(data, filters)
+
+  useEffect(() => {
+    trafficMeister.fetchData((err, res) => {
+      console.log('fetching')
+      if (err) throw new Error(err)
+      setData(res)
+    })
+  }, [])
+
   return (
     <>
       {!isEmpty(data) ? (
-        data.map(item => (
+        filteredData.map(item => (
           <StyledFlexContainer key={item.id} alignItems="center">
-            <FlexItem flex="1">{capitalize(item.type)}</FlexItem>
+            <FlexItem flex="1">{item.type.toUpperCase()}</FlexItem>
             <FlexItem flex="1">{item.brand}</FlexItem>
             <FlexItem flex="1">
               {item.colors.map(color => (
-                <StyledColorDiv color={color} />
+                <StyledColorDiv key={color} color={color} />
               ))}
             </FlexItem>
             <img src={item.img} alt={item.brand} />

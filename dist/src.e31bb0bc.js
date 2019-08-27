@@ -50301,7 +50301,7 @@ var SelectComponent = function SelectComponent(_ref) {
       loading = _ref.loading;
   var objects = !(0, _isEmpty.default)(items) ? items.map(function (i) {
     return {
-      label: i,
+      label: i.toLowerCase(),
       value: i
     };
   }) : {};
@@ -50610,7 +50610,7 @@ var _default = (0, _styledBase.default)("div", {
 }, ";align-items:", function (_ref3) {
   var alignItems = _ref3.alignItems;
   return alignItems || 'flex-start';
-}, ";margin:20px 0;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhDb250YWluZXIuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRXlCIiwiZmlsZSI6IkZsZXhDb250YWluZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcblxuZXhwb3J0IGRlZmF1bHQgc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1mbG93OiAkeyh7IGRpcmVjdGlvbiB9KSA9PiBkaXJlY3Rpb24gfHwgJ3Jvdyd9IG5vd3JhcDtcbiAganVzdGlmeS1jb250ZW50OiAkeyh7IGp1c3RpZnlDb250ZW50IH0pID0+IGp1c3RpZnlDb250ZW50IHx8ICdmbGV4LXN0YXJ0J307XG4gIGFsaWduLWl0ZW1zOiAkeyh7IGFsaWduSXRlbXMgfSkgPT4gYWxpZ25JdGVtcyB8fCAnZmxleC1zdGFydCd9O1xuICBtYXJnaW46IDIwcHggMDtcbmBcbiJdfQ== */"));
+}, ";box-sizing:border-box;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhDb250YWluZXIuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRXlCIiwiZmlsZSI6IkZsZXhDb250YWluZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcblxuZXhwb3J0IGRlZmF1bHQgc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1mbG93OiAkeyh7IGRpcmVjdGlvbiB9KSA9PiBkaXJlY3Rpb24gfHwgJ3Jvdyd9IG5vd3JhcDtcbiAganVzdGlmeS1jb250ZW50OiAkeyh7IGp1c3RpZnlDb250ZW50IH0pID0+IGp1c3RpZnlDb250ZW50IHx8ICdmbGV4LXN0YXJ0J307XG4gIGFsaWduLWl0ZW1zOiAkeyh7IGFsaWduSXRlbXMgfSkgPT4gYWxpZ25JdGVtcyB8fCAnZmxleC1zdGFydCd9O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuYFxuIl19 */"));
 
 var _default2 = _default;
 exports.default = _default2;
@@ -50666,11 +50666,11 @@ var _default = (0, _styledBase.default)("div", {
   return display || 'block';
 }, ";margin:", function (_ref4) {
   var margin = _ref4.margin;
-  return margin || '0 20px';
+  return margin || '0';
 }, ";width:", function (_ref5) {
   var width = _ref5.width;
   return width || '100%';
-}, ";" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhJdGVtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUV5QiIsImZpbGUiOiJGbGV4SXRlbS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5leHBvcnQgZGVmYXVsdCBzdHlsZWQuZGl2YFxuICBmbGV4LWRpcmVjdGlvbjogJHsoeyBkaXJlY3Rpb24gfSkgPT4gZGlyZWN0aW9uIHx8ICdyb3cnfTtcbiAgZmxleDogJHsoeyBmbGV4IH0pID0+IGZsZXggfHwgJzEgMSBhdXRvJ307XG4gIGRpc3BsYXk6ICR7KHsgZGlzcGxheSB9KSA9PiBkaXNwbGF5IHx8ICdibG9jayd9O1xuICBtYXJnaW46ICR7KHsgbWFyZ2luIH0pID0+IG1hcmdpbiB8fCAnMCAyMHB4J307XG4gIHdpZHRoOiAkeyh7IHdpZHRoIH0pID0+IHdpZHRoIHx8ICcxMDAlJ307XG5gXG4iXX0= */"));
+}, ";" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhJdGVtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUV5QiIsImZpbGUiOiJGbGV4SXRlbS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5leHBvcnQgZGVmYXVsdCBzdHlsZWQuZGl2YFxuICBmbGV4LWRpcmVjdGlvbjogJHsoeyBkaXJlY3Rpb24gfSkgPT4gZGlyZWN0aW9uIHx8ICdyb3cnfTtcbiAgZmxleDogJHsoeyBmbGV4IH0pID0+IGZsZXggfHwgJzEgMSBhdXRvJ307XG4gIGRpc3BsYXk6ICR7KHsgZGlzcGxheSB9KSA9PiBkaXNwbGF5IHx8ICdibG9jayd9O1xuICBtYXJnaW46ICR7KHsgbWFyZ2luIH0pID0+IG1hcmdpbiB8fCAnMCd9O1xuICB3aWR0aDogJHsoeyB3aWR0aCB9KSA9PiB3aWR0aCB8fCAnMTAwJSd9O1xuYFxuIl19 */"));
 
 var _default2 = _default;
 exports.default = _default2;
@@ -50880,28 +50880,15 @@ var arrayOfColors = [];
 
 var Header = function Header() {
   var _useContext = (0, _react.useContext)(_context.default),
-      data = _useContext.data; // this could be done with useReducer, but i leave it as is for simplicity
+      data = _useContext.data,
+      filters = _useContext.filters,
+      setFilters = _useContext.setFilters; // this could be done with useReducer, but i leave it as is for simplicity
 
 
   var _useState = (0, _react.useState)({}),
       _useState2 = _slicedToArray(_useState, 2),
       state = _useState2[0],
       setState = _useState2[1];
-
-  var _useState3 = (0, _react.useState)(''),
-      _useState4 = _slicedToArray(_useState3, 2),
-      type = _useState4[0],
-      setType = _useState4[1];
-
-  var _useState5 = (0, _react.useState)(''),
-      _useState6 = _slicedToArray(_useState5, 2),
-      brand = _useState6[0],
-      setBrand = _useState6[1];
-
-  var _useState7 = (0, _react.useState)(''),
-      _useState8 = _slicedToArray(_useState7, 2),
-      color = _useState8[0],
-      setColor = _useState8[1];
 
   (0, _react.useEffect)(function () {
     if (!(0, _isEmpty.default)(data)) {
@@ -50928,15 +50915,21 @@ var Header = function Header() {
   var _handleChange = function handleChange(item, prop) {
     switch (prop) {
       case _constants.PROPS.TYPES:
-        setType(item);
+        setFilters(_objectSpread({}, filters, {
+          types: item
+        }));
         break;
 
       case _constants.PROPS.BRANDS:
-        setBrand(item);
+        setFilters(_objectSpread({}, filters, {
+          brands: item
+        }));
         break;
 
       case _constants.PROPS.COLORS:
-        setColor(item);
+        setFilters(_objectSpread({}, filters, {
+          colors: item
+        }));
         break;
 
       default:
@@ -50945,9 +50938,10 @@ var Header = function Header() {
   };
 
   return (0, _core.jsx)(_react.default.Fragment, null, (0, _core.jsx)("h1", null, "The Traffic Meister"), (0, _core.jsx)("form", null, (0, _core.jsx)(_UI.FlexContainer, null, (0, _core.jsx)(_UI.FlexItem, {
-    flex: "1"
+    flex: "1",
+    margin: "0 20px"
   }, (0, _core.jsx)(_UI.Select, {
-    value: type,
+    value: filters.types,
     items: state.types,
     handleChange: function handleChange(item) {
       return _handleChange(item, 'types');
@@ -50955,9 +50949,10 @@ var Header = function Header() {
     disabled: (0, _isEmpty.default)(state.types),
     loading: (0, _isEmpty.default)(data)
   })), (0, _core.jsx)(_UI.FlexItem, {
-    flex: "1"
+    flex: "1",
+    margin: "0 20px"
   }, (0, _core.jsx)(_UI.Select, {
-    value: brand,
+    value: filters.brands,
     items: state.brands,
     handleChange: function handleChange(item) {
       return _handleChange(item, 'brands');
@@ -50965,9 +50960,10 @@ var Header = function Header() {
     disabled: (0, _isEmpty.default)(state.brands),
     loading: (0, _isEmpty.default)(data)
   })), (0, _core.jsx)(_UI.FlexItem, {
-    flex: "1"
+    flex: "1",
+    margin: "0 20px"
   }, (0, _core.jsx)(_UI.Select, {
-    value: color,
+    value: filters.colors,
     items: state.colors,
     handleChange: function handleChange(item) {
       return _handleChange(item, 'colors');
@@ -50977,7 +50973,7 @@ var Header = function Header() {
   })))));
 };
 
-__signature__(Header, "useContext{{ data }}\nuseState{[state, setState]({})}\nuseState{[type, setType]('')}\nuseState{[brand, setBrand]('')}\nuseState{[color, setColor]('')}\nuseEffect{}");
+__signature__(Header, "useContext{{ data, filters, setFilters }}\nuseState{[state, setState]({})}\nuseEffect{}");
 
 var _default = Header;
 var _default2 = _default;
@@ -52482,395 +52478,15 @@ exports.SkewLoader = SkewLoader_1.default;
 exports.SquareLoader = SquareLoader_1.default;
 exports.SyncLoader = SyncLoader_1.default;
 
-},{"./BarLoader":"../node_modules/react-spinners/BarLoader.js","./BeatLoader":"../node_modules/react-spinners/BeatLoader.js","./BounceLoader":"../node_modules/react-spinners/BounceLoader.js","./CircleLoader":"../node_modules/react-spinners/CircleLoader.js","./ClimbingBoxLoader":"../node_modules/react-spinners/ClimbingBoxLoader.js","./ClipLoader":"../node_modules/react-spinners/ClipLoader.js","./DotLoader":"../node_modules/react-spinners/DotLoader.js","./FadeLoader":"../node_modules/react-spinners/FadeLoader.js","./GridLoader":"../node_modules/react-spinners/GridLoader.js","./HashLoader":"../node_modules/react-spinners/HashLoader.js","./MoonLoader":"../node_modules/react-spinners/MoonLoader.js","./PacmanLoader":"../node_modules/react-spinners/PacmanLoader.js","./PropagateLoader":"../node_modules/react-spinners/PropagateLoader.js","./PulseLoader":"../node_modules/react-spinners/PulseLoader.js","./RingLoader":"../node_modules/react-spinners/RingLoader.js","./RiseLoader":"../node_modules/react-spinners/RiseLoader.js","./RotateLoader":"../node_modules/react-spinners/RotateLoader.js","./ScaleLoader":"../node_modules/react-spinners/ScaleLoader.js","./SkewLoader":"../node_modules/react-spinners/SkewLoader.js","./SquareLoader":"../node_modules/react-spinners/SquareLoader.js","./SyncLoader":"../node_modules/react-spinners/SyncLoader.js"}],"../node_modules/lodash/_arrayMap.js":[function(require,module,exports) {
-/**
- * A specialized version of `_.map` for arrays without support for iteratee
- * shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the new mapped array.
- */
-function arrayMap(array, iteratee) {
-  var index = -1,
-      length = array == null ? 0 : array.length,
-      result = Array(length);
-
-  while (++index < length) {
-    result[index] = iteratee(array[index], index, array);
-  }
-  return result;
-}
-
-module.exports = arrayMap;
-
-},{}],"../node_modules/lodash/isSymbol.js":[function(require,module,exports) {
-var baseGetTag = require('./_baseGetTag'),
-    isObjectLike = require('./isObjectLike');
-
-/** `Object#toString` result references. */
-var symbolTag = '[object Symbol]';
-
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike(value) && baseGetTag(value) == symbolTag);
-}
-
-module.exports = isSymbol;
-
-},{"./_baseGetTag":"../node_modules/lodash/_baseGetTag.js","./isObjectLike":"../node_modules/lodash/isObjectLike.js"}],"../node_modules/lodash/_baseToString.js":[function(require,module,exports) {
-var Symbol = require('./_Symbol'),
-    arrayMap = require('./_arrayMap'),
-    isArray = require('./isArray'),
-    isSymbol = require('./isSymbol');
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/** Used to convert symbols to primitives and strings. */
-var symbolProto = Symbol ? Symbol.prototype : undefined,
-    symbolToString = symbolProto ? symbolProto.toString : undefined;
-
-/**
- * The base implementation of `_.toString` which doesn't convert nullish
- * values to empty strings.
- *
- * @private
- * @param {*} value The value to process.
- * @returns {string} Returns the string.
- */
-function baseToString(value) {
-  // Exit early for strings to avoid a performance hit in some environments.
-  if (typeof value == 'string') {
-    return value;
-  }
-  if (isArray(value)) {
-    // Recursively convert values (susceptible to call stack limits).
-    return arrayMap(value, baseToString) + '';
-  }
-  if (isSymbol(value)) {
-    return symbolToString ? symbolToString.call(value) : '';
-  }
-  var result = (value + '');
-  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-}
-
-module.exports = baseToString;
-
-},{"./_Symbol":"../node_modules/lodash/_Symbol.js","./_arrayMap":"../node_modules/lodash/_arrayMap.js","./isArray":"../node_modules/lodash/isArray.js","./isSymbol":"../node_modules/lodash/isSymbol.js"}],"../node_modules/lodash/toString.js":[function(require,module,exports) {
-var baseToString = require('./_baseToString');
-
-/**
- * Converts `value` to a string. An empty string is returned for `null`
- * and `undefined` values. The sign of `-0` is preserved.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {string} Returns the converted string.
- * @example
- *
- * _.toString(null);
- * // => ''
- *
- * _.toString(-0);
- * // => '-0'
- *
- * _.toString([1, 2, 3]);
- * // => '1,2,3'
- */
-function toString(value) {
-  return value == null ? '' : baseToString(value);
-}
-
-module.exports = toString;
-
-},{"./_baseToString":"../node_modules/lodash/_baseToString.js"}],"../node_modules/lodash/_baseSlice.js":[function(require,module,exports) {
-/**
- * The base implementation of `_.slice` without an iteratee call guard.
- *
- * @private
- * @param {Array} array The array to slice.
- * @param {number} [start=0] The start position.
- * @param {number} [end=array.length] The end position.
- * @returns {Array} Returns the slice of `array`.
- */
-function baseSlice(array, start, end) {
-  var index = -1,
-      length = array.length;
-
-  if (start < 0) {
-    start = -start > length ? 0 : (length + start);
-  }
-  end = end > length ? length : end;
-  if (end < 0) {
-    end += length;
-  }
-  length = start > end ? 0 : ((end - start) >>> 0);
-  start >>>= 0;
-
-  var result = Array(length);
-  while (++index < length) {
-    result[index] = array[index + start];
-  }
-  return result;
-}
-
-module.exports = baseSlice;
-
-},{}],"../node_modules/lodash/_castSlice.js":[function(require,module,exports) {
-var baseSlice = require('./_baseSlice');
-
-/**
- * Casts `array` to a slice if it's needed.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {number} start The start position.
- * @param {number} [end=array.length] The end position.
- * @returns {Array} Returns the cast slice.
- */
-function castSlice(array, start, end) {
-  var length = array.length;
-  end = end === undefined ? length : end;
-  return (!start && end >= length) ? array : baseSlice(array, start, end);
-}
-
-module.exports = castSlice;
-
-},{"./_baseSlice":"../node_modules/lodash/_baseSlice.js"}],"../node_modules/lodash/_hasUnicode.js":[function(require,module,exports) {
-/** Used to compose unicode character classes. */
-var rsAstralRange = '\\ud800-\\udfff',
-    rsComboMarksRange = '\\u0300-\\u036f',
-    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
-    rsComboSymbolsRange = '\\u20d0-\\u20ff',
-    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
-    rsVarRange = '\\ufe0e\\ufe0f';
-
-/** Used to compose unicode capture groups. */
-var rsZWJ = '\\u200d';
-
-/** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
-var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboRange + rsVarRange + ']');
-
-/**
- * Checks if `string` contains Unicode symbols.
- *
- * @private
- * @param {string} string The string to inspect.
- * @returns {boolean} Returns `true` if a symbol is found, else `false`.
- */
-function hasUnicode(string) {
-  return reHasUnicode.test(string);
-}
-
-module.exports = hasUnicode;
-
-},{}],"../node_modules/lodash/_asciiToArray.js":[function(require,module,exports) {
-/**
- * Converts an ASCII `string` to an array.
- *
- * @private
- * @param {string} string The string to convert.
- * @returns {Array} Returns the converted array.
- */
-function asciiToArray(string) {
-  return string.split('');
-}
-
-module.exports = asciiToArray;
-
-},{}],"../node_modules/lodash/_unicodeToArray.js":[function(require,module,exports) {
-/** Used to compose unicode character classes. */
-var rsAstralRange = '\\ud800-\\udfff',
-    rsComboMarksRange = '\\u0300-\\u036f',
-    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
-    rsComboSymbolsRange = '\\u20d0-\\u20ff',
-    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
-    rsVarRange = '\\ufe0e\\ufe0f';
-
-/** Used to compose unicode capture groups. */
-var rsAstral = '[' + rsAstralRange + ']',
-    rsCombo = '[' + rsComboRange + ']',
-    rsFitz = '\\ud83c[\\udffb-\\udfff]',
-    rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',
-    rsNonAstral = '[^' + rsAstralRange + ']',
-    rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}',
-    rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]',
-    rsZWJ = '\\u200d';
-
-/** Used to compose unicode regexes. */
-var reOptMod = rsModifier + '?',
-    rsOptVar = '[' + rsVarRange + ']?',
-    rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
-    rsSeq = rsOptVar + reOptMod + rsOptJoin,
-    rsSymbol = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
-
-/** Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode). */
-var reUnicode = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
-
-/**
- * Converts a Unicode `string` to an array.
- *
- * @private
- * @param {string} string The string to convert.
- * @returns {Array} Returns the converted array.
- */
-function unicodeToArray(string) {
-  return string.match(reUnicode) || [];
-}
-
-module.exports = unicodeToArray;
-
-},{}],"../node_modules/lodash/_stringToArray.js":[function(require,module,exports) {
-var asciiToArray = require('./_asciiToArray'),
-    hasUnicode = require('./_hasUnicode'),
-    unicodeToArray = require('./_unicodeToArray');
-
-/**
- * Converts `string` to an array.
- *
- * @private
- * @param {string} string The string to convert.
- * @returns {Array} Returns the converted array.
- */
-function stringToArray(string) {
-  return hasUnicode(string)
-    ? unicodeToArray(string)
-    : asciiToArray(string);
-}
-
-module.exports = stringToArray;
-
-},{"./_asciiToArray":"../node_modules/lodash/_asciiToArray.js","./_hasUnicode":"../node_modules/lodash/_hasUnicode.js","./_unicodeToArray":"../node_modules/lodash/_unicodeToArray.js"}],"../node_modules/lodash/_createCaseFirst.js":[function(require,module,exports) {
-var castSlice = require('./_castSlice'),
-    hasUnicode = require('./_hasUnicode'),
-    stringToArray = require('./_stringToArray'),
-    toString = require('./toString');
-
-/**
- * Creates a function like `_.lowerFirst`.
- *
- * @private
- * @param {string} methodName The name of the `String` case method to use.
- * @returns {Function} Returns the new case function.
- */
-function createCaseFirst(methodName) {
-  return function(string) {
-    string = toString(string);
-
-    var strSymbols = hasUnicode(string)
-      ? stringToArray(string)
-      : undefined;
-
-    var chr = strSymbols
-      ? strSymbols[0]
-      : string.charAt(0);
-
-    var trailing = strSymbols
-      ? castSlice(strSymbols, 1).join('')
-      : string.slice(1);
-
-    return chr[methodName]() + trailing;
-  };
-}
-
-module.exports = createCaseFirst;
-
-},{"./_castSlice":"../node_modules/lodash/_castSlice.js","./_hasUnicode":"../node_modules/lodash/_hasUnicode.js","./_stringToArray":"../node_modules/lodash/_stringToArray.js","./toString":"../node_modules/lodash/toString.js"}],"../node_modules/lodash/upperFirst.js":[function(require,module,exports) {
-var createCaseFirst = require('./_createCaseFirst');
-
-/**
- * Converts the first character of `string` to upper case.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category String
- * @param {string} [string=''] The string to convert.
- * @returns {string} Returns the converted string.
- * @example
- *
- * _.upperFirst('fred');
- * // => 'Fred'
- *
- * _.upperFirst('FRED');
- * // => 'FRED'
- */
-var upperFirst = createCaseFirst('toUpperCase');
-
-module.exports = upperFirst;
-
-},{"./_createCaseFirst":"../node_modules/lodash/_createCaseFirst.js"}],"../node_modules/lodash/capitalize.js":[function(require,module,exports) {
-var toString = require('./toString'),
-    upperFirst = require('./upperFirst');
-
-/**
- * Converts the first character of `string` to upper case and the remaining
- * to lower case.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category String
- * @param {string} [string=''] The string to capitalize.
- * @returns {string} Returns the capitalized string.
- * @example
- *
- * _.capitalize('FRED');
- * // => 'Fred'
- */
-function capitalize(string) {
-  return upperFirst(toString(string).toLowerCase());
-}
-
-module.exports = capitalize;
-
-},{"./toString":"../node_modules/lodash/toString.js","./upperFirst":"../node_modules/lodash/upperFirst.js"}],"components/Main/Main.js":[function(require,module,exports) {
+},{"./BarLoader":"../node_modules/react-spinners/BarLoader.js","./BeatLoader":"../node_modules/react-spinners/BeatLoader.js","./BounceLoader":"../node_modules/react-spinners/BounceLoader.js","./CircleLoader":"../node_modules/react-spinners/CircleLoader.js","./ClimbingBoxLoader":"../node_modules/react-spinners/ClimbingBoxLoader.js","./ClipLoader":"../node_modules/react-spinners/ClipLoader.js","./DotLoader":"../node_modules/react-spinners/DotLoader.js","./FadeLoader":"../node_modules/react-spinners/FadeLoader.js","./GridLoader":"../node_modules/react-spinners/GridLoader.js","./HashLoader":"../node_modules/react-spinners/HashLoader.js","./MoonLoader":"../node_modules/react-spinners/MoonLoader.js","./PacmanLoader":"../node_modules/react-spinners/PacmanLoader.js","./PropagateLoader":"../node_modules/react-spinners/PropagateLoader.js","./PulseLoader":"../node_modules/react-spinners/PulseLoader.js","./RingLoader":"../node_modules/react-spinners/RingLoader.js","./RiseLoader":"../node_modules/react-spinners/RiseLoader.js","./RotateLoader":"../node_modules/react-spinners/RotateLoader.js","./ScaleLoader":"../node_modules/react-spinners/ScaleLoader.js","./SkewLoader":"../node_modules/react-spinners/SkewLoader.js","./SquareLoader":"../node_modules/react-spinners/SquareLoader.js","./SyncLoader":"../node_modules/react-spinners/SyncLoader.js"}],"helpers/helpers.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
-
-var _core = require("@emotion/core");
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _reactSpinners = require("react-spinners");
+exports.filterData = void 0;
 
 var _isEmpty = _interopRequireDefault(require("lodash/isEmpty"));
-
-var _capitalize = _interopRequireDefault(require("lodash/capitalize"));
-
-var _UI = require("../UI");
-
-var _context = _interopRequireDefault(require("../../helpers/context"));
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52883,73 +52499,33 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
   return a;
 };
 
-var StyledLoader = (0, _styledBase.default)("div", {
-  target: "eloob7g0",
-  label: "StyledLoader"
-})("development" === "production" ? {
-  name: "m5g9ji",
-  styles: "width:fit-content;margin:20px auto;"
-} : {
-  name: "m5g9ji",
-  styles: "width:fit-content;margin:20px auto;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUytCIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgR3JpZExvYWRlciB9IGZyb20gJ3JlYWN0LXNwaW5uZXJzJ1xuaW1wb3J0IGlzRW1wdHkgZnJvbSAnbG9kYXNoL2lzRW1wdHknXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcbmltcG9ydCBjYXBpdGFsaXplIGZyb20gJ2xvZGFzaC9jYXBpdGFsaXplJ1xuXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSB9IGZyb20gJy4uL1VJJ1xuaW1wb3J0IEFwcENvbnRleHQgZnJvbSAnLi4vLi4vaGVscGVycy9jb250ZXh0J1xuXG5jb25zdCBTdHlsZWRMb2FkZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuYFxuXG5jb25zdCBTdHlsZWRGbGV4Q29udGFpbmVyID0gc3R5bGVkKEZsZXhDb250YWluZXIpYFxuICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiA1cHggYXV0bztcbiAgcGFkZGluZzogNXB4O1xuXG4gIGltZyB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBtaW4taGVpZ2h0OiA1MHB4O1xuICB9XG5gXG5cbmNvbnN0IFN0eWxlZENvbG9yRGl2ID0gc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDIwcHg7XG4gIHdpZHRoOiAyMHB4O1xuICBtYXJnaW46IDAgNXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAkeyh7IGNvbG9yIH0pID0+IGNvbG9yIHx8ICdpbmhlcml0J307XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG5gXG5cbmNvbnN0IE1haW4gPSAoKSA9PiB7XG4gIGNvbnN0IHsgZGF0YSB9ID0gdXNlQ29udGV4dChBcHBDb250ZXh0KVxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGRhdGEubWFwKGl0ZW0gPT4gKFxuICAgICAgICAgIDxTdHlsZWRGbGV4Q29udGFpbmVyIGtleT17aXRlbS5pZH0gYWxpZ25JdGVtcz1cImNlbnRlclwiPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2NhcGl0YWxpemUoaXRlbS50eXBlKX08L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2l0ZW0uYnJhbmR9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPlxuICAgICAgICAgICAgICB7aXRlbS5jb2xvcnMubWFwKGNvbG9yID0+IChcbiAgICAgICAgICAgICAgICA8U3R5bGVkQ29sb3JEaXYgY29sb3I9e2NvbG9yfSAvPlxuICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgIDwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8aW1nIHNyYz17aXRlbS5pbWd9IGFsdD17aXRlbS5icmFuZH0gLz5cbiAgICAgICAgICA8L1N0eWxlZEZsZXhDb250YWluZXI+XG4gICAgICAgICkpXG4gICAgICApIDogKFxuICAgICAgICA8U3R5bGVkTG9hZGVyPlxuICAgICAgICAgIDxHcmlkTG9hZGVyIHNpemVVbml0PVwicHhcIiBzaXplPXsxMH0gY29sb3I9XCIjMTIzYWJjXCIgbG9hZGluZyAvPlxuICAgICAgICA8L1N0eWxlZExvYWRlcj5cbiAgICAgICl9XG4gICAgPC8+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgTWFpblxuIl19 */"
-});
-var StyledFlexContainer = (
-/*#__PURE__*/
-0, _styledBase.default)(_UI.FlexContainer, {
-  target: "eloob7g1",
-  label: "StyledFlexContainer"
-})("development" === "production" ? {
-  name: "10y09zs",
-  styles: "border:1px solid black;width:50%;margin:5px auto;padding:5px;img{height:100%;width:200px;min-height:50px;}"
-} : {
-  name: "10y09zs",
-  styles: "border:1px solid black;width:50%;margin:5px auto;padding:5px;img{height:100%;width:200px;min-height:50px;}",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBY2lEIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgR3JpZExvYWRlciB9IGZyb20gJ3JlYWN0LXNwaW5uZXJzJ1xuaW1wb3J0IGlzRW1wdHkgZnJvbSAnbG9kYXNoL2lzRW1wdHknXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcbmltcG9ydCBjYXBpdGFsaXplIGZyb20gJ2xvZGFzaC9jYXBpdGFsaXplJ1xuXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSB9IGZyb20gJy4uL1VJJ1xuaW1wb3J0IEFwcENvbnRleHQgZnJvbSAnLi4vLi4vaGVscGVycy9jb250ZXh0J1xuXG5jb25zdCBTdHlsZWRMb2FkZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuYFxuXG5jb25zdCBTdHlsZWRGbGV4Q29udGFpbmVyID0gc3R5bGVkKEZsZXhDb250YWluZXIpYFxuICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiA1cHggYXV0bztcbiAgcGFkZGluZzogNXB4O1xuXG4gIGltZyB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBtaW4taGVpZ2h0OiA1MHB4O1xuICB9XG5gXG5cbmNvbnN0IFN0eWxlZENvbG9yRGl2ID0gc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDIwcHg7XG4gIHdpZHRoOiAyMHB4O1xuICBtYXJnaW46IDAgNXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAkeyh7IGNvbG9yIH0pID0+IGNvbG9yIHx8ICdpbmhlcml0J307XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG5gXG5cbmNvbnN0IE1haW4gPSAoKSA9PiB7XG4gIGNvbnN0IHsgZGF0YSB9ID0gdXNlQ29udGV4dChBcHBDb250ZXh0KVxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGRhdGEubWFwKGl0ZW0gPT4gKFxuICAgICAgICAgIDxTdHlsZWRGbGV4Q29udGFpbmVyIGtleT17aXRlbS5pZH0gYWxpZ25JdGVtcz1cImNlbnRlclwiPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2NhcGl0YWxpemUoaXRlbS50eXBlKX08L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2l0ZW0uYnJhbmR9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPlxuICAgICAgICAgICAgICB7aXRlbS5jb2xvcnMubWFwKGNvbG9yID0+IChcbiAgICAgICAgICAgICAgICA8U3R5bGVkQ29sb3JEaXYgY29sb3I9e2NvbG9yfSAvPlxuICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgIDwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8aW1nIHNyYz17aXRlbS5pbWd9IGFsdD17aXRlbS5icmFuZH0gLz5cbiAgICAgICAgICA8L1N0eWxlZEZsZXhDb250YWluZXI+XG4gICAgICAgICkpXG4gICAgICApIDogKFxuICAgICAgICA8U3R5bGVkTG9hZGVyPlxuICAgICAgICAgIDxHcmlkTG9hZGVyIHNpemVVbml0PVwicHhcIiBzaXplPXsxMH0gY29sb3I9XCIjMTIzYWJjXCIgbG9hZGluZyAvPlxuICAgICAgICA8L1N0eWxlZExvYWRlcj5cbiAgICAgICl9XG4gICAgPC8+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgTWFpblxuIl19 */"
-});
-var StyledColorDiv = (0, _styledBase.default)("div", {
-  target: "eloob7g2",
-  label: "StyledColorDiv"
-})("display:inline-block;height:20px;width:20px;margin:0 5px;background-color:", function (_ref) {
-  var color = _ref.color;
-  return color || 'inherit';
-}, ";border:1px solid #ccc;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMkJpQyIsImZpbGUiOiJNYWluLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUNvbnRleHQgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IEdyaWRMb2FkZXIgfSBmcm9tICdyZWFjdC1zcGlubmVycydcbmltcG9ydCBpc0VtcHR5IGZyb20gJ2xvZGFzaC9pc0VtcHR5J1xuaW1wb3J0IHN0eWxlZCBmcm9tICdAZW1vdGlvbi9zdHlsZWQnXG5pbXBvcnQgY2FwaXRhbGl6ZSBmcm9tICdsb2Rhc2gvY2FwaXRhbGl6ZSdcblxuaW1wb3J0IHsgRmxleENvbnRhaW5lciwgRmxleEl0ZW0gfSBmcm9tICcuLi9VSSdcbmltcG9ydCBBcHBDb250ZXh0IGZyb20gJy4uLy4uL2hlbHBlcnMvY29udGV4dCdcblxuY29uc3QgU3R5bGVkTG9hZGVyID0gc3R5bGVkLmRpdmBcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xuICBtYXJnaW46IDIwcHggYXV0bztcbmBcblxuY29uc3QgU3R5bGVkRmxleENvbnRhaW5lciA9IHN0eWxlZChGbGV4Q29udGFpbmVyKWBcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XG4gIHdpZHRoOiA1MCU7XG4gIG1hcmdpbjogNXB4IGF1dG87XG4gIHBhZGRpbmc6IDVweDtcblxuICBpbWcge1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogMjAwcHg7XG4gICAgbWluLWhlaWdodDogNTBweDtcbiAgfVxuYFxuXG5jb25zdCBTdHlsZWRDb2xvckRpdiA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAyMHB4O1xuICB3aWR0aDogMjBweDtcbiAgbWFyZ2luOiAwIDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyBjb2xvciB9KSA9PiBjb2xvciB8fCAnaW5oZXJpdCd9O1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuYFxuXG5jb25zdCBNYWluID0gKCkgPT4ge1xuICBjb25zdCB7IGRhdGEgfSA9IHVzZUNvbnRleHQoQXBwQ29udGV4dClcbiAgcmV0dXJuIChcbiAgICA8PlxuICAgICAgeyFpc0VtcHR5KGRhdGEpID8gKFxuICAgICAgICBkYXRhLm1hcChpdGVtID0+IChcbiAgICAgICAgICA8U3R5bGVkRmxleENvbnRhaW5lciBrZXk9e2l0ZW0uaWR9IGFsaWduSXRlbXM9XCJjZW50ZXJcIj5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntjYXBpdGFsaXplKGl0ZW0udHlwZSl9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntpdGVtLmJyYW5kfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj5cbiAgICAgICAgICAgICAge2l0ZW0uY29sb3JzLm1hcChjb2xvciA9PiAoXG4gICAgICAgICAgICAgICAgPFN0eWxlZENvbG9yRGl2IGNvbG9yPXtjb2xvcn0gLz5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPGltZyBzcmM9e2l0ZW0uaW1nfSBhbHQ9e2l0ZW0uYnJhbmR9IC8+XG4gICAgICAgICAgPC9TdHlsZWRGbGV4Q29udGFpbmVyPlxuICAgICAgICApKVxuICAgICAgKSA6IChcbiAgICAgICAgPFN0eWxlZExvYWRlcj5cbiAgICAgICAgICA8R3JpZExvYWRlciBzaXplVW5pdD1cInB4XCIgc2l6ZT17MTB9IGNvbG9yPVwiIzEyM2FiY1wiIGxvYWRpbmcgLz5cbiAgICAgICAgPC9TdHlsZWRMb2FkZXI+XG4gICAgICApfVxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5cbiJdfQ== */"));
+// eslint-disable-next-line import/prefer-default-export
+var filterData = function filterData(data, filters) {
+  var filteredData = (0, _isEmpty.default)(filters) ? data : [];
+  var appliedTypes = !(0, _isEmpty.default)(filters.types) ? filters.types.map(function (t) {
+    return t.value;
+  }) : [];
+  var appliedBrands = !(0, _isEmpty.default)(filters.brands) ? filters.brands.map(function (t) {
+    return t.value;
+  }) : [];
+  var appliedColors = !(0, _isEmpty.default)(filters.colors) ? filters.colors.map(function (t) {
+    return t.value;
+  }) : [];
+  data.forEach(function (item) {
+    var values = Object.values(item);
 
-var Main = function Main() {
-  var _useContext = (0, _react.useContext)(_context.default),
-      data = _useContext.data;
-
-  return (0, _core.jsx)(_react.default.Fragment, null, !(0, _isEmpty.default)(data) ? data.map(function (item) {
-    return (0, _core.jsx)(StyledFlexContainer, {
-      key: item.id,
-      alignItems: "center"
-    }, (0, _core.jsx)(_UI.FlexItem, {
-      flex: "1"
-    }, (0, _capitalize.default)(item.type)), (0, _core.jsx)(_UI.FlexItem, {
-      flex: "1"
-    }, item.brand), (0, _core.jsx)(_UI.FlexItem, {
-      flex: "1"
-    }, item.colors.map(function (color) {
-      return (0, _core.jsx)(StyledColorDiv, {
-        color: color
-      });
-    })), (0, _core.jsx)("img", {
-      src: item.img,
-      alt: item.brand
-    }));
-  }) : (0, _core.jsx)(StyledLoader, null, (0, _core.jsx)(_reactSpinners.GridLoader, {
-    sizeUnit: "px",
-    size: 10,
-    color: "#123abc",
-    loading: true
-  })));
+    if (values.some(function (i) {
+      return appliedTypes.includes(i) || appliedBrands.includes(i);
+    }) || item.colors.some(function (c) {
+      return appliedColors.includes(c);
+    })) {
+      filteredData.push(item);
+    }
+  });
+  return filteredData;
 };
 
-__signature__(Main, "useContext{{ data }}");
-
-var _default = Main;
-var _default2 = _default;
-exports.default = _default2;
+exports.filterData = filterData;
 ;
 
 (function () {
@@ -52959,11 +52535,7 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(StyledLoader, "StyledLoader", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(StyledFlexContainer, "StyledFlexContainer", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(StyledColorDiv, "StyledColorDiv", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(Main, "Main", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(filterData, "filterData", "/Users/pavel/code/React-pablospaniard/src/helpers/helpers.js");
 })();
 
 ;
@@ -52972,35 +52544,7 @@ exports.default = _default2;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","react-spinners":"../node_modules/react-spinners/index.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js","lodash/capitalize":"../node_modules/lodash/capitalize.js","../UI":"components/UI/index.js","../../helpers/context":"helpers/context.js"}],"components/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Header", {
-  enumerable: true,
-  get: function () {
-    return _Header.default;
-  }
-});
-Object.defineProperty(exports, "Main", {
-  enumerable: true,
-  get: function () {
-    return _Main.default;
-  }
-});
-
-var _Header = _interopRequireDefault(require("./Header/Header"));
-
-var _Main = _interopRequireDefault(require("./Main/Main"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
-  return a;
-};
-},{"./Header/Header":"components/Header/Header.js","./Main/Main":"components/Main/Main.js"}],"service/index.js":[function(require,module,exports) {
+},{"lodash/isEmpty":"../node_modules/lodash/isEmpty.js"}],"service/index.js":[function(require,module,exports) {
 (function () {
   var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
@@ -53128,7 +52672,174 @@ var trafficMeister;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{}],"App.js":[function(require,module,exports) {
+},{}],"components/Main/Main.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
+
+var _core = require("@emotion/core");
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactSpinners = require("react-spinners");
+
+var _isEmpty = _interopRequireDefault(require("lodash/isEmpty"));
+
+var _UI = require("../UI");
+
+var _context = _interopRequireDefault(require("../../helpers/context"));
+
+var _helpers = require("../../helpers/helpers");
+
+var _service = _interopRequireDefault(require("../../service"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+var StyledLoader = (0, _styledBase.default)("div", {
+  target: "eloob7g0",
+  label: "StyledLoader"
+})("development" === "production" ? {
+  name: "m5g9ji",
+  styles: "width:fit-content;margin:20px auto;"
+} : {
+  name: "m5g9ji",
+  styles: "width:fit-content;margin:20px auto;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBVStCIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCwgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBHcmlkTG9hZGVyIH0gZnJvbSAncmVhY3Qtc3Bpbm5lcnMnXG5pbXBvcnQgaXNFbXB0eSBmcm9tICdsb2Rhc2gvaXNFbXB0eSdcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSB9IGZyb20gJy4uL1VJJ1xuaW1wb3J0IEFwcENvbnRleHQgZnJvbSAnLi4vLi4vaGVscGVycy9jb250ZXh0J1xuaW1wb3J0IHsgZmlsdGVyRGF0YSB9IGZyb20gJy4uLy4uL2hlbHBlcnMvaGVscGVycydcbmltcG9ydCB0cmFmZmljTWVpc3RlciBmcm9tICcuLi8uLi9zZXJ2aWNlJ1xuXG5jb25zdCBTdHlsZWRMb2FkZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuYFxuXG5jb25zdCBTdHlsZWRGbGV4Q29udGFpbmVyID0gc3R5bGVkKEZsZXhDb250YWluZXIpYFxuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICB3aWR0aDogNTAlO1xuICBtYXJnaW46IDVweCBhdXRvO1xuICBwYWRkaW5nOiA1cHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcblxuICBpbWcge1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogMjAwcHg7XG4gICAgbWluLWhlaWdodDogNTBweDtcbiAgfVxuXG4gIEBtZWRpYSAobWF4LXdpZHRoOiAxMDI0cHgpIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuYFxuXG5jb25zdCBTdHlsZWRDb2xvckRpdiA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAyMHB4O1xuICB3aWR0aDogMjBweDtcbiAgbWFyZ2luOiAwIDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyBjb2xvciB9KSA9PiBjb2xvciB8fCAnaW5oZXJpdCd9O1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuYFxuXG5jb25zdCBNYWluID0gKCkgPT4ge1xuICBjb25zdCB7IGRhdGEsIGZpbHRlcnMsIHNldERhdGEgfSA9IHVzZUNvbnRleHQoQXBwQ29udGV4dClcbiAgY29uc3QgZmlsdGVyZWREYXRhID0gZmlsdGVyRGF0YShkYXRhLCBmaWx0ZXJzKVxuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgdHJhZmZpY01laXN0ZXIuZmV0Y2hEYXRhKChlcnIsIHJlcykgPT4ge1xuICAgICAgY29uc29sZS5sb2coJ2ZldGNoaW5nJylcbiAgICAgIGlmIChlcnIpIHRocm93IG5ldyBFcnJvcihlcnIpXG4gICAgICBzZXREYXRhKHJlcylcbiAgICB9KVxuICB9LCBbXSlcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGZpbHRlcmVkRGF0YS5tYXAoaXRlbSA9PiAoXG4gICAgICAgICAgPFN0eWxlZEZsZXhDb250YWluZXIga2V5PXtpdGVtLmlkfSBhbGlnbkl0ZW1zPVwiY2VudGVyXCI+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS50eXBlLnRvVXBwZXJDYXNlKCl9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntpdGVtLmJyYW5kfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj5cbiAgICAgICAgICAgICAge2l0ZW0uY29sb3JzLm1hcChjb2xvciA9PiAoXG4gICAgICAgICAgICAgICAgPFN0eWxlZENvbG9yRGl2IGtleT17Y29sb3J9IGNvbG9yPXtjb2xvcn0gLz5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPGltZyBzcmM9e2l0ZW0uaW1nfSBhbHQ9e2l0ZW0uYnJhbmR9IC8+XG4gICAgICAgICAgPC9TdHlsZWRGbGV4Q29udGFpbmVyPlxuICAgICAgICApKVxuICAgICAgKSA6IChcbiAgICAgICAgPFN0eWxlZExvYWRlcj5cbiAgICAgICAgICA8R3JpZExvYWRlciBzaXplVW5pdD1cInB4XCIgc2l6ZT17MTB9IGNvbG9yPVwiIzEyM2FiY1wiIGxvYWRpbmcgLz5cbiAgICAgICAgPC9TdHlsZWRMb2FkZXI+XG4gICAgICApfVxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5cbiJdfQ== */"
+});
+var StyledFlexContainer = (
+/*#__PURE__*/
+0, _styledBase.default)(_UI.FlexContainer, {
+  target: "eloob7g1",
+  label: "StyledFlexContainer"
+})("development" === "production" ? {
+  name: "1b8gycc",
+  styles: "border:1px solid #ccc;width:50%;margin:5px auto;padding:5px;border-radius:4px;img{height:100%;width:200px;min-height:50px;}@media (max-width:1024px){width:100%;}"
+} : {
+  name: "1b8gycc",
+  styles: "border:1px solid #ccc;width:50%;margin:5px auto;padding:5px;border-radius:4px;img{height:100%;width:200px;min-height:50px;}@media (max-width:1024px){width:100%;}",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZWlEIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCwgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBHcmlkTG9hZGVyIH0gZnJvbSAncmVhY3Qtc3Bpbm5lcnMnXG5pbXBvcnQgaXNFbXB0eSBmcm9tICdsb2Rhc2gvaXNFbXB0eSdcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSB9IGZyb20gJy4uL1VJJ1xuaW1wb3J0IEFwcENvbnRleHQgZnJvbSAnLi4vLi4vaGVscGVycy9jb250ZXh0J1xuaW1wb3J0IHsgZmlsdGVyRGF0YSB9IGZyb20gJy4uLy4uL2hlbHBlcnMvaGVscGVycydcbmltcG9ydCB0cmFmZmljTWVpc3RlciBmcm9tICcuLi8uLi9zZXJ2aWNlJ1xuXG5jb25zdCBTdHlsZWRMb2FkZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuYFxuXG5jb25zdCBTdHlsZWRGbGV4Q29udGFpbmVyID0gc3R5bGVkKEZsZXhDb250YWluZXIpYFxuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICB3aWR0aDogNTAlO1xuICBtYXJnaW46IDVweCBhdXRvO1xuICBwYWRkaW5nOiA1cHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcblxuICBpbWcge1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogMjAwcHg7XG4gICAgbWluLWhlaWdodDogNTBweDtcbiAgfVxuXG4gIEBtZWRpYSAobWF4LXdpZHRoOiAxMDI0cHgpIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuYFxuXG5jb25zdCBTdHlsZWRDb2xvckRpdiA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAyMHB4O1xuICB3aWR0aDogMjBweDtcbiAgbWFyZ2luOiAwIDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyBjb2xvciB9KSA9PiBjb2xvciB8fCAnaW5oZXJpdCd9O1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuYFxuXG5jb25zdCBNYWluID0gKCkgPT4ge1xuICBjb25zdCB7IGRhdGEsIGZpbHRlcnMsIHNldERhdGEgfSA9IHVzZUNvbnRleHQoQXBwQ29udGV4dClcbiAgY29uc3QgZmlsdGVyZWREYXRhID0gZmlsdGVyRGF0YShkYXRhLCBmaWx0ZXJzKVxuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgdHJhZmZpY01laXN0ZXIuZmV0Y2hEYXRhKChlcnIsIHJlcykgPT4ge1xuICAgICAgY29uc29sZS5sb2coJ2ZldGNoaW5nJylcbiAgICAgIGlmIChlcnIpIHRocm93IG5ldyBFcnJvcihlcnIpXG4gICAgICBzZXREYXRhKHJlcylcbiAgICB9KVxuICB9LCBbXSlcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGZpbHRlcmVkRGF0YS5tYXAoaXRlbSA9PiAoXG4gICAgICAgICAgPFN0eWxlZEZsZXhDb250YWluZXIga2V5PXtpdGVtLmlkfSBhbGlnbkl0ZW1zPVwiY2VudGVyXCI+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS50eXBlLnRvVXBwZXJDYXNlKCl9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntpdGVtLmJyYW5kfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj5cbiAgICAgICAgICAgICAge2l0ZW0uY29sb3JzLm1hcChjb2xvciA9PiAoXG4gICAgICAgICAgICAgICAgPFN0eWxlZENvbG9yRGl2IGtleT17Y29sb3J9IGNvbG9yPXtjb2xvcn0gLz5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPGltZyBzcmM9e2l0ZW0uaW1nfSBhbHQ9e2l0ZW0uYnJhbmR9IC8+XG4gICAgICAgICAgPC9TdHlsZWRGbGV4Q29udGFpbmVyPlxuICAgICAgICApKVxuICAgICAgKSA6IChcbiAgICAgICAgPFN0eWxlZExvYWRlcj5cbiAgICAgICAgICA8R3JpZExvYWRlciBzaXplVW5pdD1cInB4XCIgc2l6ZT17MTB9IGNvbG9yPVwiIzEyM2FiY1wiIGxvYWRpbmcgLz5cbiAgICAgICAgPC9TdHlsZWRMb2FkZXI+XG4gICAgICApfVxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5cbiJdfQ== */"
+});
+var StyledColorDiv = (0, _styledBase.default)("div", {
+  target: "eloob7g2",
+  label: "StyledColorDiv"
+})("display:inline-block;height:20px;width:20px;margin:0 5px;background-color:", function (_ref) {
+  var color = _ref.color;
+  return color || 'inherit';
+}, ";border:1px solid #ccc;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBaUNpQyIsImZpbGUiOiJNYWluLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUNvbnRleHQsIHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgR3JpZExvYWRlciB9IGZyb20gJ3JlYWN0LXNwaW5uZXJzJ1xuaW1wb3J0IGlzRW1wdHkgZnJvbSAnbG9kYXNoL2lzRW1wdHknXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcblxuaW1wb3J0IHsgRmxleENvbnRhaW5lciwgRmxleEl0ZW0gfSBmcm9tICcuLi9VSSdcbmltcG9ydCBBcHBDb250ZXh0IGZyb20gJy4uLy4uL2hlbHBlcnMvY29udGV4dCdcbmltcG9ydCB7IGZpbHRlckRhdGEgfSBmcm9tICcuLi8uLi9oZWxwZXJzL2hlbHBlcnMnXG5pbXBvcnQgdHJhZmZpY01laXN0ZXIgZnJvbSAnLi4vLi4vc2VydmljZSdcblxuY29uc3QgU3R5bGVkTG9hZGVyID0gc3R5bGVkLmRpdmBcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xuICBtYXJnaW46IDIwcHggYXV0bztcbmBcblxuY29uc3QgU3R5bGVkRmxleENvbnRhaW5lciA9IHN0eWxlZChGbGV4Q29udGFpbmVyKWBcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiA1cHggYXV0bztcbiAgcGFkZGluZzogNXB4O1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG5cbiAgaW1nIHtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgd2lkdGg6IDIwMHB4O1xuICAgIG1pbi1oZWlnaHQ6IDUwcHg7XG4gIH1cblxuICBAbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbmBcblxuY29uc3QgU3R5bGVkQ29sb3JEaXYgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGhlaWdodDogMjBweDtcbiAgd2lkdGg6IDIwcHg7XG4gIG1hcmdpbjogMCA1cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICR7KHsgY29sb3IgfSkgPT4gY29sb3IgfHwgJ2luaGVyaXQnfTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbmBcblxuY29uc3QgTWFpbiA9ICgpID0+IHtcbiAgY29uc3QgeyBkYXRhLCBmaWx0ZXJzLCBzZXREYXRhIH0gPSB1c2VDb250ZXh0KEFwcENvbnRleHQpXG4gIGNvbnN0IGZpbHRlcmVkRGF0YSA9IGZpbHRlckRhdGEoZGF0YSwgZmlsdGVycylcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIHRyYWZmaWNNZWlzdGVyLmZldGNoRGF0YSgoZXJyLCByZXMpID0+IHtcbiAgICAgIGNvbnNvbGUubG9nKCdmZXRjaGluZycpXG4gICAgICBpZiAoZXJyKSB0aHJvdyBuZXcgRXJyb3IoZXJyKVxuICAgICAgc2V0RGF0YShyZXMpXG4gICAgfSlcbiAgfSwgW10pXG5cbiAgcmV0dXJuIChcbiAgICA8PlxuICAgICAgeyFpc0VtcHR5KGRhdGEpID8gKFxuICAgICAgICBmaWx0ZXJlZERhdGEubWFwKGl0ZW0gPT4gKFxuICAgICAgICAgIDxTdHlsZWRGbGV4Q29udGFpbmVyIGtleT17aXRlbS5pZH0gYWxpZ25JdGVtcz1cImNlbnRlclwiPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2l0ZW0udHlwZS50b1VwcGVyQ2FzZSgpfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS5icmFuZH08L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+XG4gICAgICAgICAgICAgIHtpdGVtLmNvbG9ycy5tYXAoY29sb3IgPT4gKFxuICAgICAgICAgICAgICAgIDxTdHlsZWRDb2xvckRpdiBrZXk9e2NvbG9yfSBjb2xvcj17Y29sb3J9IC8+XG4gICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgPC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxpbWcgc3JjPXtpdGVtLmltZ30gYWx0PXtpdGVtLmJyYW5kfSAvPlxuICAgICAgICAgIDwvU3R5bGVkRmxleENvbnRhaW5lcj5cbiAgICAgICAgKSlcbiAgICAgICkgOiAoXG4gICAgICAgIDxTdHlsZWRMb2FkZXI+XG4gICAgICAgICAgPEdyaWRMb2FkZXIgc2l6ZVVuaXQ9XCJweFwiIHNpemU9ezEwfSBjb2xvcj1cIiMxMjNhYmNcIiBsb2FkaW5nIC8+XG4gICAgICAgIDwvU3R5bGVkTG9hZGVyPlxuICAgICAgKX1cbiAgICA8Lz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBNYWluXG4iXX0= */"));
+
+var Main = function Main() {
+  var _useContext = (0, _react.useContext)(_context.default),
+      data = _useContext.data,
+      filters = _useContext.filters,
+      setData = _useContext.setData;
+
+  var filteredData = (0, _helpers.filterData)(data, filters);
+  (0, _react.useEffect)(function () {
+    _service.default.fetchData(function (err, res) {
+      console.log('fetching');
+      if (err) throw new Error(err);
+      setData(res);
+    });
+  }, []);
+  return (0, _core.jsx)(_react.default.Fragment, null, !(0, _isEmpty.default)(data) ? filteredData.map(function (item) {
+    return (0, _core.jsx)(StyledFlexContainer, {
+      key: item.id,
+      alignItems: "center"
+    }, (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, item.type.toUpperCase()), (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, item.brand), (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, item.colors.map(function (color) {
+      return (0, _core.jsx)(StyledColorDiv, {
+        key: color,
+        color: color
+      });
+    })), (0, _core.jsx)("img", {
+      src: item.img,
+      alt: item.brand
+    }));
+  }) : (0, _core.jsx)(StyledLoader, null, (0, _core.jsx)(_reactSpinners.GridLoader, {
+    sizeUnit: "px",
+    size: 10,
+    color: "#123abc",
+    loading: true
+  })));
+};
+
+__signature__(Main, "useContext{{ data, filters, setData }}\nuseEffect{}");
+
+var _default = Main;
+var _default2 = _default;
+exports.default = _default2;
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(StyledLoader, "StyledLoader", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledFlexContainer, "StyledFlexContainer", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledColorDiv, "StyledColorDiv", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(Main, "Main", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","react-spinners":"../node_modules/react-spinners/index.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js","../UI":"components/UI/index.js","../../helpers/context":"helpers/context.js","../../helpers/helpers":"helpers/helpers.js","../../service":"service/index.js"}],"components/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Header", {
+  enumerable: true,
+  get: function () {
+    return _Header.default;
+  }
+});
+Object.defineProperty(exports, "Main", {
+  enumerable: true,
+  get: function () {
+    return _Main.default;
+  }
+});
+
+var _Header = _interopRequireDefault(require("./Header/Header"));
+
+var _Main = _interopRequireDefault(require("./Main/Main"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+},{"./Header/Header":"components/Header/Header.js","./Main/Main":"components/Main/Main.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53145,8 +52856,6 @@ var _react = _interopRequireWildcard(require("react"));
 var _UI = require("./components/UI");
 
 var _components = require("./components");
-
-var _service = _interopRequireDefault(require("./service"));
 
 var _context = _interopRequireDefault(require("./helpers/context"));
 
@@ -53175,25 +52884,27 @@ var App = function App() {
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       data = _useState2[0],
-      setData = _useState2[1];
+      setData = _useState2[1]; // this could be done with useReducer, but i leave it as is for simplicity
 
-  (0, _react.useEffect)(function () {
-    _service.default.fetchData(function (err, res) {
-      if (err) throw new Error(err);
-      console.log(res);
-      setData(res);
-    });
-  }, []);
+
+  var _useState3 = (0, _react.useState)({}),
+      _useState4 = _slicedToArray(_useState3, 2),
+      filters = _useState4[0],
+      setFilters = _useState4[1];
+
   return (0, _core.jsx)(_context.default.Provider, {
     value: {
-      data: data
+      data: data,
+      filters: filters,
+      setFilters: setFilters,
+      setData: setData
     }
   }, (0, _core.jsx)(_UI.FlexContainer, {
     direction: "column"
-  }, (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Header, null)), (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Main, null))));
+  }, (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Header, null)), (0, _core.jsx)("br", null), (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Main, null))));
 };
 
-__signature__(App, "useState{[data, setData]([])}\nuseEffect{}");
+__signature__(App, "useState{[data, setData]([])}\nuseState{[filters, setFilters]({})}");
 
 var _default = (0, _reactHotLoader.hot)(module)(App);
 
@@ -53218,7 +52929,7 @@ exports.default = _default2;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","./components/UI":"components/UI/index.js","./components":"components/index.js","./service":"service/index.js","./helpers/context":"helpers/context.js"}],"index.js":[function(require,module,exports) {
+},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","./components/UI":"components/UI/index.js","./components":"components/index.js","./helpers/context":"helpers/context.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("core-js/modules/es6.array.copy-within");
