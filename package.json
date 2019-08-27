@@ -64,5 +64,10 @@
       "pre-commit": "lint-staged",
       "pre-push": "test:ci"
     }
+  },
+  "jest": {
+    "rootDir": "./",
+    "testURL": "http://localhost/",
+    "testRegex": "(/__tests__/.*\\.(test|spec))\\.[jt]sx?$"
   }
 }
