@@ -50310,7 +50310,6 @@ var SelectComponent = function SelectComponent(_ref) {
     onChange: handleChange,
     options: objects,
     isClearable: true,
-    isMulti: true,
     isDisabled: disabled,
     isLoading: loading
   });
@@ -50319,7 +50318,7 @@ var SelectComponent = function SelectComponent(_ref) {
 SelectComponent.propTypes = {
   disabled: _propTypes.bool.isRequired,
   loading: _propTypes.bool.isRequired,
-  value: (0, _propTypes.oneOfType)([_propTypes.string, (0, _propTypes.arrayOf)(_propTypes.object)]),
+  value: (0, _propTypes.oneOfType)([(0, _propTypes.arrayOf)(_propTypes.any), (0, _propTypes.objectOf)(_propTypes.any)]),
   items: (0, _propTypes.oneOfType)([(0, _propTypes.arrayOf)(_propTypes.string), (0, _propTypes.arrayOf)(_propTypes.object)]),
   handleChange: _propTypes.func
 };
@@ -50795,9 +50794,9 @@ var TYPES = {
 };
 exports.TYPES = TYPES;
 var PROPS = {
-  TYPES: 'types',
-  BRANDS: 'brands',
-  COLORS: 'colors'
+  TYPES: 'type',
+  BRANDS: 'brand',
+  COLORS: 'color'
 };
 exports.PROPS = PROPS;
 ;
@@ -50882,7 +50881,8 @@ var Header = function Header() {
   var _useContext = (0, _react.useContext)(_context.default),
       data = _useContext.data,
       filters = _useContext.filters,
-      setFilters = _useContext.setFilters; // this could be done with useReducer, but i leave it as is for simplicity
+      setFilters = _useContext.setFilters,
+      filteredData = _useContext.filteredData; // this could be done with useReducer, but i leave it as is for simplicity
 
 
   var _useState = (0, _react.useState)({}),
@@ -50892,15 +50892,16 @@ var Header = function Header() {
 
   (0, _react.useEffect)(function () {
     if (!(0, _isEmpty.default)(data)) {
-      arrayOfTypes = data.map(function (i) {
+      var source = (0, _isEmpty.default)(filteredData) ? data : filteredData;
+      arrayOfTypes = source.map(function (i) {
         return i.type;
       });
       var uniqueTypes = Array.from(new Set(arrayOfTypes));
-      arrayOfBrands = data.map(function (i) {
+      arrayOfBrands = source.map(function (i) {
         return i.brand;
       });
       var uniqueBrands = Array.from(new Set(arrayOfBrands));
-      arrayOfColors = data.reduce(function (prev, curr) {
+      arrayOfColors = source.reduce(function (prev, curr) {
         return [].concat(_toConsumableArray(prev), _toConsumableArray(curr.colors));
       }, []);
       var uniqueColors = Array.from(new Set(arrayOfColors));
@@ -50910,25 +50911,25 @@ var Header = function Header() {
         colors: uniqueColors
       }));
     }
-  }, [data]);
+  }, [data, filteredData]);
 
   var _handleChange = function handleChange(item, prop) {
     switch (prop) {
       case _constants.PROPS.TYPES:
         setFilters(_objectSpread({}, filters, {
-          types: item
+          type: item
         }));
         break;
 
       case _constants.PROPS.BRANDS:
         setFilters(_objectSpread({}, filters, {
-          brands: item
+          brand: item
         }));
         break;
 
       case _constants.PROPS.COLORS:
         setFilters(_objectSpread({}, filters, {
-          colors: item
+          color: item
         }));
         break;
 
@@ -50941,10 +50942,10 @@ var Header = function Header() {
     flex: "1",
     margin: "0 20px"
   }, (0, _core.jsx)(_UI.Select, {
-    value: filters.types,
+    value: filters.type,
     items: state.types,
     handleChange: function handleChange(item) {
-      return _handleChange(item, 'types');
+      return _handleChange(item, 'type');
     },
     disabled: (0, _isEmpty.default)(state.types),
     loading: (0, _isEmpty.default)(data)
@@ -50952,10 +50953,10 @@ var Header = function Header() {
     flex: "1",
     margin: "0 20px"
   }, (0, _core.jsx)(_UI.Select, {
-    value: filters.brands,
+    value: filters.brand,
     items: state.brands,
     handleChange: function handleChange(item) {
-      return _handleChange(item, 'brands');
+      return _handleChange(item, 'brand');
     },
     disabled: (0, _isEmpty.default)(state.brands),
     loading: (0, _isEmpty.default)(data)
@@ -50963,17 +50964,17 @@ var Header = function Header() {
     flex: "1",
     margin: "0 20px"
   }, (0, _core.jsx)(_UI.Select, {
-    value: filters.colors,
+    value: filters.color,
     items: state.colors,
     handleChange: function handleChange(item) {
-      return _handleChange(item, 'colors');
+      return _handleChange(item, 'color');
     },
     disabled: (0, _isEmpty.default)(state.colors),
     loading: (0, _isEmpty.default)(data)
   })))));
 };
 
-__signature__(Header, "useContext{{ data, filters, setFilters }}\nuseState{[state, setState]({})}\nuseEffect{}");
+__signature__(Header, "useContext{{ data, filters, setFilters, filteredData }}\nuseState{[state, setState]({})}\nuseEffect{}");
 
 var _default = Header;
 var _default2 = _default;
@@ -52478,15 +52479,29 @@ exports.SkewLoader = SkewLoader_1.default;
 exports.SquareLoader = SquareLoader_1.default;
 exports.SyncLoader = SyncLoader_1.default;
 
-},{"./BarLoader":"../node_modules/react-spinners/BarLoader.js","./BeatLoader":"../node_modules/react-spinners/BeatLoader.js","./BounceLoader":"../node_modules/react-spinners/BounceLoader.js","./CircleLoader":"../node_modules/react-spinners/CircleLoader.js","./ClimbingBoxLoader":"../node_modules/react-spinners/ClimbingBoxLoader.js","./ClipLoader":"../node_modules/react-spinners/ClipLoader.js","./DotLoader":"../node_modules/react-spinners/DotLoader.js","./FadeLoader":"../node_modules/react-spinners/FadeLoader.js","./GridLoader":"../node_modules/react-spinners/GridLoader.js","./HashLoader":"../node_modules/react-spinners/HashLoader.js","./MoonLoader":"../node_modules/react-spinners/MoonLoader.js","./PacmanLoader":"../node_modules/react-spinners/PacmanLoader.js","./PropagateLoader":"../node_modules/react-spinners/PropagateLoader.js","./PulseLoader":"../node_modules/react-spinners/PulseLoader.js","./RingLoader":"../node_modules/react-spinners/RingLoader.js","./RiseLoader":"../node_modules/react-spinners/RiseLoader.js","./RotateLoader":"../node_modules/react-spinners/RotateLoader.js","./ScaleLoader":"../node_modules/react-spinners/ScaleLoader.js","./SkewLoader":"../node_modules/react-spinners/SkewLoader.js","./SquareLoader":"../node_modules/react-spinners/SquareLoader.js","./SyncLoader":"../node_modules/react-spinners/SyncLoader.js"}],"helpers/helpers.js":[function(require,module,exports) {
+},{"./BarLoader":"../node_modules/react-spinners/BarLoader.js","./BeatLoader":"../node_modules/react-spinners/BeatLoader.js","./BounceLoader":"../node_modules/react-spinners/BounceLoader.js","./CircleLoader":"../node_modules/react-spinners/CircleLoader.js","./ClimbingBoxLoader":"../node_modules/react-spinners/ClimbingBoxLoader.js","./ClipLoader":"../node_modules/react-spinners/ClipLoader.js","./DotLoader":"../node_modules/react-spinners/DotLoader.js","./FadeLoader":"../node_modules/react-spinners/FadeLoader.js","./GridLoader":"../node_modules/react-spinners/GridLoader.js","./HashLoader":"../node_modules/react-spinners/HashLoader.js","./MoonLoader":"../node_modules/react-spinners/MoonLoader.js","./PacmanLoader":"../node_modules/react-spinners/PacmanLoader.js","./PropagateLoader":"../node_modules/react-spinners/PropagateLoader.js","./PulseLoader":"../node_modules/react-spinners/PulseLoader.js","./RingLoader":"../node_modules/react-spinners/RingLoader.js","./RiseLoader":"../node_modules/react-spinners/RiseLoader.js","./RotateLoader":"../node_modules/react-spinners/RotateLoader.js","./ScaleLoader":"../node_modules/react-spinners/ScaleLoader.js","./SkewLoader":"../node_modules/react-spinners/SkewLoader.js","./SquareLoader":"../node_modules/react-spinners/SquareLoader.js","./SyncLoader":"../node_modules/react-spinners/SyncLoader.js"}],"components/Main/Main.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.filterData = void 0;
+exports.default = void 0;
+
+var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
+
+var _core = require("@emotion/core");
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactSpinners = require("react-spinners");
 
 var _isEmpty = _interopRequireDefault(require("lodash/isEmpty"));
+
+var _UI = require("../UI");
+
+var _context = _interopRequireDefault(require("../../helpers/context"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52499,33 +52514,75 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
   return a;
 };
 
-// eslint-disable-next-line import/prefer-default-export
-var filterData = function filterData(data, filters) {
-  var filteredData = (0, _isEmpty.default)(filters) ? data : [];
-  var appliedTypes = !(0, _isEmpty.default)(filters.types) ? filters.types.map(function (t) {
-    return t.value;
-  }) : [];
-  var appliedBrands = !(0, _isEmpty.default)(filters.brands) ? filters.brands.map(function (t) {
-    return t.value;
-  }) : [];
-  var appliedColors = !(0, _isEmpty.default)(filters.colors) ? filters.colors.map(function (t) {
-    return t.value;
-  }) : [];
-  data.forEach(function (item) {
-    var values = Object.values(item);
+var StyledLoader = (0, _styledBase.default)("div", {
+  target: "eloob7g0",
+  label: "StyledLoader"
+})("development" === "production" ? {
+  name: "m5g9ji",
+  styles: "width:fit-content;margin:20px auto;"
+} : {
+  name: "m5g9ji",
+  styles: "width:fit-content;margin:20px auto;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUStCIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgR3JpZExvYWRlciB9IGZyb20gJ3JlYWN0LXNwaW5uZXJzJ1xuaW1wb3J0IGlzRW1wdHkgZnJvbSAnbG9kYXNoL2lzRW1wdHknXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcblxuaW1wb3J0IHsgRmxleENvbnRhaW5lciwgRmxleEl0ZW0gfSBmcm9tICcuLi9VSSdcbmltcG9ydCBBcHBDb250ZXh0IGZyb20gJy4uLy4uL2hlbHBlcnMvY29udGV4dCdcblxuY29uc3QgU3R5bGVkTG9hZGVyID0gc3R5bGVkLmRpdmBcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xuICBtYXJnaW46IDIwcHggYXV0bztcbmBcblxuY29uc3QgU3R5bGVkRmxleENvbnRhaW5lciA9IHN0eWxlZChGbGV4Q29udGFpbmVyKWBcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiA1cHggYXV0bztcbiAgcGFkZGluZzogNXB4O1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG5cbiAgaW1nIHtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgd2lkdGg6IDIwMHB4O1xuICAgIG1pbi1oZWlnaHQ6IDUwcHg7XG4gIH1cblxuICBAbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbmBcblxuY29uc3QgU3R5bGVkQ29sb3JEaXYgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGhlaWdodDogMjBweDtcbiAgd2lkdGg6IDIwcHg7XG4gIG1hcmdpbjogMCA1cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICR7KHsgY29sb3IgfSkgPT4gY29sb3IgfHwgJ2luaGVyaXQnfTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbmBcblxuY29uc3QgTWFpbiA9ICgpID0+IHtcbiAgY29uc3QgeyBkYXRhLCBmaWx0ZXJlZERhdGEgfSA9IHVzZUNvbnRleHQoQXBwQ29udGV4dClcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGZpbHRlcmVkRGF0YS5tYXAoaXRlbSA9PiAoXG4gICAgICAgICAgPFN0eWxlZEZsZXhDb250YWluZXIga2V5PXtpdGVtLmlkfSBhbGlnbkl0ZW1zPVwiY2VudGVyXCI+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS50eXBlLnRvVXBwZXJDYXNlKCl9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntpdGVtLmJyYW5kfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj5cbiAgICAgICAgICAgICAge2l0ZW0uY29sb3JzLm1hcChjb2xvciA9PiAoXG4gICAgICAgICAgICAgICAgPFN0eWxlZENvbG9yRGl2IGtleT17Y29sb3J9IGNvbG9yPXtjb2xvcn0gLz5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPGltZyBzcmM9e2l0ZW0uaW1nfSBhbHQ9e2l0ZW0uYnJhbmR9IC8+XG4gICAgICAgICAgPC9TdHlsZWRGbGV4Q29udGFpbmVyPlxuICAgICAgICApKVxuICAgICAgKSA6IChcbiAgICAgICAgPFN0eWxlZExvYWRlcj5cbiAgICAgICAgICA8R3JpZExvYWRlciBzaXplVW5pdD1cInB4XCIgc2l6ZT17MTB9IGNvbG9yPVwiI2NjY1wiIGxvYWRpbmcgLz5cbiAgICAgICAgPC9TdHlsZWRMb2FkZXI+XG4gICAgICApfVxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5cbiJdfQ== */"
+});
+var StyledFlexContainer = (
+/*#__PURE__*/
+0, _styledBase.default)(_UI.FlexContainer, {
+  target: "eloob7g1",
+  label: "StyledFlexContainer"
+})("development" === "production" ? {
+  name: "1b8gycc",
+  styles: "border:1px solid #ccc;width:50%;margin:5px auto;padding:5px;border-radius:4px;img{height:100%;width:200px;min-height:50px;}@media (max-width:1024px){width:100%;}"
+} : {
+  name: "1b8gycc",
+  styles: "border:1px solid #ccc;width:50%;margin:5px auto;padding:5px;border-radius:4px;img{height:100%;width:200px;min-height:50px;}@media (max-width:1024px){width:100%;}",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBYWlEIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgR3JpZExvYWRlciB9IGZyb20gJ3JlYWN0LXNwaW5uZXJzJ1xuaW1wb3J0IGlzRW1wdHkgZnJvbSAnbG9kYXNoL2lzRW1wdHknXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcblxuaW1wb3J0IHsgRmxleENvbnRhaW5lciwgRmxleEl0ZW0gfSBmcm9tICcuLi9VSSdcbmltcG9ydCBBcHBDb250ZXh0IGZyb20gJy4uLy4uL2hlbHBlcnMvY29udGV4dCdcblxuY29uc3QgU3R5bGVkTG9hZGVyID0gc3R5bGVkLmRpdmBcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xuICBtYXJnaW46IDIwcHggYXV0bztcbmBcblxuY29uc3QgU3R5bGVkRmxleENvbnRhaW5lciA9IHN0eWxlZChGbGV4Q29udGFpbmVyKWBcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiA1cHggYXV0bztcbiAgcGFkZGluZzogNXB4O1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG5cbiAgaW1nIHtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgd2lkdGg6IDIwMHB4O1xuICAgIG1pbi1oZWlnaHQ6IDUwcHg7XG4gIH1cblxuICBAbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbmBcblxuY29uc3QgU3R5bGVkQ29sb3JEaXYgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGhlaWdodDogMjBweDtcbiAgd2lkdGg6IDIwcHg7XG4gIG1hcmdpbjogMCA1cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICR7KHsgY29sb3IgfSkgPT4gY29sb3IgfHwgJ2luaGVyaXQnfTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbmBcblxuY29uc3QgTWFpbiA9ICgpID0+IHtcbiAgY29uc3QgeyBkYXRhLCBmaWx0ZXJlZERhdGEgfSA9IHVzZUNvbnRleHQoQXBwQ29udGV4dClcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGZpbHRlcmVkRGF0YS5tYXAoaXRlbSA9PiAoXG4gICAgICAgICAgPFN0eWxlZEZsZXhDb250YWluZXIga2V5PXtpdGVtLmlkfSBhbGlnbkl0ZW1zPVwiY2VudGVyXCI+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS50eXBlLnRvVXBwZXJDYXNlKCl9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntpdGVtLmJyYW5kfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj5cbiAgICAgICAgICAgICAge2l0ZW0uY29sb3JzLm1hcChjb2xvciA9PiAoXG4gICAgICAgICAgICAgICAgPFN0eWxlZENvbG9yRGl2IGtleT17Y29sb3J9IGNvbG9yPXtjb2xvcn0gLz5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPGltZyBzcmM9e2l0ZW0uaW1nfSBhbHQ9e2l0ZW0uYnJhbmR9IC8+XG4gICAgICAgICAgPC9TdHlsZWRGbGV4Q29udGFpbmVyPlxuICAgICAgICApKVxuICAgICAgKSA6IChcbiAgICAgICAgPFN0eWxlZExvYWRlcj5cbiAgICAgICAgICA8R3JpZExvYWRlciBzaXplVW5pdD1cInB4XCIgc2l6ZT17MTB9IGNvbG9yPVwiI2NjY1wiIGxvYWRpbmcgLz5cbiAgICAgICAgPC9TdHlsZWRMb2FkZXI+XG4gICAgICApfVxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5cbiJdfQ== */"
+});
+var StyledColorDiv = (0, _styledBase.default)("div", {
+  target: "eloob7g2",
+  label: "StyledColorDiv"
+})("display:inline-block;height:20px;width:20px;margin:0 5px;background-color:", function (_ref) {
+  var color = _ref.color;
+  return color || 'inherit';
+}, ";border:1px solid #ccc;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBK0JpQyIsImZpbGUiOiJNYWluLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUNvbnRleHQgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IEdyaWRMb2FkZXIgfSBmcm9tICdyZWFjdC1zcGlubmVycydcbmltcG9ydCBpc0VtcHR5IGZyb20gJ2xvZGFzaC9pc0VtcHR5J1xuaW1wb3J0IHN0eWxlZCBmcm9tICdAZW1vdGlvbi9zdHlsZWQnXG5cbmltcG9ydCB7IEZsZXhDb250YWluZXIsIEZsZXhJdGVtIH0gZnJvbSAnLi4vVUknXG5pbXBvcnQgQXBwQ29udGV4dCBmcm9tICcuLi8uLi9oZWxwZXJzL2NvbnRleHQnXG5cbmNvbnN0IFN0eWxlZExvYWRlciA9IHN0eWxlZC5kaXZgXG4gIHdpZHRoOiBmaXQtY29udGVudDtcbiAgbWFyZ2luOiAyMHB4IGF1dG87XG5gXG5cbmNvbnN0IFN0eWxlZEZsZXhDb250YWluZXIgPSBzdHlsZWQoRmxleENvbnRhaW5lcilgXG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIHdpZHRoOiA1MCU7XG4gIG1hcmdpbjogNXB4IGF1dG87XG4gIHBhZGRpbmc6IDVweDtcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xuXG4gIGltZyB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBtaW4taGVpZ2h0OiA1MHB4O1xuICB9XG5cbiAgQG1lZGlhIChtYXgtd2lkdGg6IDEwMjRweCkge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG5gXG5cbmNvbnN0IFN0eWxlZENvbG9yRGl2ID0gc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDIwcHg7XG4gIHdpZHRoOiAyMHB4O1xuICBtYXJnaW46IDAgNXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAkeyh7IGNvbG9yIH0pID0+IGNvbG9yIHx8ICdpbmhlcml0J307XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG5gXG5cbmNvbnN0IE1haW4gPSAoKSA9PiB7XG4gIGNvbnN0IHsgZGF0YSwgZmlsdGVyZWREYXRhIH0gPSB1c2VDb250ZXh0KEFwcENvbnRleHQpXG5cbiAgcmV0dXJuIChcbiAgICA8PlxuICAgICAgeyFpc0VtcHR5KGRhdGEpID8gKFxuICAgICAgICBmaWx0ZXJlZERhdGEubWFwKGl0ZW0gPT4gKFxuICAgICAgICAgIDxTdHlsZWRGbGV4Q29udGFpbmVyIGtleT17aXRlbS5pZH0gYWxpZ25JdGVtcz1cImNlbnRlclwiPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2l0ZW0udHlwZS50b1VwcGVyQ2FzZSgpfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS5icmFuZH08L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+XG4gICAgICAgICAgICAgIHtpdGVtLmNvbG9ycy5tYXAoY29sb3IgPT4gKFxuICAgICAgICAgICAgICAgIDxTdHlsZWRDb2xvckRpdiBrZXk9e2NvbG9yfSBjb2xvcj17Y29sb3J9IC8+XG4gICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgPC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxpbWcgc3JjPXtpdGVtLmltZ30gYWx0PXtpdGVtLmJyYW5kfSAvPlxuICAgICAgICAgIDwvU3R5bGVkRmxleENvbnRhaW5lcj5cbiAgICAgICAgKSlcbiAgICAgICkgOiAoXG4gICAgICAgIDxTdHlsZWRMb2FkZXI+XG4gICAgICAgICAgPEdyaWRMb2FkZXIgc2l6ZVVuaXQ9XCJweFwiIHNpemU9ezEwfSBjb2xvcj1cIiNjY2NcIiBsb2FkaW5nIC8+XG4gICAgICAgIDwvU3R5bGVkTG9hZGVyPlxuICAgICAgKX1cbiAgICA8Lz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBNYWluXG4iXX0= */"));
 
-    if (values.some(function (i) {
-      return appliedTypes.includes(i) || appliedBrands.includes(i);
-    }) || item.colors.some(function (c) {
-      return appliedColors.includes(c);
-    })) {
-      filteredData.push(item);
-    }
-  });
-  return filteredData;
+var Main = function Main() {
+  var _useContext = (0, _react.useContext)(_context.default),
+      data = _useContext.data,
+      filteredData = _useContext.filteredData;
+
+  return (0, _core.jsx)(_react.default.Fragment, null, !(0, _isEmpty.default)(data) ? filteredData.map(function (item) {
+    return (0, _core.jsx)(StyledFlexContainer, {
+      key: item.id,
+      alignItems: "center"
+    }, (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, item.type.toUpperCase()), (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, item.brand), (0, _core.jsx)(_UI.FlexItem, {
+      flex: "1"
+    }, item.colors.map(function (color) {
+      return (0, _core.jsx)(StyledColorDiv, {
+        key: color,
+        color: color
+      });
+    })), (0, _core.jsx)("img", {
+      src: item.img,
+      alt: item.brand
+    }));
+  }) : (0, _core.jsx)(StyledLoader, null, (0, _core.jsx)(_reactSpinners.GridLoader, {
+    sizeUnit: "px",
+    size: 10,
+    color: "#ccc",
+    loading: true
+  })));
 };
 
-exports.filterData = filterData;
+__signature__(Main, "useContext{{ data, filteredData }}");
+
+var _default = Main;
+var _default2 = _default;
+exports.default = _default2;
 ;
 
 (function () {
@@ -52535,7 +52592,11 @@ exports.filterData = filterData;
     return;
   }
 
-  reactHotLoader.register(filterData, "filterData", "/Users/pavel/code/React-pablospaniard/src/helpers/helpers.js");
+  reactHotLoader.register(StyledLoader, "StyledLoader", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledFlexContainer, "StyledFlexContainer", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledColorDiv, "StyledColorDiv", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(Main, "Main", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
 })();
 
 ;
@@ -52544,7 +52605,35 @@ exports.filterData = filterData;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{"lodash/isEmpty":"../node_modules/lodash/isEmpty.js"}],"service/index.js":[function(require,module,exports) {
+},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","react-spinners":"../node_modules/react-spinners/index.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js","../UI":"components/UI/index.js","../../helpers/context":"helpers/context.js"}],"components/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Header", {
+  enumerable: true,
+  get: function () {
+    return _Header.default;
+  }
+});
+Object.defineProperty(exports, "Main", {
+  enumerable: true,
+  get: function () {
+    return _Main.default;
+  }
+});
+
+var _Header = _interopRequireDefault(require("./Header/Header"));
+
+var _Main = _interopRequireDefault(require("./Main/Main"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+},{"./Header/Header":"components/Header/Header.js","./Main/Main":"components/Main/Main.js"}],"service/index.js":[function(require,module,exports) {
 (function () {
   var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
@@ -52672,33 +52761,41 @@ var trafficMeister;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{}],"components/Main/Main.js":[function(require,module,exports) {
+},{}],"../node_modules/lodash/isNull.js":[function(require,module,exports) {
+/**
+ * Checks if `value` is `null`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is `null`, else `false`.
+ * @example
+ *
+ * _.isNull(null);
+ * // => true
+ *
+ * _.isNull(void 0);
+ * // => false
+ */
+function isNull(value) {
+  return value === null;
+}
+
+module.exports = isNull;
+
+},{}],"helpers/helpers.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
-
-var _core = require("@emotion/core");
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _reactSpinners = require("react-spinners");
+exports.filterData = void 0;
 
 var _isEmpty = _interopRequireDefault(require("lodash/isEmpty"));
 
-var _UI = require("../UI");
-
-var _context = _interopRequireDefault(require("../../helpers/context"));
-
-var _helpers = require("../../helpers/helpers");
-
-var _service = _interopRequireDefault(require("../../service"));
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+var _isNull = _interopRequireDefault(require("lodash/isNull"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52711,84 +52808,34 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
   return a;
 };
 
-var StyledLoader = (0, _styledBase.default)("div", {
-  target: "eloob7g0",
-  label: "StyledLoader"
-})("development" === "production" ? {
-  name: "m5g9ji",
-  styles: "width:fit-content;margin:20px auto;"
-} : {
-  name: "m5g9ji",
-  styles: "width:fit-content;margin:20px auto;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBVStCIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCwgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBHcmlkTG9hZGVyIH0gZnJvbSAncmVhY3Qtc3Bpbm5lcnMnXG5pbXBvcnQgaXNFbXB0eSBmcm9tICdsb2Rhc2gvaXNFbXB0eSdcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSB9IGZyb20gJy4uL1VJJ1xuaW1wb3J0IEFwcENvbnRleHQgZnJvbSAnLi4vLi4vaGVscGVycy9jb250ZXh0J1xuaW1wb3J0IHsgZmlsdGVyRGF0YSB9IGZyb20gJy4uLy4uL2hlbHBlcnMvaGVscGVycydcbmltcG9ydCB0cmFmZmljTWVpc3RlciBmcm9tICcuLi8uLi9zZXJ2aWNlJ1xuXG5jb25zdCBTdHlsZWRMb2FkZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuYFxuXG5jb25zdCBTdHlsZWRGbGV4Q29udGFpbmVyID0gc3R5bGVkKEZsZXhDb250YWluZXIpYFxuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICB3aWR0aDogNTAlO1xuICBtYXJnaW46IDVweCBhdXRvO1xuICBwYWRkaW5nOiA1cHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcblxuICBpbWcge1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogMjAwcHg7XG4gICAgbWluLWhlaWdodDogNTBweDtcbiAgfVxuXG4gIEBtZWRpYSAobWF4LXdpZHRoOiAxMDI0cHgpIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuYFxuXG5jb25zdCBTdHlsZWRDb2xvckRpdiA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAyMHB4O1xuICB3aWR0aDogMjBweDtcbiAgbWFyZ2luOiAwIDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyBjb2xvciB9KSA9PiBjb2xvciB8fCAnaW5oZXJpdCd9O1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuYFxuXG5jb25zdCBNYWluID0gKCkgPT4ge1xuICBjb25zdCB7IGRhdGEsIGZpbHRlcnMsIHNldERhdGEgfSA9IHVzZUNvbnRleHQoQXBwQ29udGV4dClcbiAgY29uc3QgZmlsdGVyZWREYXRhID0gZmlsdGVyRGF0YShkYXRhLCBmaWx0ZXJzKVxuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgdHJhZmZpY01laXN0ZXIuZmV0Y2hEYXRhKChlcnIsIHJlcykgPT4ge1xuICAgICAgY29uc29sZS5sb2coJ2ZldGNoaW5nJylcbiAgICAgIGlmIChlcnIpIHRocm93IG5ldyBFcnJvcihlcnIpXG4gICAgICBzZXREYXRhKHJlcylcbiAgICB9KVxuICB9LCBbXSlcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGZpbHRlcmVkRGF0YS5tYXAoaXRlbSA9PiAoXG4gICAgICAgICAgPFN0eWxlZEZsZXhDb250YWluZXIga2V5PXtpdGVtLmlkfSBhbGlnbkl0ZW1zPVwiY2VudGVyXCI+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS50eXBlLnRvVXBwZXJDYXNlKCl9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntpdGVtLmJyYW5kfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj5cbiAgICAgICAgICAgICAge2l0ZW0uY29sb3JzLm1hcChjb2xvciA9PiAoXG4gICAgICAgICAgICAgICAgPFN0eWxlZENvbG9yRGl2IGtleT17Y29sb3J9IGNvbG9yPXtjb2xvcn0gLz5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPGltZyBzcmM9e2l0ZW0uaW1nfSBhbHQ9e2l0ZW0uYnJhbmR9IC8+XG4gICAgICAgICAgPC9TdHlsZWRGbGV4Q29udGFpbmVyPlxuICAgICAgICApKVxuICAgICAgKSA6IChcbiAgICAgICAgPFN0eWxlZExvYWRlcj5cbiAgICAgICAgICA8R3JpZExvYWRlciBzaXplVW5pdD1cInB4XCIgc2l6ZT17MTB9IGNvbG9yPVwiIzEyM2FiY1wiIGxvYWRpbmcgLz5cbiAgICAgICAgPC9TdHlsZWRMb2FkZXI+XG4gICAgICApfVxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5cbiJdfQ== */"
-});
-var StyledFlexContainer = (
-/*#__PURE__*/
-0, _styledBase.default)(_UI.FlexContainer, {
-  target: "eloob7g1",
-  label: "StyledFlexContainer"
-})("development" === "production" ? {
-  name: "1b8gycc",
-  styles: "border:1px solid #ccc;width:50%;margin:5px auto;padding:5px;border-radius:4px;img{height:100%;width:200px;min-height:50px;}@media (max-width:1024px){width:100%;}"
-} : {
-  name: "1b8gycc",
-  styles: "border:1px solid #ccc;width:50%;margin:5px auto;padding:5px;border-radius:4px;img{height:100%;width:200px;min-height:50px;}@media (max-width:1024px){width:100%;}",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZWlEIiwiZmlsZSI6Ik1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlQ29udGV4dCwgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBHcmlkTG9hZGVyIH0gZnJvbSAncmVhY3Qtc3Bpbm5lcnMnXG5pbXBvcnQgaXNFbXB0eSBmcm9tICdsb2Rhc2gvaXNFbXB0eSdcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSB9IGZyb20gJy4uL1VJJ1xuaW1wb3J0IEFwcENvbnRleHQgZnJvbSAnLi4vLi4vaGVscGVycy9jb250ZXh0J1xuaW1wb3J0IHsgZmlsdGVyRGF0YSB9IGZyb20gJy4uLy4uL2hlbHBlcnMvaGVscGVycydcbmltcG9ydCB0cmFmZmljTWVpc3RlciBmcm9tICcuLi8uLi9zZXJ2aWNlJ1xuXG5jb25zdCBTdHlsZWRMb2FkZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuYFxuXG5jb25zdCBTdHlsZWRGbGV4Q29udGFpbmVyID0gc3R5bGVkKEZsZXhDb250YWluZXIpYFxuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICB3aWR0aDogNTAlO1xuICBtYXJnaW46IDVweCBhdXRvO1xuICBwYWRkaW5nOiA1cHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcblxuICBpbWcge1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogMjAwcHg7XG4gICAgbWluLWhlaWdodDogNTBweDtcbiAgfVxuXG4gIEBtZWRpYSAobWF4LXdpZHRoOiAxMDI0cHgpIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuYFxuXG5jb25zdCBTdHlsZWRDb2xvckRpdiA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAyMHB4O1xuICB3aWR0aDogMjBweDtcbiAgbWFyZ2luOiAwIDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyBjb2xvciB9KSA9PiBjb2xvciB8fCAnaW5oZXJpdCd9O1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuYFxuXG5jb25zdCBNYWluID0gKCkgPT4ge1xuICBjb25zdCB7IGRhdGEsIGZpbHRlcnMsIHNldERhdGEgfSA9IHVzZUNvbnRleHQoQXBwQ29udGV4dClcbiAgY29uc3QgZmlsdGVyZWREYXRhID0gZmlsdGVyRGF0YShkYXRhLCBmaWx0ZXJzKVxuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgdHJhZmZpY01laXN0ZXIuZmV0Y2hEYXRhKChlcnIsIHJlcykgPT4ge1xuICAgICAgY29uc29sZS5sb2coJ2ZldGNoaW5nJylcbiAgICAgIGlmIChlcnIpIHRocm93IG5ldyBFcnJvcihlcnIpXG4gICAgICBzZXREYXRhKHJlcylcbiAgICB9KVxuICB9LCBbXSlcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7IWlzRW1wdHkoZGF0YSkgPyAoXG4gICAgICAgIGZpbHRlcmVkRGF0YS5tYXAoaXRlbSA9PiAoXG4gICAgICAgICAgPFN0eWxlZEZsZXhDb250YWluZXIga2V5PXtpdGVtLmlkfSBhbGlnbkl0ZW1zPVwiY2VudGVyXCI+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS50eXBlLnRvVXBwZXJDYXNlKCl9PC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxGbGV4SXRlbSBmbGV4PVwiMVwiPntpdGVtLmJyYW5kfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj5cbiAgICAgICAgICAgICAge2l0ZW0uY29sb3JzLm1hcChjb2xvciA9PiAoXG4gICAgICAgICAgICAgICAgPFN0eWxlZENvbG9yRGl2IGtleT17Y29sb3J9IGNvbG9yPXtjb2xvcn0gLz5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPGltZyBzcmM9e2l0ZW0uaW1nfSBhbHQ9e2l0ZW0uYnJhbmR9IC8+XG4gICAgICAgICAgPC9TdHlsZWRGbGV4Q29udGFpbmVyPlxuICAgICAgICApKVxuICAgICAgKSA6IChcbiAgICAgICAgPFN0eWxlZExvYWRlcj5cbiAgICAgICAgICA8R3JpZExvYWRlciBzaXplVW5pdD1cInB4XCIgc2l6ZT17MTB9IGNvbG9yPVwiIzEyM2FiY1wiIGxvYWRpbmcgLz5cbiAgICAgICAgPC9TdHlsZWRMb2FkZXI+XG4gICAgICApfVxuICAgIDwvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE1haW5cbiJdfQ== */"
-});
-var StyledColorDiv = (0, _styledBase.default)("div", {
-  target: "eloob7g2",
-  label: "StyledColorDiv"
-})("display:inline-block;height:20px;width:20px;margin:0 5px;background-color:", function (_ref) {
-  var color = _ref.color;
-  return color || 'inherit';
-}, ";border:1px solid #ccc;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBaUNpQyIsImZpbGUiOiJNYWluLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUNvbnRleHQsIHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgR3JpZExvYWRlciB9IGZyb20gJ3JlYWN0LXNwaW5uZXJzJ1xuaW1wb3J0IGlzRW1wdHkgZnJvbSAnbG9kYXNoL2lzRW1wdHknXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcblxuaW1wb3J0IHsgRmxleENvbnRhaW5lciwgRmxleEl0ZW0gfSBmcm9tICcuLi9VSSdcbmltcG9ydCBBcHBDb250ZXh0IGZyb20gJy4uLy4uL2hlbHBlcnMvY29udGV4dCdcbmltcG9ydCB7IGZpbHRlckRhdGEgfSBmcm9tICcuLi8uLi9oZWxwZXJzL2hlbHBlcnMnXG5pbXBvcnQgdHJhZmZpY01laXN0ZXIgZnJvbSAnLi4vLi4vc2VydmljZSdcblxuY29uc3QgU3R5bGVkTG9hZGVyID0gc3R5bGVkLmRpdmBcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xuICBtYXJnaW46IDIwcHggYXV0bztcbmBcblxuY29uc3QgU3R5bGVkRmxleENvbnRhaW5lciA9IHN0eWxlZChGbGV4Q29udGFpbmVyKWBcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiA1cHggYXV0bztcbiAgcGFkZGluZzogNXB4O1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG5cbiAgaW1nIHtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgd2lkdGg6IDIwMHB4O1xuICAgIG1pbi1oZWlnaHQ6IDUwcHg7XG4gIH1cblxuICBAbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbmBcblxuY29uc3QgU3R5bGVkQ29sb3JEaXYgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGhlaWdodDogMjBweDtcbiAgd2lkdGg6IDIwcHg7XG4gIG1hcmdpbjogMCA1cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICR7KHsgY29sb3IgfSkgPT4gY29sb3IgfHwgJ2luaGVyaXQnfTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbmBcblxuY29uc3QgTWFpbiA9ICgpID0+IHtcbiAgY29uc3QgeyBkYXRhLCBmaWx0ZXJzLCBzZXREYXRhIH0gPSB1c2VDb250ZXh0KEFwcENvbnRleHQpXG4gIGNvbnN0IGZpbHRlcmVkRGF0YSA9IGZpbHRlckRhdGEoZGF0YSwgZmlsdGVycylcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIHRyYWZmaWNNZWlzdGVyLmZldGNoRGF0YSgoZXJyLCByZXMpID0+IHtcbiAgICAgIGNvbnNvbGUubG9nKCdmZXRjaGluZycpXG4gICAgICBpZiAoZXJyKSB0aHJvdyBuZXcgRXJyb3IoZXJyKVxuICAgICAgc2V0RGF0YShyZXMpXG4gICAgfSlcbiAgfSwgW10pXG5cbiAgcmV0dXJuIChcbiAgICA8PlxuICAgICAgeyFpc0VtcHR5KGRhdGEpID8gKFxuICAgICAgICBmaWx0ZXJlZERhdGEubWFwKGl0ZW0gPT4gKFxuICAgICAgICAgIDxTdHlsZWRGbGV4Q29udGFpbmVyIGtleT17aXRlbS5pZH0gYWxpZ25JdGVtcz1cImNlbnRlclwiPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+e2l0ZW0udHlwZS50b1VwcGVyQ2FzZSgpfTwvRmxleEl0ZW0+XG4gICAgICAgICAgICA8RmxleEl0ZW0gZmxleD1cIjFcIj57aXRlbS5icmFuZH08L0ZsZXhJdGVtPlxuICAgICAgICAgICAgPEZsZXhJdGVtIGZsZXg9XCIxXCI+XG4gICAgICAgICAgICAgIHtpdGVtLmNvbG9ycy5tYXAoY29sb3IgPT4gKFxuICAgICAgICAgICAgICAgIDxTdHlsZWRDb2xvckRpdiBrZXk9e2NvbG9yfSBjb2xvcj17Y29sb3J9IC8+XG4gICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgPC9GbGV4SXRlbT5cbiAgICAgICAgICAgIDxpbWcgc3JjPXtpdGVtLmltZ30gYWx0PXtpdGVtLmJyYW5kfSAvPlxuICAgICAgICAgIDwvU3R5bGVkRmxleENvbnRhaW5lcj5cbiAgICAgICAgKSlcbiAgICAgICkgOiAoXG4gICAgICAgIDxTdHlsZWRMb2FkZXI+XG4gICAgICAgICAgPEdyaWRMb2FkZXIgc2l6ZVVuaXQ9XCJweFwiIHNpemU9ezEwfSBjb2xvcj1cIiMxMjNhYmNcIiBsb2FkaW5nIC8+XG4gICAgICAgIDwvU3R5bGVkTG9hZGVyPlxuICAgICAgKX1cbiAgICA8Lz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBNYWluXG4iXX0= */"));
+// eslint-disable-next-line import/prefer-default-export
+var filterData = function filterData(data, filters) {
+  var filteredData = data;
 
-var Main = function Main() {
-  var _useContext = (0, _react.useContext)(_context.default),
-      data = _useContext.data,
-      filters = _useContext.filters,
-      setData = _useContext.setData;
-
-  var filteredData = (0, _helpers.filterData)(data, filters);
-  (0, _react.useEffect)(function () {
-    _service.default.fetchData(function (err, res) {
-      console.log('fetching');
-      if (err) throw new Error(err);
-      setData(res);
+  if (!(0, _isEmpty.default)(filters.type) && !(0, _isNull.default)(filters.type)) {
+    filteredData = data.filter(function (i) {
+      return i.type === filters.type.value;
     });
-  }, []);
-  return (0, _core.jsx)(_react.default.Fragment, null, !(0, _isEmpty.default)(data) ? filteredData.map(function (item) {
-    return (0, _core.jsx)(StyledFlexContainer, {
-      key: item.id,
-      alignItems: "center"
-    }, (0, _core.jsx)(_UI.FlexItem, {
-      flex: "1"
-    }, item.type.toUpperCase()), (0, _core.jsx)(_UI.FlexItem, {
-      flex: "1"
-    }, item.brand), (0, _core.jsx)(_UI.FlexItem, {
-      flex: "1"
-    }, item.colors.map(function (color) {
-      return (0, _core.jsx)(StyledColorDiv, {
-        key: color,
-        color: color
+  }
+
+  if (!(0, _isEmpty.default)(filters.brand) && !(0, _isNull.default)(filters.brand)) {
+    filteredData = data.filter(function (i) {
+      return i.brand === filters.brand.value;
+    });
+  }
+
+  if (!(0, _isEmpty.default)(filters.color) && !(0, _isNull.default)(filters.color)) {
+    filteredData = filteredData.filter(function (i) {
+      return i.colors.some(function (r) {
+        return filters.color.value.includes(r);
       });
-    })), (0, _core.jsx)("img", {
-      src: item.img,
-      alt: item.brand
-    }));
-  }) : (0, _core.jsx)(StyledLoader, null, (0, _core.jsx)(_reactSpinners.GridLoader, {
-    sizeUnit: "px",
-    size: 10,
-    color: "#123abc",
-    loading: true
-  })));
+    });
+  }
+
+  return filteredData;
 };
 
-__signature__(Main, "useContext{{ data, filters, setData }}\nuseEffect{}");
-
-var _default = Main;
-var _default2 = _default;
-exports.default = _default2;
+exports.filterData = filterData;
 ;
 
 (function () {
@@ -52798,11 +52845,7 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(StyledLoader, "StyledLoader", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(StyledFlexContainer, "StyledFlexContainer", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(StyledColorDiv, "StyledColorDiv", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(Main, "Main", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(filterData, "filterData", "/Users/pavel/code/React-pablospaniard/src/helpers/helpers.js");
 })();
 
 ;
@@ -52811,35 +52854,7 @@ exports.default = _default2;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react":"../node_modules/react/index.js","react-spinners":"../node_modules/react-spinners/index.js","lodash/isEmpty":"../node_modules/lodash/isEmpty.js","../UI":"components/UI/index.js","../../helpers/context":"helpers/context.js","../../helpers/helpers":"helpers/helpers.js","../../service":"service/index.js"}],"components/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Header", {
-  enumerable: true,
-  get: function () {
-    return _Header.default;
-  }
-});
-Object.defineProperty(exports, "Main", {
-  enumerable: true,
-  get: function () {
-    return _Main.default;
-  }
-});
-
-var _Header = _interopRequireDefault(require("./Header/Header"));
-
-var _Main = _interopRequireDefault(require("./Main/Main"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
-  return a;
-};
-},{"./Header/Header":"components/Header/Header.js","./Main/Main":"components/Main/Main.js"}],"App.js":[function(require,module,exports) {
+},{"lodash/isEmpty":"../node_modules/lodash/isEmpty.js","lodash/isNull":"../node_modules/lodash/isNull.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52858,6 +52873,10 @@ var _UI = require("./components/UI");
 var _components = require("./components");
 
 var _context = _interopRequireDefault(require("./helpers/context"));
+
+var _service = _interopRequireDefault(require("./service"));
+
+var _helpers = require("./helpers/helpers");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52892,19 +52911,27 @@ var App = function App() {
       filters = _useState4[0],
       setFilters = _useState4[1];
 
+  var filteredData = (0, _helpers.filterData)(data, filters);
+  console.log(filters);
+  (0, _react.useEffect)(function () {
+    _service.default.fetchData(function (err, res) {
+      if (err) throw new Error(err);
+      setData(res);
+    });
+  }, []);
   return (0, _core.jsx)(_context.default.Provider, {
     value: {
       data: data,
       filters: filters,
       setFilters: setFilters,
-      setData: setData
+      filteredData: filteredData
     }
   }, (0, _core.jsx)(_UI.FlexContainer, {
     direction: "column"
   }, (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Header, null)), (0, _core.jsx)("br", null), (0, _core.jsx)(_UI.FlexItem, null, (0, _core.jsx)(_components.Main, null))));
 };
 
-__signature__(App, "useState{[data, setData]([])}\nuseState{[filters, setFilters]({})}");
+__signature__(App, "useState{[data, setData]([])}\nuseState{[filters, setFilters]({})}\nuseEffect{}");
 
 var _default = (0, _reactHotLoader.hot)(module)(App);
 
@@ -52929,7 +52956,7 @@ exports.default = _default2;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","./components/UI":"components/UI/index.js","./components":"components/index.js","./helpers/context":"helpers/context.js"}],"index.js":[function(require,module,exports) {
+},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","./components/UI":"components/UI/index.js","./components":"components/index.js","./helpers/context":"helpers/context.js","./service":"service/index.js","./helpers/helpers":"helpers/helpers.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("core-js/modules/es6.array.copy-within");

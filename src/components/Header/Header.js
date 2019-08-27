@@ -10,17 +10,21 @@ let arrayOfBrands = []
 let arrayOfColors = []
 
 const Header = () => {
-  const { data, filters, setFilters } = useContext(AppContext)
+  const { data, filters, setFilters, filteredData } = useContext(AppContext)
   // this could be done with useReducer, but i leave it as is for simplicity
   const [state, setState] = useState({})
 
   useEffect(() => {
     if (!isEmpty(data)) {
-      arrayOfTypes = data.map(i => i.type)
+      const source = isEmpty(filteredData) ? data : filteredData
+      arrayOfTypes = source.map(i => i.type)
       const uniqueTypes = Array.from(new Set(arrayOfTypes))
-      arrayOfBrands = data.map(i => i.brand)
+      arrayOfBrands = source.map(i => i.brand)
       const uniqueBrands = Array.from(new Set(arrayOfBrands))
-      arrayOfColors = data.reduce((prev, curr) => [...prev, ...curr.colors], [])
+      arrayOfColors = source.reduce(
+        (prev, curr) => [...prev, ...curr.colors],
+        []
+      )
       const uniqueColors = Array.from(new Set(arrayOfColors))
       setState({
         ...state,
@@ -29,18 +33,18 @@ const Header = () => {
         colors: uniqueColors
       })
     }
-  }, [data])
+  }, [data, filteredData])
 
   const handleChange = (item, prop) => {
     switch (prop) {
       case PROPS.TYPES:
-        setFilters({ ...filters, types: item })
+        setFilters({ ...filters, type: item })
         break
       case PROPS.BRANDS:
-        setFilters({ ...filters, brands: item })
+        setFilters({ ...filters, brand: item })
         break
       case PROPS.COLORS:
-        setFilters({ ...filters, colors: item })
+        setFilters({ ...filters, color: item })
         break
 
       default:
@@ -55,27 +59,27 @@ const Header = () => {
         <FlexContainer>
           <FlexItem flex="1" margin="0 20px">
             <Select
-              value={filters.types}
+              value={filters.type}
               items={state.types}
-              handleChange={item => handleChange(item, 'types')}
+              handleChange={item => handleChange(item, 'type')}
               disabled={isEmpty(state.types)}
               loading={isEmpty(data)}
             />
           </FlexItem>
           <FlexItem flex="1" margin="0 20px">
             <Select
-              value={filters.brands}
+              value={filters.brand}
               items={state.brands}
-              handleChange={item => handleChange(item, 'brands')}
+              handleChange={item => handleChange(item, 'brand')}
               disabled={isEmpty(state.brands)}
               loading={isEmpty(data)}
             />
           </FlexItem>
           <FlexItem flex="1" margin="0 20px">
             <Select
-              value={filters.colors}
+              value={filters.color}
               items={state.colors}
-              handleChange={item => handleChange(item, 'colors')}
+              handleChange={item => handleChange(item, 'color')}
               disabled={isEmpty(state.colors)}
               loading={isEmpty(data)}
             />

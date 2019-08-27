@@ -1,5 +1,14 @@
 import React from 'react'
-import { string, func, arrayOf, object, oneOfType, bool } from 'prop-types'
+import {
+  string,
+  func,
+  arrayOf,
+  object,
+  oneOfType,
+  bool,
+  any,
+  objectOf
+} from 'prop-types'
 import Select from 'react-select'
 import isEmpty from 'lodash/isEmpty'
 
@@ -15,7 +24,6 @@ const SelectComponent = ({ value, handleChange, items, disabled, loading }) => {
       onChange={handleChange}
       options={objects}
       isClearable
-      isMulti
       isDisabled={disabled}
       isLoading={loading}
     />
@@ -25,7 +33,7 @@ const SelectComponent = ({ value, handleChange, items, disabled, loading }) => {
 SelectComponent.propTypes = {
   disabled: bool.isRequired,
   loading: bool.isRequired,
-  value: oneOfType([string, arrayOf(object)]),
+  value: oneOfType([arrayOf(any), objectOf(any)]),
   items: oneOfType([arrayOf(string), arrayOf(object)]),
   handleChange: func
 }

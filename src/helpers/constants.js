@@ -5,7 +5,7 @@ export const TYPES = {
 }
 
 export const PROPS = {
-  TYPES: 'types',
-  BRANDS: 'brands',
-  COLORS: 'colors'
+  TYPES: 'type',
+  BRANDS: 'brand',
+  COLORS: 'color'
 }

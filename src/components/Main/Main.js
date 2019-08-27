@@ -1,12 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { GridLoader } from 'react-spinners'
 import isEmpty from 'lodash/isEmpty'
 import styled from '@emotion/styled'
 
 import { FlexContainer, FlexItem } from '../UI'
 import AppContext from '../../helpers/context'
-import { filterData } from '../../helpers/helpers'
-import trafficMeister from '../../service'
 
 const StyledLoader = styled.div`
   width: fit-content;
@@ -41,16 +39,7 @@ const StyledColorDiv = styled.div`
 `
 
 const Main = () => {
-  const { data, filters, setData } = useContext(AppContext)
-  const filteredData = filterData(data, filters)
-
-  useEffect(() => {
-    trafficMeister.fetchData((err, res) => {
-      console.log('fetching')
-      if (err) throw new Error(err)
-      setData(res)
-    })
-  }, [])
+  const { data, filteredData } = useContext(AppContext)
 
   return (
     <>
@@ -69,7 +58,7 @@ const Main = () => {
         ))
       ) : (
         <StyledLoader>
-          <GridLoader sizeUnit="px" size={10} color="#123abc" loading />
+          <GridLoader sizeUnit="px" size={10} color="#ccc" loading />
         </StyledLoader>
       )}
     </>
