@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <>
-      <h1>The Traffic Meister</h1>
+      <h1 style={{ textAlign: 'center' }}>The Traffic Meister</h1>
       <form>
         <FlexContainer>
           <FlexItem flex="1" margin="0 20px">

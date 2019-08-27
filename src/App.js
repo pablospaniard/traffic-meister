@@ -9,6 +9,7 @@ import { filterData } from './helpers/helpers'
 
 const App = () => {
   const [data, setData] = useState([])
+  const [error, setError] = useState(false)
   // this could be done with useReducer, but i leave it as is for simplicity
   const [filters, setFilters] = useState({})
 
@@ -16,8 +17,12 @@ const App = () => {
 
   useEffect(() => {
     trafficMeister.fetchData((err, res) => {
-      if (err) throw new Error(err)
+      if (err) {
+        setError(true)
+        throw new Error(err)
+      }
       setData(res)
+      setError(false)
     })
   }, [])
 
@@ -29,7 +34,13 @@ const App = () => {
         </FlexItem>
         <br />
         <FlexItem>
-          <Main />
+          {error ? (
+            <div style={{ textAlign: 'center' }}>
+              Ups, please do it again. Reload the page!
+            </div>
+          ) : (
+            <Main />
+          )}
         </FlexItem>
       </FlexContainer>
     </AppContext.Provider>

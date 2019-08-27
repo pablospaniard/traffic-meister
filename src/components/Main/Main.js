@@ -15,8 +15,10 @@ const StyledFlexContainer = styled(FlexContainer)`
   border: 1px solid #ccc;
   width: 50%;
   margin: 5px auto;
-  padding: 5px;
+  padding: 15px;
   border-radius: 4px;
+  background-color: #607b7d;
+  color: #e0e0e0;
 
   img {
     height: 100%;
