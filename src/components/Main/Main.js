@@ -47,7 +47,11 @@ const Main = () => {
     <>
       {!isEmpty(data) ? (
         filteredData.map(item => (
-          <StyledFlexContainer key={item.id} alignItems="center">
+          <StyledFlexContainer
+            key={item.id}
+            alignItems="center"
+            data-testid="table"
+          >
             <FlexItem flex="1">{item.type.toUpperCase()}</FlexItem>
             <FlexItem flex="1">{item.brand}</FlexItem>
             <FlexItem flex="1">
@@ -59,7 +63,7 @@ const Main = () => {
           </StyledFlexContainer>
         ))
       ) : (
-        <StyledLoader>
+        <StyledLoader data-testid="loading">
           <GridLoader sizeUnit="px" size={10} color="#ccc" loading />
         </StyledLoader>
       )}

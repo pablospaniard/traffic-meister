@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main component should works properly should match Snapshot: Main_1 1`] = `
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  width: 50%;
+  margin: 5px auto;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #607b7d;
+  color: #e0e0e0;
+}
+
+.emotion-10 img {
+  height: 100%;
+  width: 200px;
+  min-height: 50px;
+}
+
+@media (max-width:1024px) {
+  .emotion-10 {
+    width: 100%;
+  }
+}
+
+.emotion-0 {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  background-color: red;
+  border: 1px solid #ccc;
+}
+
+.emotion-6 {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  background-color: black;
+  border: 1px solid #ccc;
+}
+
+<div
+  class="emotion-10 emotion-11"
+  data-testid="table"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    CAR
+  </div>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    Bugatti Veyron
+  </div>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      class="emotion-4 emotion-5"
+      color="red"
+    />
+    <div
+      class="emotion-6 emotion-5"
+      color="black"
+    />
+  </div>
+  <div
+    class="imageloader imageloader-loading"
+  >
+    <div />
+  </div>
+</div>
+`;

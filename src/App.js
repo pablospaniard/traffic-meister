@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react'
 import { FlexContainer, FlexItem } from './components/UI'
 import { Header, Main } from './components'
 import AppContext from './helpers/context'
-import trafficMeister from './service'
 import { filterData } from './helpers/helpers'
+import trafficMeister from './service'
 
 const App = () => {
   const [data, setData] = useState([])
