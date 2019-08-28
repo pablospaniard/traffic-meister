@@ -50339,8 +50339,8 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(SelectComponent, "SelectComponent", "/Users/pavel/code/React-pablospaniard/src/components/UI/Select.js");
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/UI/Select.js");
+  reactHotLoader.register(SelectComponent, "SelectComponent", "/Users/pavel/projects/React-pablospaniard/src/components/UI/Select.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/projects/React-pablospaniard/src/components/UI/Select.js");
 })();
 
 ;
@@ -50622,7 +50622,7 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/UI/FlexContainer.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/projects/React-pablospaniard/src/components/UI/FlexContainer.js");
 })();
 
 ;
@@ -50682,7 +50682,7 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/UI/FlexItem.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/projects/React-pablospaniard/src/components/UI/FlexItem.js");
 })();
 
 ;
@@ -50882,7 +50882,7 @@ var Image = function Image(_ref) {
     src: src
   }, (0, _core.jsx)("img", {
     alt: alt
-  }), (0, _core.jsx)("div", null, "image is not available"));
+  }), (0, _core.jsx)("div", null, "image is not available"), (0, _core.jsx)("div", null));
 };
 
 Image.propTypes = {
@@ -50901,8 +50901,8 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(Image, "Image", "/Users/pavel/code/React-pablospaniard/src/components/UI/Image.js");
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/UI/Image.js");
+  reactHotLoader.register(Image, "Image", "/Users/pavel/projects/React-pablospaniard/src/components/UI/Image.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/projects/React-pablospaniard/src/components/UI/Image.js");
 })();
 
 ;
@@ -50989,7 +50989,7 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/helpers/context.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/projects/React-pablospaniard/src/helpers/context.js");
 })();
 
 ;
@@ -51036,8 +51036,8 @@ exports.PROPS = PROPS;
     return;
   }
 
-  reactHotLoader.register(TYPES, "TYPES", "/Users/pavel/code/React-pablospaniard/src/helpers/constants.js");
-  reactHotLoader.register(PROPS, "PROPS", "/Users/pavel/code/React-pablospaniard/src/helpers/constants.js");
+  reactHotLoader.register(TYPES, "TYPES", "/Users/pavel/projects/React-pablospaniard/src/helpers/constants.js");
+  reactHotLoader.register(PROPS, "PROPS", "/Users/pavel/projects/React-pablospaniard/src/helpers/constants.js");
 })();
 
 ;
@@ -51220,11 +51220,11 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(arrayOfTypes, "arrayOfTypes", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
-  reactHotLoader.register(arrayOfBrands, "arrayOfBrands", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
-  reactHotLoader.register(arrayOfColors, "arrayOfColors", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
-  reactHotLoader.register(Header, "Header", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/Header/Header.js");
+  reactHotLoader.register(arrayOfTypes, "arrayOfTypes", "/Users/pavel/projects/React-pablospaniard/src/components/Header/Header.js");
+  reactHotLoader.register(arrayOfBrands, "arrayOfBrands", "/Users/pavel/projects/React-pablospaniard/src/components/Header/Header.js");
+  reactHotLoader.register(arrayOfColors, "arrayOfColors", "/Users/pavel/projects/React-pablospaniard/src/components/Header/Header.js");
+  reactHotLoader.register(Header, "Header", "/Users/pavel/projects/React-pablospaniard/src/components/Header/Header.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/projects/React-pablospaniard/src/components/Header/Header.js");
 })();
 
 ;
@@ -52824,11 +52824,11 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(StyledLoader, "StyledLoader", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(StyledFlexContainer, "StyledFlexContainer", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(StyledColorDiv, "StyledColorDiv", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(Main, "Main", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledLoader, "StyledLoader", "/Users/pavel/projects/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledFlexContainer, "StyledFlexContainer", "/Users/pavel/projects/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(StyledColorDiv, "StyledColorDiv", "/Users/pavel/projects/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(Main, "Main", "/Users/pavel/projects/React-pablospaniard/src/components/Main/Main.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/projects/React-pablospaniard/src/components/Main/Main.js");
 })();
 
 ;
@@ -52984,7 +52984,7 @@ var trafficMeister;
     return;
   }
 
-  reactHotLoader.register(trafficMeister, "trafficMeister", "/Users/pavel/code/React-pablospaniard/src/service/index.js");
+  reactHotLoader.register(trafficMeister, "trafficMeister", "/Users/pavel/projects/React-pablospaniard/src/service/index.js");
 })();
 
 ;
@@ -53077,7 +53077,7 @@ exports.filterData = filterData;
     return;
   }
 
-  reactHotLoader.register(filterData, "filterData", "/Users/pavel/code/React-pablospaniard/src/helpers/helpers.js");
+  reactHotLoader.register(filterData, "filterData", "/Users/pavel/projects/React-pablospaniard/src/helpers/helpers.js");
 })();
 
 ;
@@ -53191,8 +53191,8 @@ exports.default = _default2;
     return;
   }
 
-  reactHotLoader.register(App, "App", "/Users/pavel/code/React-pablospaniard/src/App.js");
-  reactHotLoader.register(_default, "default", "/Users/pavel/code/React-pablospaniard/src/App.js");
+  reactHotLoader.register(App, "App", "/Users/pavel/projects/React-pablospaniard/src/App.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/projects/React-pablospaniard/src/App.js");
 })();
 
 ;
@@ -53501,7 +53501,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62153" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51834" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

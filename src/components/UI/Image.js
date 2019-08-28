@@ -7,6 +7,7 @@ const Image = ({ src, alt }) => {
     <ImageLoader src={src}>
       <img alt={alt} />
       <div>image is not available</div>
+      <div />
     </ImageLoader>
   )
 }
